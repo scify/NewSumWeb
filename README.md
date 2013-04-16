@@ -12,5 +12,6 @@ The Files are split in the current way:
 	- js
 	- php      
 
-gkiom@scify.org
-pgiotis@scify.org
+George Kiomourtzis --> gkiom@scify.org 
+
+Panagiotis Giotis --> pgiotis@scify.org

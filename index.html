@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>NewSum Widget</title>
+        <title>NewSum Web</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
 
@@ -61,6 +61,8 @@
                     function getCategories() {
                         initMainOutput();
                         $("#categoriesDiv").load("php/getCategories.php?lang=" + getLang());
+                        $("#output").html('<div class="info">No category selected.</div>');
+                        // todo FIXME
 
                     }
 

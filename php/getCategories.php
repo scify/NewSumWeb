@@ -6,7 +6,7 @@ $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategor
 
 # For each category
 
-echo '<div  class="navbar navbar-static"><div class="navbar-inner"><div class="container" style="width: auto;"><a class="brand" href="http://scify.org" target="_new"><img src="./img/scifylogo.png"  height="30" width="29"></a><a class="brand" href="http://www.scify.gr/site/en/newsum-en" target="_new">NewSum</a>';
+echo '<div  class="navbar navbar-static"><div class="navbar-inner"><div class="container" style="width: auto;"><a class="brand" href="http://scify.org" target="_new"><img src="./img/scifylogo.png"  height="30" width="29"></a><a class="brand" href="#" onClick="getCategories();">NewSum</a>';
 echo '<ul class="nav" role="navigation"><li class="dropdown"><a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" >Choose Category <b class="caret"></b></a>';
 echo '<ul class="dropdown-menu" role="menu" aria-labelledby="drop1">';
 

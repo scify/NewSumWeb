@@ -32,7 +32,7 @@ function getLang() {
 
 function getCategories() {
     initMainOutput();
-    $("#categoriesDiv").load("php/getCategories.php?lang=" + getLang());
+    $("#categoryMenu").load("php/getCategories.php?lang=" + getLang());
     $("#output").html('<div class="info">No category selected.</div>');
     // todo FIXME
 

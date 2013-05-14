@@ -67,11 +67,10 @@ and open the template in the editor.
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="brand" href="#"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"> NewSumWeb</a>
+                    <a class="brand" href="#"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
                     <div class="nav-collapse collapse">
-
                         <ul class="nav">
-                            <li class="active" ><a href="#home" data-toggle="tab">Home</a></li>
+                            <li class="active brand" ><a href="#home" data-toggle="tab">NewSumWeb</a></li>
                             <li><a href="#about" data-toggle="tab">About</a></li>
                             <li><a href="#contact" data-toggle="tab">Contact</a></li>
                             <li>
@@ -94,17 +93,17 @@ and open the template in the editor.
                     <a href="?lang=en"><img src="img/us.png" alt="en Flag" width=16 height=11/></a>
                     <!--<a href="http://www.scify.gr/site/en/support-us" target="_new"><i class="icon-gift icon-white"></i></a>-->
                     <table>
-                        
+
                         <tr>
-                       <td>  <a href="http://www.scify.gr/site/en/support-us" target="_new"><i class="icon-gift icon-white"></i></a><a id="displaySearch" href="javascript:toggleSearch();"><i class="icon-search icon-white"></i></a></td>
-                        <td><div id="toggleSearch" style="display: none"> 
-                            <form class="form-search">
-                                <input type="text" class="input-small search-query">
-                                <button type="submit" class="btn">Search</button>
-                            </form>
-                        </div>
-                        </td>
-                    </tr>
+                            <td>  <a href="http://www.scify.gr/site/en/support-us" target="_new"><i class="icon-gift icon-white"></i></a><a id="displaySearch" href="javascript:toggleSearch();"><i class="icon-search icon-white"></i></a></td>
+                            <td><div id="toggleSearch" style="display: none"> 
+                                    <form class="form-search">
+                                        <input type="text" class="input-small search-query">
+                                        <button type="submit" class="btn">Search</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
                     </table>
 
                 </div><!--/container-fluid -->

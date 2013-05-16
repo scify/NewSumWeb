@@ -34,12 +34,12 @@ and open the template in the editor.
         <script>
             function init() {
                 
-                initcarousel();
+                //                initcarousel();
             }
-            function initcarousel() {
-                
-                $('.carousel').carousel("cycle")
-            }
+            //            function initcarousel() {
+            //                
+            //                $('.carousel').carousel("cycle")
+            //            }
         
             function toggleSearch() {
                 var ele = document.getElementById("toggleSearch");
@@ -76,12 +76,29 @@ and open the template in the editor.
                             <li>
 
                                 <ul class="nav" role="navigation">
-                                    <li class="dropdown"><a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" >Choose Category <b class="caret"></b></a>
+                                    <li class="dropdown">
+                                        <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" >Choose Category <b class="caret"></b></a>
                                         <ul id="categoryMenu" class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#categories" data-toggle="tab"> Ellada</a></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#categories" data-toggle="tab"> Texnologia</a></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#categories" data-toggle="tab"> Kosmos</a></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#categories" data-toggle="tab"> Epistimi</a></li>
+                                            <?php
+                                            require_once 'php/common.php';
+                                            # Get categories
+                                            $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
+
+                                            # For each category
+
+                                            foreach ($saCategories as $sCurCat) {
+
+//                                                echo' <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onClick="getCategory(\'' . $sCurCat . '\');">' . $sCurCat . "</a></li>";
+                                                echo' <li role="presentation"><a role="menuitem" tabindex="-1" href="#categories" data-toggle="tab" id="SelectedCategory">' . $sCurCat . "</a></li>";
+                                                #echo '<div class="category"><a class="large" href="#" onClick="getCategory(\''.$sCurCat.'\');">'.$sCurCat."</a></div>";
+                                            }
+
+                                            # "'.$sCurCat.'"
+                                            ?>
+                                            <!--                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#categories" data-toggle="tab"> Ellada</a></li>
+                                                                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#categories" data-toggle="tab"> Texnologia</a></li>
+                                                                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#categories" data-toggle="tab"> Kosmos</a></li>
+                                                                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#categories" data-toggle="tab"> Epistimi</a></li>-->
                                         </ul>
                                     </li>
                                 </ul>
@@ -120,37 +137,105 @@ and open the template in the editor.
 
 
                         <div class="tab-pane fade" id="categories">
+                            
                             <div class="span3">
                                 <div class="well sidebar-nav">
-                                    <h3>Ellada</h3><br>
-                                    <table class="table table-striped">
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
-                                                    mpla mpla mpla mpla mpla mpla mpla
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
-                                                    mpla mpla mpla mpla mpla mpla mpla
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
-                                                    mpla mpla mpla mpla mpla mpla mpla
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <h3>
+                                        Ellada                                          
 
+                                    </h3><br>
+                                     <div id="topics" class="tab-content">
+                                        <div class="tab-pane fade in active" id="page1">
+                                            <table class="table table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
+                                                            mpla mpla mpla mpla mpla mpla mpla
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
+                                                            mpla mpla mpla mpla mpla mpla mpla
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
+                                                            mpla mpla mpla mpla mpla mpla mpla
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="page2">
+                                            <table class="table table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="http://www.scify.gr/site/en/" target="_blank">Title 4</a><br>
+                                                            mpla mpla mpla mpla mpla mpla mpla
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="http://www.scify.gr/site/en/" target="_blank">Title 5</a><br>
+                                                            mpla mpla mpla mpla mpla mpla mpla
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="http://www.scify.gr/site/en/" target="_blank">Title 6</a><br>
+                                                            mpla mpla mpla mpla mpla mpla mpla
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="page3">
+                                            <table class="table table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="http://www.scify.gr/site/en/" target="_blank">Title 7</a><br>
+                                                            mpla mpla mpla mpla mpla mpla mpla
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="http://www.scify.gr/site/en/" target="_blank">Title 8</a><br>
+                                                            mpla mpla mpla mpla mpla mpla mpla
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="http://www.scify.gr/site/en/" target="_blank">Title 9</a><br>
+                                                            mpla mpla mpla mpla mpla mpla mpla
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="pagination pagination-centered">
+                                        <ul id="myTab" class="nav pager">
+<!--                                            <li class="previous"><a href="#" >&laquo;</a></li>-->
+                                            <li class="active"><a href="#page1" data-toggle="tab">1</a></li>
+                                            <li><a  href="#page2" data-toggle="tab">2</a></li>
+                                            <li><a  href="#page3" data-toggle="tab">3</a></li>
+<!--                                            <li class="next"><a href="#">&raquo;</a></li>-->
+                                        </ul>
+                                    </div>
+                                   
                                 </div><!--/.well--> 
+
                             </div><!--/span-->
 
 
-                            <div class="span9">
+                            <div class="span9" id="SummaryOutput">
                                 <div class="hero-unit">
                                     To SoundCloud υποστηρίζει λογαριασμούς Google+ (1)
                                 </div>
@@ -182,103 +267,6 @@ and open the template in the editor.
                             </div>
 
 
-                            <!--                            <div id="myCarousel" class="carousel slide">
-                                                            <ol class="carousel-indicators">
-                                                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                                                            </ol>
-                                                            <div class="carousel-inner">
-                                                                <div class="item active">
-                                                                    <p class="text-center"> 
-                                                                    <h1>ELLada</h1><br>
-                                                                    Edw tha emfanizonte ta top 2-3 news gia kathe kathgoria<br>
-                                                                    <table class="table table-striped">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
-                                                                                    mpla mpla mpla mpla mpla mpla mpla
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
-                                                                                    mpla mpla mpla mpla mpla mpla mpla
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
-                                                                                    mpla mpla mpla mpla mpla mpla mpla
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="item">
-                                                                    <p class="text-center"> 
-                                                                    <h1>texnologia</h1><br>
-                                                                    Edw tha emfanizonte ta top 2-3 news gia kathe kathgoria<br>
-                                                                    <table class="table table-striped">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
-                                                                                    mpla mpla mpla mpla mpla mpla mpla
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
-                                                                                    mpla mpla mpla mpla mpla mpla mpla
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
-                                                                                    mpla mpla mpla mpla mpla mpla mpla
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="item">
-                                                                    <p class="text-center"> 
-                                                                    <h1>kosmos</h1><br>
-                                                                    Edw tha emfanizonte ta top 2-3 news gia kathe kathgoria<br>
-                                                                    <table class="table table-striped">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
-                                                                                    mpla mpla mpla mpla mpla mpla mpla
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
-                                                                                    mpla mpla mpla mpla mpla mpla mpla
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
-                                                                                    mpla mpla mpla mpla mpla mpla mpla
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                            
-                            
-                                                                    </p>
-                                                                </div>
-                                                            </div>-->
-                            <!--carousel nav-->
-                            <!--                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                                                            <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>-->
                             <div class="row-fluid">
                                 <div class="span3">
                                     <h2>Ellada</h2>
@@ -332,7 +320,7 @@ and open the template in the editor.
                                 </div><!--/span-->
                                 <div class="span3">
                                     <h2>Athlitika</h2>
-                                     <table class="table table-striped">
+                                    <table class="table table-striped">
                                         <tbody>
                                             <tr>
                                                 <td>
@@ -434,7 +422,7 @@ and open the template in the editor.
                                 </div><!--/span-->
                                 <div class="span3">
                                     <h2>SciFY</h2>
-                                     <table class="table table-striped">
+                                    <table class="table table-striped">
                                         <tbody>
                                             <tr>
                                                 <td>

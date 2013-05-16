@@ -281,46 +281,206 @@ and open the template in the editor.
                                                             <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>-->
                             <div class="row-fluid">
                                 <div class="span3">
-                                    <h2>Heading1</h2>
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                                    <h2>Ellada</h2>
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div><!--/span-->
                                 <div class="span3">
-                                    <h2>Heading1</h2>
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                                    <h2>Kosmos</h2>
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div><!--/span-->
                                 <div class="span3">
-                                    <h2>Heading</h2>
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                                    <h2>Athlitika</h2>
+                                     <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div><!--/span-->
                                 <div class="span3">
-                                    <h2>Heading</h2>
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                                    <h2>Epistimi</h2>
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div><!--/span-->
                             </div><!--/row-->
                             <div class="row-fluid">
                                 <div class="span3">
-                                    <h2>Heading1</h2>
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                                    <h2>Oikonomika</h2>
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div><!--/span-->
                                 <div class="span3">
-                                    <h2>Heading</h2>
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                                    <h2>Texnologia</h2>
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div><!--/span-->
                                 <div class="span3">
-                                    <h2>Heading</h2>
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                                    <h2>SciFY</h2>
+                                     <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div><!--/span-->
                                 <div class="span3">
-                                    <h2>Heading</h2>
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                                    <h2>Genika</h2>
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 1</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 2</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="http://www.scify.gr/site/en/" target="_blank">Title 3</a><br>
+                                                    mpla mpla mpla mpla mpla mpla mpla
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div><!--/span-->
                             </div><!--/row-->
                         </div><!--   tab-pane fade-->

@@ -106,6 +106,7 @@ and open the template in the editor.
                                 $saTopics = splitToFirstLevelSeparator($newsum->getTopicTitles($paramsTitles)->return);
 
                                 $topicCount = 1;
+                                $tempDate="";
                                 foreach ($saTopics as $sCurTopicInfo) {
                                     $tempinfo = splitToSecondLevelSeparator($sCurTopicInfo);
 
@@ -115,10 +116,20 @@ and open the template in the editor.
                                     $sCurTopicDate = $tempinfo[2];
                                     $seconds = $sCurTopicDate / 1000;
                                     $convertToDate = date("d-m-Y", $seconds);
+                                     echo '<tr><td>';
+                                    
+                                    if($topicCount == 1){
+                                       $tempDate= $convertToDate;
+                                         echo'<span class="label label-info">' . $convertToDate . '</span>';
+                                    }
+                                   
+                                    if($tempDate!=$convertToDate){
+                                    echo'<span class="label label-info">' . $convertToDate . '</span>';
+                                    }
+                                    
+                                    echo'<br><a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a></td></tr>";
 
-                                    echo '<tr><td><span class="label label-info">' . $convertToDate . '</span><br><a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a></td></tr>";
-
-                                    if ($topicCount % 3 == 0) {
+                                    if ($topicCount % 2 == 0) {
                                         break;
                                     }
                                     $topicCount++;

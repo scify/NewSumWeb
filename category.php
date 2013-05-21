@@ -104,32 +104,41 @@ and open the template in the editor.
                             $saTopics = splitToFirstLevelSeparator($newsum->getTopicTitles($paramsTitles)->return);
 
 
-                            echo'<div class="tab-pane fade in active" id="page' . $count . '">
+                            echo'<div class="tab-pane fade in active" id="page' . $pagecount . '">
                                             <table class="table table-striped">
                                                 <tbody>';
                             $idfirstTopic = "";
-                            $summaryTopicTitle="";
+                            $summaryTopicTitle = "";
+                            $tempDate="";
                             foreach ($saTopics as $sCurTopicInfo) {
                                 $tempinfo = splitToSecondLevelSeparator($sCurTopicInfo);
 
                                 $sCurTopicID = $tempinfo[0];
-                               
+
                                 $sCurTopic = $tempinfo[1];
                                 $sCurTopicDate = $tempinfo[2];
                                 $seconds = $sCurTopicDate / 1000;
                                 $convertToDate = date("d-m-Y", $seconds);
-                                
-                                 if ($count == 1) {
+                                echo '<tr><td>';
+                                if ($count == 1) {
                                     $idfirstTopic = $sCurTopicID;
-                                    $summaryTopicTitle=$sCurTopic;
-                                }
-                                
-                                if ($URLtopicID == $sCurTopicID) {
-                                   
-                                    $summaryTopicTitle=$sCurTopic;
+                                    $summaryTopicTitle = $sCurTopic;
+                                    $tempDate = $convertToDate;
+                                    echo'<span class="label label-info">' . $convertToDate . '</span><br>';
                                 }
 
-                                echo '<tr><td><span class="label label-info">' . $convertToDate . '</span><br><a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a></td></tr>";
+                                if ($URLtopicID == $sCurTopicID) {
+
+                                    $summaryTopicTitle = $sCurTopic;
+                                    
+                                }
+
+
+                                if($convertToDate != $tempDate) {
+                                    echo'<span class="label label-info">' . $convertToDate . '</span><br>';
+                                    $tempDate=$convertToDate;
+                                }
+                                echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a></td></tr>";
 
                                 if ($count % 10 == 0) {
 
@@ -170,10 +179,10 @@ and open the template in the editor.
                                 $URLtopicID = $idfirstTopic;
                             }
 //                            =================================================
-                            
-                          
 
-                            echo'  <div class="hero-unit">'.$summaryTopicTitle.'</div>';
+
+
+                            echo'  <div class="hero-unit">' . $summaryTopicTitle . '</div>';
 
 
                             $params = new getSummary();

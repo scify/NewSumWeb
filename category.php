@@ -138,7 +138,7 @@ and open the template in the editor.
                                     echo'<span class="label label-info">' . $convertToDate . '</span><br>';
                                     $tempDate=$convertToDate;
                                 }
-                                echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a></td></tr>";
+                                echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $category . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a></td></tr>";
 
                                 if ($count % 10 == 0) {
 

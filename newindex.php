@@ -12,25 +12,10 @@ and open the template in the editor.
 
         <!-- Le styles -->
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
-        <style type="text/css">
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
-            .sidebar-nav {
-                padding: 9px 0;
-            }
-
-            @media (max-width: 980px) {
-                /* Enable use of floated navbar text */
-                .navbar-text.pull-right {
-                    float: none;
-                    padding-left: 5px;
-                    padding-right: 5px;
-                }
-            }
-        </style>
+        <link href="css/index.css" rel="stylesheet">
         <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
+        <link href="css/global.css" rel="stylesheet">
+
         <script src="js/scify.index.js"></script>
         <script>
             function init() {
@@ -93,8 +78,8 @@ and open the template in the editor.
                             //load 8 first kategories
                             foreach ($saCategories as $sCurCat) {
 
-                                echo '<div class="span3">
-                                    <h3><a href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' ">' . $sCurCat . '</a></h3>
+                                echo '      <div class="span3">
+                                    <h2><a href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' ">' . $sCurCat . '</a></h2>
                                     <table class="table table-striped">
                                         <tbody>';
 
@@ -112,7 +97,7 @@ and open the template in the editor.
 
                                     $sCurTopicID = $tempinfo[0];
 
-                                    $sCurTopic = substr($tempinfo[1], 0, -3);
+                                    $sCurTopic = $tempinfo[1];
                                     $sCurTopicDate = $tempinfo[2];
                                     $seconds = $sCurTopicDate / 1000;
                                     $convertToDate = date("d-m-Y", $seconds);

@@ -1,0 +1,9 @@
+.nav .menuItem
+{
+    margin-top: 10px;
+}
+
+.lang a
+{
+    float: left !important;
+}

@@ -17,7 +17,6 @@ echo' <div class="navbar navbar-inverse navbar-fixed-top">
                      <a class="brand" href="./newindex.php" data-toggle="tooltip" title="Go to home page."><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
                      <div class="nav-collapse collapse">
                          <ul class="nav">
-                            <li class="active brand" ><a href="./newindex.php" data-toggle="tooltip" title="Go to home page.">NewSumWeb</a></li>
                              <li class="menuItem"><a href="#about" data-toggle="tab" data-toggle="tooltip" title="Info about the NewSum Web.">About</a></li>
                              <li class="menuItem"><a href="#contact" data-toggle="tab" data-toggle="tooltip" title="Find how you can contact with us.">Contact</a></li>
                             <li class="menuItem">
@@ -61,5 +60,5 @@ echo'  </ul>
 </ul>
                  </div>
              </div>
-         </div>';
+         </div><br>';
 ?>

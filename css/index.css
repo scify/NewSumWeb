@@ -24,3 +24,30 @@ color: black;
 {
 margin-bottom: 0;
 }
+
+.carousel {
+    background-color: #EEEEEE;
+    border-radius: 10px 10px 10px 10px;
+    margin: auto auto 20px;
+    max-width: 1000px;
+    font-size: 18px;
+}
+.carousel-inner
+{
+    height: 180px;
+}
+
+.carousel-control {
+    font-size: 27px;
+    height: 25px;
+    left: 15px;
+    line-height: 20px;
+    margin-top: -12px;
+    top: 49%;
+    width: 25px;
+}
+
+.carousel p
+{
+    margin-top: 72px;
+}

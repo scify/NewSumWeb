@@ -6,7 +6,11 @@ var scify = scify || {};
 scify.index = function () { };
 scify.index.prototype = function () {
 
-    var Init = function () {};
+    var Init = function () {
+        
+
+
+    };
 
     //return the public methods of the class
     return {

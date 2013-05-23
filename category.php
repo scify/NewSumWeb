@@ -124,7 +124,7 @@ and open the template in the editor.
                                     $idfirstTopic = $sCurTopicID;
                                     $summaryTopicTitle = $sCurTopic;
                                     $tempDate = $convertToDate;
-                                    echo '<tr class="warning"><td>';
+                                    echo '<tr class="Tlabel"><td>';
 //                                    echo'<span class="label label-info">' . $convertToDate . '</span><br>';
                                     echo'<h6 class="text-center" >' . $convertToDate . '</h6>';
                                     echo '</tr></td>';
@@ -138,7 +138,7 @@ and open the template in the editor.
 
                                 if ($convertToDate != $tempDate) {
 //                                    echo'<span class="label label-info">' . $convertToDate . '</span><br>';
-                                    echo '<tr class="warning"><td>';
+                                    echo '<tr class="Tlabel"><td>';
                                     echo'<h6 class="text-center">' . $convertToDate . '</h6>';
                                     echo '</tr></td>';
                                     $tempDate = $convertToDate;

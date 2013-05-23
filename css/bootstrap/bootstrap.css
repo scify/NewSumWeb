@@ -2248,6 +2248,9 @@ table th[class*="span"],
 .table tbody tr.error > td {
   background-color: #f2dede;
 }
+.table tbody tr.Tlabel > td {
+  background-color: #cccccc;
+}
 
 .table tbody tr.warning > td {
   background-color: #fcf8e3;

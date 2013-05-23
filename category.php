@@ -12,6 +12,7 @@ and open the template in the editor.
 
         <!-- Le styles -->
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/global.css" rel="stylesheet">
         <style type="text/css">
             body {
                 padding-top: 60px;
@@ -33,27 +34,27 @@ and open the template in the editor.
         <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
         <script>
             function init() {
-      
-                
+
+
                 //                initcarousel();
             }
             //            function initcarousel() {
             //                
             //                $('.carousel').carousel("cycle")
             //            }
-        
+
             function toggleSearch() {
                 var ele = document.getElementById("toggleSearch");
                 var text = document.getElementById("displaySearch");
-                if(ele.style.display == "block") {
+                if (ele.style.display == "block") {
                     ele.style.display = "none";
-                    
+
                 }
                 else {
                     ele.style.display = "block";
-                   
+
                 }
-            } 
+            }
         </script>
         <?php include ('php/navbar.php'); ?>
         <title>NewSum Web</title>
@@ -90,7 +91,7 @@ and open the template in the editor.
                             echo $category;
 
 
-                            echo' </h3><br>
+                            echo' </h3>
                                      <div id="topics" class="tab-content">';
 
                             $count = 1;
@@ -115,7 +116,7 @@ and open the template in the editor.
 
                                 $sCurTopicID = $tempinfo[0];
 
-                                $sCurTopic = $tempinfo[1];
+                                $sCurTopic = substr($tempinfo[1], 0, -3);
                                 $sCurTopicDate = $tempinfo[2];
                                 $seconds = $sCurTopicDate / 1000;
                                 $convertToDate = date("d-m-Y", $seconds);
@@ -153,7 +154,7 @@ and open the template in the editor.
                                     <div class="tab-pane fade" id="page' . $pagecount . '">
                                             <table class="table table-striped">
                                                 <tbody>';
-                                    $tempDate="";
+                                    $tempDate = "";
                                 }
                                 $count++;
                             }
@@ -189,7 +190,7 @@ and open the template in the editor.
 
 
 
-                            echo'  <div class="hero-unit">' . $summaryTopicTitle . '</div>';
+                            echo'  <div class="hero-unit text-center">' . $summaryTopicTitle . '</div>';
 
 
                             $params = new getSummary();

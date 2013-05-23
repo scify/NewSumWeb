@@ -190,7 +190,7 @@ and open the template in the editor.
 
 
 
-                            echo'  <div class="hero-unit text-center">' . $summaryTopicTitle . '</div>';
+                            echo'  <div class="hero-unit text-center"><i>' . $summaryTopicTitle . '</i></div>';
 
 
                             $params = new getSummary();
@@ -245,6 +245,7 @@ and open the template in the editor.
                             echo '<tr class><td>' . $tempHTML . '</td></tr>';
                             echo '<tr class><td></td></tr>';
                             echo '   </tbody></table>';
+                            echo '<div id="ratingDiv"><h5 class="text-left">Please rate this summary:</h5><div id="rating-star"></div></div>';
 
 
 
@@ -306,18 +307,15 @@ and open the template in the editor.
             <hr>
 
             <footer>
-                <p>&copy; <a href="http://www.scify.gr/site/en/" target="_blank">SciFY</a> 2013</p>
+                <p>&copy; <a href="http://www.scify.gr/site/en/" target="_blank">SciFY</a> 2013</p>               
             </footer>
 
         </div><!--/.fluid-container-->
 
-
-
-
         <!-- Le javascript
     ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="js/bootstrap/jquery.js"></script>
+        <script src="js/bootstrap/jquery-1.9.1.min.js"></script>
         <script src="js/bootstrap/bootstrap-transition.js"></script>
         <script src="js/bootstrap/bootstrap-alert.js"></script>
         <script src="js/bootstrap/bootstrap-modal.js"></script>
@@ -330,5 +328,25 @@ and open the template in the editor.
         <script src="js/bootstrap/bootstrap-collapse.js"></script>
         <script src="js/bootstrap/bootstrap-carousel.js"></script>
         <script src="js/bootstrap/bootstrap-typeahead.js"></script>
+        <script src="rating/jquery.raty.min.js"></script>
+
+        <script type="text/javascript">
+            $(function() {
+                $.fn.raty.defaults.path = 'rating/';
+
+
+                $('#rating-star').raty({
+                    click: function(score, evt) {
+                        alert("Thank you for your rating.");
+                        alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt.type);
+                        $("#ratingDiv").hide();
+                    },
+                    hints: ['1', '2', '3', '4', '5']
+                });
+
+            });
+        </script>
+
+
     </body>
 </html>

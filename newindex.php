@@ -118,16 +118,17 @@ and open the template in the editor.
                                     $convertToDate = date("d-m-Y", $seconds);
                                      echo '<tr><td>';
                                     
-                                    if($topicCount == 1){
-                                       $tempDate= $convertToDate;
-                                         echo'<span class="label label-info">' . $convertToDate . '</span>';
-                                    }
-                                   
-                                    if($tempDate!=$convertToDate){
-                                    echo'<span class="label label-info">' . $convertToDate . '</span>';
-                                    }
+//                                    if($topicCount == 1){
+//                                       $tempDate= $convertToDate;
+//                                         echo'<small class="text-center">' . $convertToDate . '</small>';
+//                                    }
+//                                   
+//                                    if($tempDate!=$convertToDate){
+//                                    echo'<small class="text-center">' . $convertToDate . '</small>';
+//                                    }
                                     
-                                    echo'<br><a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a></td></tr>";
+                                    echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a>";
+                                         echo'<br><small class="muted">' . $convertToDate . '</small></td></tr>';
 
                                     if ($topicCount % 2 == 0) {
                                         break;

@@ -84,7 +84,7 @@ and open the template in the editor.
 
                             echo '<div class="span3">
                                 <div class="well sidebar-nav">
-                                    <h3>';
+                                    <h3 class="text-center">';
 
 
                             echo $category;
@@ -109,7 +109,7 @@ and open the template in the editor.
                                                 <tbody>';
                             $idfirstTopic = "";
                             $summaryTopicTitle = "";
-                            $tempDate="";
+                            $tempDate = "";
                             foreach ($saTopics as $sCurTopicInfo) {
                                 $tempinfo = splitToSecondLevelSeparator($sCurTopicInfo);
 
@@ -119,25 +119,31 @@ and open the template in the editor.
                                 $sCurTopicDate = $tempinfo[2];
                                 $seconds = $sCurTopicDate / 1000;
                                 $convertToDate = date("d-m-Y", $seconds);
-                                echo '<tr><td>';
+
                                 if ($count == 1) {
                                     $idfirstTopic = $sCurTopicID;
                                     $summaryTopicTitle = $sCurTopic;
                                     $tempDate = $convertToDate;
-                                    echo'<span class="label label-info">' . $convertToDate . '</span><br>';
+                                    echo '<tr class="warning"><td>';
+//                                    echo'<span class="label label-info">' . $convertToDate . '</span><br>';
+                                    echo'<h6 class="text-center" >' . $convertToDate . '</h6>';
+                                    echo '</tr></td>';
                                 }
 
                                 if ($URLtopicID == $sCurTopicID) {
 
                                     $summaryTopicTitle = $sCurTopic;
-                                    
                                 }
 
 
-                                if($convertToDate != $tempDate) {
-                                    echo'<span class="label label-info">' . $convertToDate . '</span><br>';
-                                    $tempDate=$convertToDate;
+                                if ($convertToDate != $tempDate) {
+//                                    echo'<span class="label label-info">' . $convertToDate . '</span><br>';
+                                    echo '<tr class="warning"><td>';
+                                    echo'<h6 class="text-center">' . $convertToDate . '</h6>';
+                                    echo '</tr></td>';
+                                    $tempDate = $convertToDate;
                                 }
+                                echo '<tr><td>';
                                 echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $category . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a></td></tr>";
 
                                 if ($count % 10 == 0) {
@@ -147,6 +153,7 @@ and open the template in the editor.
                                     <div class="tab-pane fade" id="page' . $pagecount . '">
                                             <table class="table table-striped">
                                                 <tbody>';
+                                    $tempDate="";
                                 }
                                 $count++;
                             }

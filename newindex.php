@@ -93,8 +93,8 @@ and open the template in the editor.
                             //load 8 first kategories
                             foreach ($saCategories as $sCurCat) {
 
-                                echo '      <div class="span3">
-                                    <h2><a href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' ">' . $sCurCat . '</a></h2>
+                                echo '<div class="span3">
+                                    <h3><a href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' ">' . $sCurCat . '</a></h3>
                                     <table class="table table-striped">
                                         <tbody>';
 
@@ -112,7 +112,7 @@ and open the template in the editor.
 
                                     $sCurTopicID = $tempinfo[0];
 
-                                    $sCurTopic = $tempinfo[1];
+                                    $sCurTopic = substr($tempinfo[1], 0, -3);
                                     $sCurTopicDate = $tempinfo[2];
                                     $seconds = $sCurTopicDate / 1000;
                                     $convertToDate = date("d-m-Y", $seconds);

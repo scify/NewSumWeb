@@ -90,7 +90,7 @@ and open the template in the editor.
                             echo $category;
 
 
-                            echo' </h3><br>
+                            echo' </h3>
                                      <div id="topics" class="tab-content">';
 
                             $count = 1;

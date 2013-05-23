@@ -2250,6 +2250,7 @@ table th[class*="span"],
 }
 .table tbody tr.Tlabel > td {
   background-color: #cccccc;
+  
 }
 
 .table tbody tr.warning > td {

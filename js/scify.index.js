@@ -20,8 +20,8 @@ scify.index.prototype = function () {
 
 function getURLParameter(name) {
     return decodeURI(
-            (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1]
-            );
+        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1]
+        );
 }
 
 function getLang() {
@@ -38,7 +38,7 @@ function getCategories() {
     initMainOutput();
     $("#categoryMenu").load("php/getCategories.php?lang=" + getLang());
     $("#output").html('<div class="info">No category selected.</div>');
-    // todo FIXME
+// todo FIXME
 
 }
 
@@ -81,16 +81,13 @@ function getSummary(sTopic, sTitle, sCategory) {
     //   alert(encodeURIComponent(sTitle));
     $("#mainoutput").html("<div class='info'><img src='./img/loadingNS2.gif'><br><h3>Loading...</h3></div>");
     $("#mainoutput").load("php/getSummary.php?topicID=" + sTopic + "&lang=" + getLang() + "&category=" + sCategory
-            + "&title=" + encodeURIComponent(sTitle));
+        + "&title=" + encodeURIComponent(sTitle));
 }
 
 function getSearchSummary(sTopic, sTitle, sSearchKey) {
     //   alert(encodeURIComponent(sTitle));
     $("#mainoutput").html("<div class='info'><img src='./img/loadingNS2.gif'><br><h3>Loading...</h3></div>");
     $("#mainoutput").load("php/getSearchSummary.php?topicID=" + sTopic + "&lang=" + getLang() + "&sKey=" + sSearchKey
-            + "&title=" + encodeURIComponent(sTitle));
+        + "&title=" + encodeURIComponent(sTitle));
 }
 
-$(document).ready(function() {
-    getCategories();
-});

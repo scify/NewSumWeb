@@ -17,7 +17,9 @@ and open the template in the editor.
         <link href="css/global.css" rel="stylesheet">
 
         <script src="js/scify.index.js"></script>
+
         <script>
+           
             function toggleSearch() {
                 var ele = document.getElementById("toggleSearch");
                 var text = document.getElementById("displaySearch");
@@ -33,7 +35,7 @@ and open the template in the editor.
         <?php include ('php/navbar.php'); ?>
         <title>NewSum Web</title>
     </head>
-    <body onload="init();">
+    <body>
 
 
         <div class="container-fluid">
@@ -59,66 +61,34 @@ and open the template in the editor.
                                         <img src="img/carousel/newsumontheweb1.png" alt="">
                                         <div class="carousel-caption">
                                             <h4>Welcome to NewSum Web</h4>
-                                            <p><i>"The best news summarizer...In the world."</i></p>                                            
+                                            <p><i>"One news summary from many news sources...for free."</i></p>                                            
                                         </div>
                                     </div>
                                     <div class="item">
                                         <img src="img/carousel/newsumontheweb2.png" alt="">
                                         <div class="carousel-caption">
-                                            <h4>Reinforcing pluralism in news coverage</h4>
-                                            <!--<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
+                                            <h4>We reinforce pluralism in news coverage</h4>
+                                            <p>Get informed fast, without losing the pluralism!.</p>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <img src="img/carousel/newsumontheweb3.png" alt="">
                                         <div class="carousel-caption">
-                                            <h4>NewSum app on Air</h4>
-                                            <p>Download the application for your android phone, check here (QR)</p>
+                                            <h4>The unique NewSum android app: news on the go</h4>
+                                            <p>Download NewSum at Google Play</p>
                                         </div>
                                     </div>
                                     <div class="item">
-                                        <img src="img/carousel/newsumontheweb4.png" alt="">
+                                        <img src="img/carousel/newsumontheweb4a.png" alt="">
                                         <div class="carousel-caption">
-                                            <h4>Bring cutting-edge technology into everyday life for free</h4>
-                                            <p>Check out our awesome other projects at our site.</p>
+                                            <h4>We bring cutting-edge technology into everyday life for free</h4>
+                                            <p><a href="http://www.scify.gr/site/en/" target="_blank" style="color: whitesmoke;">Check out more of our awesome projects at our site.</a></p>
                                         </div>
                                     </div>
                                 </div>
                                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
                                 <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
                             </div>
-
-                            <!--                            <div id="myCarousel" class="carousel slide">
-                                                            <ol class="carousel-indicators">
-                                                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                                                                <li data-target="#myCarousel" data-slide-to="3"></li>
-                                                            </ol>
-                                                             Carousel items 
-                                                            <div class="carousel-inner">
-                                                                <div class="active item">
-                                                                    <p align="center">
-                                                                        <strong>Καλώς ήρθατε στο NewSum</strong>
-                                                                        <br>
-                                                                        <i>Η γρήγορη ματιά στην ενημέρωση</i>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="item"><p align="center">
-                                                                        <strong>Welcome to NewSum Web</strong>
-                                                                        <br>
-                                                                        <i>"The best news aggregator...In the world."</i>
-                                                                    </p></div>
-                                                                <div class="item"><p align="center">
-                                                                        <strong>Welcome to NewSum Web</strong>
-                                                                        <br>
-                                                                        <i>"The best news aggregator...In the world."</i>
-                                                                    </p></div>
-                                                            </div>
-                                                             Carousel nav 
-                                                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                                                            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-                                                        </div>-->
 
                             <?php
                             require_once 'php/common.php';
@@ -139,7 +109,7 @@ and open the template in the editor.
                                     <table class="table table-striped">
                                         <tbody>';
 
-                                //load 3 first topics
+                                //load 2 first topics
 
                                 $paramsTitles = new getTopicTitles();
                                 $paramsTitles->sUserSources = "All";
@@ -204,71 +174,119 @@ and open the template in the editor.
 
                             <div class="hero-unit">  
 
-                                NewSumWeb is mpla mpla mpla mpla mpla<br>
-                                mpla mpla mpla mpla mpla
+                                <h4> What is NewSum?</h4>
+
+                                <p> NewSum automatically summarizes information 
+                                    from many sources and combines them in a single text.<br>
+                                    It gives you the main points (something like “tweets”) 
+                                    of all the different information that you would get if 
+                                    you read all the articles from the sources you visit 
+                                    (or that you would like to have time to visit...)
+                                    <br>With the use of cutting-edge artificial intelligence technology, news are summarised and all repeated information is not duplicated.
+                                    What is more, you always have access to the news sources.</p>
+
                             </div>
+
 
 
                         </div>
 
                         <div class="tab-pane fade" id="contact">
-                            <div class="hero-unit">  
-                                <address>
-                                    <strong> SCIENCE FOR YOU NPO - <a href="http://www.scify.gr/site/en/" target="_blank">SciFY</a> </strong><br>
-                                    4, I. Varvaki str., Gizi, 114 74 Athens - Greece<br>
-                                    <abbr title="Phone">P: </abbr> +30 211 0149 973 <br>
-                                    <abbr title="Fax">F: </abbr>+30 211 0124 418<br>
-                                    <abbr title="e-mail">E: </abbr><a href="mailto:#">info @ scify.org</a><br></br>
-                                    <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.gr/maps?f=q&amp;source=s_q&amp;hl=el&amp;geocode=&amp;q=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%BF%CF%85+%CE%92%CE%B1%CF%81%CE%B2%CE%AC%CE%BA%CE%B7+4&amp;aq=&amp;sll=37.989688,23.745857&amp;sspn=0.001951,0.004128&amp;ie=UTF8&amp;hq=&amp;hnear=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%BF%CF%85+%CE%92%CE%B1%CF%81%CE%B2%CE%AC%CE%BA%CE%B7+4,+%CE%91%CE%B8%CE%AE%CE%BD%CE%B1,+%CE%9A%CE%B5%CE%BD%CF%84%CF%81%CE%B9%CE%BA%CF%8C%CF%82+%CE%A4%CE%BF%CE%BC%CE%AD%CE%B1%CF%82+%CE%91%CE%B8%CE%B7%CE%BD%CF%8E%CE%BD&amp;t=m&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small></small>
 
-                                </address>
+                            <div class="row-fluid">
+
+                                <div class="span3">
+
+
+                                    <div class="hero-unit">  
+                                        <address>
+                                            <strong> SCIENCE FOR YOU NPO - <a href="http://www.scify.gr/site/en/" target="_blank">SciFY</a> </strong><br>
+                                            4, I. Varvaki str., Gizi, 114 74 Athens - Greece<br>
+                                            <abbr title="Phone">P: </abbr> +30 211 0149 973 <br>
+                                            <abbr title="Fax">F: </abbr>+30 211 0124 418<br>
+                                            <abbr title="e-mail">E: </abbr><a href="mailto:#">info @ scify.org</a><br></br>
+                                            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                            <h4 class="modal-title" id="myModalLabel">NewSumWeb Feedback</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+
+                                                            <iframe width="640" height="1120" frameborder=0  marginheight="0" marginwidth="0"  src='https://docs.google.com/spreadsheet/viewform?formkey=dE5FTFJnMk40MnFXaEVsRmYtMkdENXc6MA#gid=0'></iframe>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+
+                                                    </div><!-- /.modal-content -->
+                                                </div><!-- /.modal-dalog -->
+                                            </div><!-- /.modal -->
+
+                                            <a data-toggle="modal" href="#myModal" class="btn btn-primary">Give us a feedback</a>
+
+
+                                        </address>
+                                    </div>
+
+                                </div>
+
+
+
+                                <!--                                <div class="span3">
+                                
+                                                                    <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=el&amp;geocode=&amp;q=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%BF%CF%85+%CE%92%CE%B1%CF%81%CE%B2%CE%AC%CE%BA%CE%B7+4+%CE%91%CE%B8%CE%AE%CE%BD%CE%B1+114+74,+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=62.99906,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%BF%CF%85+%CE%92%CE%B1%CF%81%CE%B2%CE%AC%CE%BA%CE%B7+4,+%CE%91%CE%B8%CE%AE%CE%BD%CE%B1,+%CE%9A%CE%B5%CE%BD%CF%84%CF%81%CE%B9%CE%BA%CF%8C%CF%82+%CE%A4%CE%BF%CE%BC%CE%AD%CE%B1%CF%82+%CE%91%CE%B8%CE%B7%CE%BD%CF%8E%CE%BD,+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1&amp;t=m&amp;ll=37.993525,23.743687&amp;spn=0.023675,0.036478&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+                                                                </div>
+                                -->
+
+
                             </div>
                         </div>
 
 
 
+                        </div><!--myTabContent-->
+                    </div><!--/span-->
+                </div><!--/row-->
 
+                <hr>
 
+                <footer>
+                    <p>&copy; <a href="http://www.scify.gr/site/en/" target="_blank">SciFY</a> 2013</p>
+                </footer>
 
-                    </div><!--myTabContent-->
-                </div><!--/span-->
-            </div><!--/row-->
-
-            <hr>
-
-            <footer>
-                <p>&copy; <a href="http://www.scify.gr/site/en/" target="_blank">SciFY</a> 2013</p>
-            </footer>
-
-        </div><!--/.fluid-container-->
+            </div><!--/.fluid-container-->
 
 
 
 
-        <!-- Le javascript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="js/bootstrap/jquery.js"></script>
-        <script src="js/bootstrap/bootstrap-transition.js"></script>
-        <script src="js/bootstrap/bootstrap-alert.js"></script>
-        <script src="js/bootstrap/bootstrap-modal.js"></script>
-        <script src="js/bootstrap/bootstrap-dropdown.js"></script>
-        <script src="js/bootstrap/bootstrap-scrollspy.js"></script>
-        <script src="js/bootstrap/bootstrap-tab.js"></script>
-        <script src="js/bootstrap/bootstrap-tooltip.js"></script>
-        <script src="js/bootstrap/bootstrap-popover.js"></script>
-        <script src="js/bootstrap/bootstrap-button.js"></script>
-        <script src="js/bootstrap/bootstrap-collapse.js"></script>
-        <script src="js/bootstrap/bootstrap-carousel.js"></script>
-        <script src="js/bootstrap/bootstrap-typeahead.js"></script>
-        <script>
-            $(function(){
-                $('.carousel').carousel({
-                    interval: 7000
-                });    
-            });
+            <!-- Le javascript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="js/bootstrap/jquery-1.9.1.min.js"></script>
+            <script src="js/bootstrap/bootstrap-transition.js"></script>
+            <script src="js/bootstrap/bootstrap-alert.js"></script>
+            <script src="js/bootstrap/bootstrap-modal.js"></script>
+            <script src="js/bootstrap/bootstrap-dropdown.js"></script>
+            <script src="js/bootstrap/bootstrap-scrollspy.js"></script>
+            <script src="js/bootstrap/bootstrap-tab.js"></script>
+            <script src="js/bootstrap/bootstrap-tooltip.js"></script>
+            <script src="js/bootstrap/bootstrap-popover.js"></script>
+            <script src="js/bootstrap/bootstrap-button.js"></script>
+            <script src="js/bootstrap/bootstrap-collapse.js"></script>
+            <script src="js/bootstrap/bootstrap-carousel.js"></script>
+            <script src="js/bootstrap/bootstrap-typeahead.js"></script>
+            <script>
+                $(function(){
+                    $('.carousel').carousel({
+                        interval: 7000
+                    });    
+                });
     
 
-        </script>
+            </script>
     </body>
 </html>

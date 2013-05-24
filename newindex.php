@@ -68,7 +68,7 @@ and open the template in the editor.
                                         <img src="img/carousel/newsumontheweb2.png" alt="">
                                         <div class="carousel-caption">
                                             <h4>We reinforce pluralism in news coverage</h4>
-                                            <p>Get informed fast, without losing the pluralism!.</p>
+                                            <p>Get informed fast, without losing the pluralism!</p>
                                         </div>
                                     </div>
                                     <div class="item">

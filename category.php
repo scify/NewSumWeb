@@ -14,6 +14,7 @@ and open the template in the editor.
         <script src="js/bootstrap.min.js"></script>
         <script src="rating/jquery.raty.min.js"></script>
         <script src="js/bootstrap/jquery.bootpag.min.js"></script>
+        <script src="js/jquery.cookie.js"></script>
 
 
         <link href="css/bootstrap-combined.min.css" rel="stylesheet">
@@ -195,6 +196,7 @@ and open the template in the editor.
                             if ($URLtopicID == "") {
                                 $URLtopicID = $idfirstTopic;
                             }
+
 //                            =================================================
 
 
@@ -222,8 +224,9 @@ and open the template in the editor.
   ';
                                 die;
                             }
-
+                            echo'<label id="summaryid" style="display:none" >' . $URLtopicID . '</label>';
                             $tempHTML = "<br>All Sources:";
+                            $Allsummary = "";
                             echo '<table class="table table-striped"><tbody>';
                             foreach ($saSentenceInfo as $sCurSentenceInfo) {
 
@@ -251,14 +254,18 @@ and open the template in the editor.
                                     }
                                 }
                             }
+
                             echo '<tr class><td>' . $tempHTML . '</td></tr>';
                             echo '<tr class><td></td></tr>';
                             echo '   </tbody></table>';
+
                             echo '<div id="ratingDiv"><h5 class="text-left">Please rate this summary:</h5><div id="rating-star"></div></div>';
 
 
-//                             =================================================
 
+
+//                             =================================================
+                            echo '';
                             echo' </div><!--/span-->';
                             ?>
 
@@ -393,6 +400,18 @@ and open the template in the editor.
         </div><!--/.fluid-container-->
 
         <script type="text/javascript">
+            
+            function s4() {
+                return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+            };
+
+            function guid() {
+                return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                    s4() + '-' + s4() + s4() + s4();
+            }
+            
             $(function() {
                 $.fn.raty.defaults.path = 'rating/';
                 
@@ -400,9 +419,27 @@ and open the template in the editor.
 
                 $('#rating-star').raty({
                     click: function(score, evt) {
-                        alert("Thank you for your rating.");
-                        alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt.type);
-                        $("#ratingDiv").fadeOut("slow");
+                       
+                        //                        alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nsummary: " + evt.type);
+                        
+                        var sUserID;
+                        if (!$.cookie("userID")) {
+                            sUserID = "NewSumWeb" + guid();
+                        
+                            $.cookie("userID", sUserID);
+                        }
+                        else
+                            sUserID = $.cookie("userID");
+                                                
+                       
+                        
+                        $.post(
+                        "php/rate.php", {'sid': $("#summaryid").html(), 'rating':score, 'userID': sUserID}, function (data) {  alert('Thank you for your rating.'); }
+                    );
+                        
+                        $("#ratingDiv").fadeOut("slow"); 
+                        
+                       
                     },
                     hints: ['1', '2', '3', '4', '5']
                 });

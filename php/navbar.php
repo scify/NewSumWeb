@@ -48,8 +48,8 @@ echo'  </ul>
                     <a href="newindex.php?lang=en" data-toggle="tooltip" title="English"><img src="img/us.png" alt="en Flag" width=16 height=11/></a></li>
                    
                      <li class="menuItem"><a href="http://www.scify.gr/site/en/support-us" target="_new" data-toggle="tooltip" title="Make us a donation and help us to afford the best services." ><i class="icon-gift icon-white"></i></a></li>
-                     <li class="menuItem"><a id="displaySearch" href="javascript:toggleSearch();" data-toggle="tooltip" title="Search an interesting word."><i class="icon-search icon-white"></i></a></li>
-                     <li class="menuItem"><div id="toggleSearch" style="display: none" > 
+                     <li class="menuItem"  style="display: none"><a id="displaySearch" href="javascript:toggleSearch();" data-toggle="tooltip" title="Search an interesting word."><i class="icon-search icon-white"></i></a></li>
+                     <li class="menuItem" style="display: none"><div id="toggleSearch" style="display: none" > 
                                     <form class="form-search">
                                          <input type="text" class="input-small search-query">
                                          <button type="submit" class="btn">Search</button>

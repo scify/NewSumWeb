@@ -18,17 +18,7 @@ and open the template in the editor.
 
         <script src="js/scify.index.js"></script>
         <script>
-            function init() {
-      
-                
-                //                initcarousel();
-            }
-            //            function initcarousel() {
-            //                
-            //                $('.carousel').carousel("cycle")
-            //            }
-        
-            function toggleSearch() {
+           function toggleSearch() {
                 var ele = document.getElementById("toggleSearch");
                 var text = document.getElementById("displaySearch");
                 if(ele.style.display == "block") {
@@ -36,8 +26,7 @@ and open the template in the editor.
                     
                 }
                 else {
-                    ele.style.display = "block";
-                   
+                    ele.style.display = "block";     
                 }
             } 
         </script>
@@ -57,12 +46,37 @@ and open the template in the editor.
 
 
                         <div class="tab-pane fade in active" id="home">
-                            <div class="hero-unit">
 
-                                <p align="center"><strong>Welcome to NewSum Web</strong><br>
-                                    <i>"The best news aggregator...In the world."</i></p>
-
-                            </div>
+                                <div id="myCarousel" class="carousel slide">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                </ol>
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                <div class="active item">
+                                    <p align="center">
+                                        <strong>Καλώς ήρθατε στο NewSum</strong>
+                                        <br>
+                                        <i>Η γρήγορη ματιά στην ενημέρωση</i>
+                                    </p>
+                                </div>
+                                <div class="item"><p align="center">
+                                        <strong>Welcome to NewSum Web</strong>
+                                        <br>
+                                        <i>"The best news aggregator...In the world."</i>
+                                    </p></div>
+                                <div class="item"><p align="center">
+                                        <strong>Welcome to NewSum Web</strong>
+                                        <br>
+                                        <i>"The best news aggregator...In the world."</i>
+                                    </p></div>
+                                </div>
+                                <!-- Carousel nav -->
+                                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                                </div>
 
                             <?php
                             require_once 'php/common.php';
@@ -205,5 +219,14 @@ and open the template in the editor.
         <script src="js/bootstrap/bootstrap-collapse.js"></script>
         <script src="js/bootstrap/bootstrap-carousel.js"></script>
         <script src="js/bootstrap/bootstrap-typeahead.js"></script>
+<script>
+    $(function(){
+        $('.carousel').carousel({
+            interval: 7000
+            });    
+    });
+    
+
+</script>
     </body>
 </html>

@@ -18,7 +18,7 @@ and open the template in the editor.
 
         <script src="js/scify.index.js"></script>
         <script>
-           function toggleSearch() {
+            function toggleSearch() {
                 var ele = document.getElementById("toggleSearch");
                 var text = document.getElementById("displaySearch");
                 if(ele.style.display == "block") {
@@ -47,36 +47,78 @@ and open the template in the editor.
 
                         <div class="tab-pane fade in active" id="home">
 
-                                <div id="myCarousel" class="carousel slide">
+                            <div id="myCarousel" class="carousel slide">
                                 <ol class="carousel-indicators">
                                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                                     <li data-target="#myCarousel" data-slide-to="1"></li>
                                     <li data-target="#myCarousel" data-slide-to="2"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
                                 </ol>
-                                <!-- Carousel items -->
                                 <div class="carousel-inner">
-                                <div class="active item">
-                                    <p align="center">
-                                        <strong>Καλώς ήρθατε στο NewSum</strong>
-                                        <br>
-                                        <i>Η γρήγορη ματιά στην ενημέρωση</i>
-                                    </p>
+                                    <div class="item active">
+                                        <img src="img/carousel/newsumontheweb1.png" alt="">
+                                        <div class="carousel-caption">
+                                            <h4>Welcome to NewSum Web</h4>
+                                            <p><i>"The best news summarizer...In the world."</i></p>                                            
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/carousel/newsumontheweb2.png" alt="">
+                                        <div class="carousel-caption">
+                                            <h4>Reinforcing pluralism in news coverage</h4>
+                                            <!--<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/carousel/newsumontheweb3.png" alt="">
+                                        <div class="carousel-caption">
+                                            <h4>NewSum app on Air</h4>
+                                            <p>Download the application for your android phone, check here (QR)</p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/carousel/newsumontheweb4.png" alt="">
+                                        <div class="carousel-caption">
+                                            <h4>Bring cutting-edge technology into everyday life for free</h4>
+                                            <p>Check out our awesome other projects at our site.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="item"><p align="center">
-                                        <strong>Welcome to NewSum Web</strong>
-                                        <br>
-                                        <i>"The best news aggregator...In the world."</i>
-                                    </p></div>
-                                <div class="item"><p align="center">
-                                        <strong>Welcome to NewSum Web</strong>
-                                        <br>
-                                        <i>"The best news aggregator...In the world."</i>
-                                    </p></div>
-                                </div>
-                                <!-- Carousel nav -->
-                                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-                                </div>
+                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                                <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                            </div>
+
+                            <!--                            <div id="myCarousel" class="carousel slide">
+                                                            <ol class="carousel-indicators">
+                                                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                                                            </ol>
+                                                             Carousel items 
+                                                            <div class="carousel-inner">
+                                                                <div class="active item">
+                                                                    <p align="center">
+                                                                        <strong>Καλώς ήρθατε στο NewSum</strong>
+                                                                        <br>
+                                                                        <i>Η γρήγορη ματιά στην ενημέρωση</i>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="item"><p align="center">
+                                                                        <strong>Welcome to NewSum Web</strong>
+                                                                        <br>
+                                                                        <i>"The best news aggregator...In the world."</i>
+                                                                    </p></div>
+                                                                <div class="item"><p align="center">
+                                                                        <strong>Welcome to NewSum Web</strong>
+                                                                        <br>
+                                                                        <i>"The best news aggregator...In the world."</i>
+                                                                    </p></div>
+                                                            </div>
+                                                             Carousel nav 
+                                                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                                                            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                                                        </div>-->
 
                             <?php
                             require_once 'php/common.php';
@@ -105,18 +147,18 @@ and open the template in the editor.
                                 $saTopics = splitToFirstLevelSeparator($newsum->getTopicTitles($paramsTitles)->return);
 
                                 $topicCount = 1;
-                                $tempDate="";
+                                $tempDate = "";
                                 foreach ($saTopics as $sCurTopicInfo) {
                                     $tempinfo = splitToSecondLevelSeparator($sCurTopicInfo);
 
                                     $sCurTopicID = $tempinfo[0];
 
-                                    $sCurTopic = substr($tempinfo[1], 0, -3); 
+                                    $sCurTopic = substr($tempinfo[1], 0, -3);
                                     $sCurTopicDate = $tempinfo[2];
                                     $seconds = $sCurTopicDate / 1000;
                                     $convertToDate = date("d-m-Y", $seconds);
-                                     echo '<tr><td>';
-                                    
+                                    echo '<tr><td>';
+
 //                                    if($topicCount == 1){
 //                                       $tempDate= $convertToDate;
 //                                         echo'<small class="text-center">' . $convertToDate . '</small>';
@@ -125,9 +167,9 @@ and open the template in the editor.
 //                                    if($tempDate!=$convertToDate){
 //                                    echo'<small class="text-center">' . $convertToDate . '</small>';
 //                                    }
-                                    
+
                                     echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a>";
-                                         echo'<br><small class="muted">' . $convertToDate . '</small></td></tr>';
+                                    echo'<br><small class="muted">' . $convertToDate . '</small></td></tr>';
 
                                     if ($topicCount % 2 == 0) {
                                         break;
@@ -219,14 +261,14 @@ and open the template in the editor.
         <script src="js/bootstrap/bootstrap-collapse.js"></script>
         <script src="js/bootstrap/bootstrap-carousel.js"></script>
         <script src="js/bootstrap/bootstrap-typeahead.js"></script>
-<script>
-    $(function(){
-        $('.carousel').carousel({
-            interval: 7000
-            });    
-    });
+        <script>
+            $(function(){
+                $('.carousel').carousel({
+                    interval: 7000
+                });    
+            });
     
 
-</script>
+        </script>
     </body>
 </html>

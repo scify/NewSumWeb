@@ -34,7 +34,7 @@ margin-bottom: 0;
 }
 .carousel-inner
 {
-    height: 180px;
+    height: 20%;
 }
 
 .carousel-control {
@@ -47,7 +47,7 @@ margin-bottom: 0;
     width: 25px;
 }
 
-.carousel p
+/*.carousel p
 {
     margin-top: 72px;
-}
+}*/

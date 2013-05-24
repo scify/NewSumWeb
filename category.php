@@ -70,7 +70,8 @@ and open the template in the editor.
 
                         <div class="tab-pane fade in active" id="categories">
                             <?php
-                            require_once 'php/common.php';
+                            require_once ('php/common.php');
+                            require_once("php/regDomain.inc.php");
 
 
                             $category = $_GET["categname"];
@@ -239,7 +240,9 @@ and open the template in the editor.
                                     $tempSecondLVLsplit = splitToSecondLevelSeparator($sCurSentenceInfo);
                                     foreach ($tempSecondLVLsplit as $sCurSourceInfo) {
                                         $ThirdLevelSplit = splitToThirdLevelSeparator($sCurSourceInfo);
-                                        $tempHTML = $tempHTML . '<a href="' . $ThirdLevelSplit[0] . '" target="_new">' . $ThirdLevelSplit[1] . "</a>   .  ";
+                                        $sDomain = getRegisteredDomain(parse_url($ThirdLevelSplit[0], PHP_URL_HOST));
+                                        $tempHTML = $tempHTML . "<a href='$ThirdLevelSplit[0]' target='_new'><img title='".$ThirdLevelSplit[1]."' alt='".$ThirdLevelSplit[1]."' src='http://www.google.com/s2/favicons?domain=".$sDomain."'> </a>  .  ";
+                                     
                                     }
                                 } else {
 
@@ -249,8 +252,10 @@ and open the template in the editor.
                                     $text = $sSecondLVLsplit[0];
                                     $sourceLink = $sSecondLVLsplit[1];
                                     $source = $sSecondLVLsplit[3];
+                                    $sDomain = getRegisteredDomain(parse_url($sourceLink, PHP_URL_HOST));
+                                                                        
                                     if (!is_null($source)) {
-                                        echo '<tr class><td>' . $text . "<br> Source: " . '<a href="' . $sourceLink . '" target="_new">' . $source . '</a></td></tr>';
+                                        echo '<tr class><td>' . $text . "<br> Source: " . '<a href="' . $sourceLink . '" target="_new"><img title="'.$source.'" alt="'.$source.'" src="http://www.google.com/s2/favicons?domain='.$sDomain.'"></a></td></tr>';
                                     }
                                 }
                             }

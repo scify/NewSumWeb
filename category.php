@@ -339,7 +339,7 @@ and open the template in the editor.
                     click: function(score, evt) {
                         alert("Thank you for your rating.");
                         alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt.type);
-                        $("#ratingDiv").hide();
+                        $("#ratingDiv").fadeOut("slow");
                     },
                     hints: ['1', '2', '3', '4', '5']
                 });

@@ -105,7 +105,7 @@ and open the template in the editor.
                             $saTopics = splitToFirstLevelSeparator($newsum->getTopicTitles($paramsTitles)->return);
 
 
-                            echo'<div class="tab-pane fade in active" id="page' . $pagecount . '">
+                            echo'<div class="tab-pane fade in active page" id="page' . $pagecount . '">
                                             <table class="table table-striped">
                                                 <tbody>';
                             $idfirstTopic = "";
@@ -144,14 +144,14 @@ and open the template in the editor.
                                     echo '</tr></td>';
                                     $tempDate = $convertToDate;
                                 }
-                                echo '<tr><td>';
+                                echo '<tr id="'.$sCurTopicID.'"><td>';
                                 echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $category . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a></td></tr>";
 
                                 if ($count % 10 == 0) {
 
                                     $pagecount++;
                                     echo '</tbody></table></div>
-                                    <div class="tab-pane fade" id="page' . $pagecount . '">
+                                    <div class="tab-pane fade page" id="page' . $pagecount . '">
                                             <table class="table table-striped">
                                                 <tbody>';
                                     $tempDate = "";
@@ -175,15 +175,24 @@ and open the template in the editor.
 //
 //                            echo'  </ul>
 //                                    </div>
+                             if ($URLtopicID == "") {
+                                $URLtopicID = $idfirstTopic;
+                            }
                             echo '<div class="pagination-centered paging"></div> ';
                             echo '<script>
                                  // init bootpag
+                                 var selectedPage = $("#'.$URLtopicID.'").parents("page");
+                                 var index = selectedPage.index()+1;
                                  $(\'.paging\').bootpag({
                                             total:' . $pagecount . ' ,
-                                            page: 1,
+                                            page: index,
                                             maxVisible: 5 
                                 }).on(\'page\', function(event, num){
-                                    $("#page"+num).active
+                                    $(".page").hide();
+                                    $(".page.active").removeClass("active");
+                                    $(".page.in").removeClass("in");
+                                    $("#page"+num).show().addClass("active").addClass("in");
+                                    
                                 });
                                 </script>';
 
@@ -194,10 +203,19 @@ and open the template in the editor.
 
                             <div class="span7" id="SummaryOutput">';
 
-                            if ($URLtopicID == "") {
-                                $URLtopicID = $idfirstTopic;
-                            }
-
+//                            if ($URLtopicID == "") {
+//                                $URLtopicID = $idfirstTopic;
+//                            }
+//                            echo '<script>
+//                                   var selectedPage = $("#'.$URLtopicID.'").parents("page")  
+//                                       
+//                                   $(".page").hide();
+//                                   $(".page.active").removeClass("active");
+//                                   $(".page.in").removeClass("in");
+//                                   $("#"+selectedPage).show().addClass("active").addClass("in");
+//                                       
+//
+//                                  </script>';
 //                            =================================================
 
 

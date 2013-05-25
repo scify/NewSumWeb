@@ -182,18 +182,23 @@ and open the template in the editor.
                             echo '<script>
                                  // init bootpag
                                  var selectedPage = $("#'.$URLtopicID.'").parents(".page");
+                                 $("#'.$URLtopicID.'").addClass("selected");
                                  var index = selectedPage.index()+1;
+
+                                 var selectPage = function(pageNum){
+                                    $(".page").hide();
+                                    $(".page.active").removeClass("active");
+                                    $(".page.in").removeClass("in");
+                                    $("#page"+pageNum).show().addClass("active").addClass("in");                                     
+                                 };
                                  $(\'.paging\').bootpag({
                                             total:' . $pagecount . ' ,
                                             page: index,
                                             maxVisible: 5 
                                 }).on(\'page\', function(event, num){
-                                    $(".page").hide();
-                                    $(".page.active").removeClass("active");
-                                    $(".page.in").removeClass("in");
-                                    $("#page"+num).show().addClass("active").addClass("in");
-                                    
+                                   selectPage(num);
                                 });
+                                selectPage(index);
                                 </script>';
 
                             echo'</div><!--/.well--> 

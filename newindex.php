@@ -79,7 +79,13 @@ and open the template in the editor.
                                         </div>
                                     </div>
                                     <div class="item">
-                                        <img src="img/carousel/newsumontheweb4a.png" alt="">
+                                        <img src="img/carousel/newsumontheweb4.png" alt="" usemap="#Projectmap">
+                                        <map name="Projectmap">
+                                            <area shape="rect" coords="372,13,581,213" title="SciFY" href="http://www.scify.gr/site/en/">
+                                            <area shape="rect" coords="693,21,868,85" title="PServer" href="http://www.scify.gr/site/en/pserver-en">
+                                            <area shape="rect" coords="804,100,895,189" title="NewSum" href="http://www.scify.gr/site/en/newsum-en">
+                                            <area shape="rect" coords="612,139,758,205" title="iCSee" href="http://www.scify.gr/site/en/icsee-en">
+                                        </map>
                                         <div class="carousel-caption">
                                             <h4>We bring cutting-edge technology into everyday life for free</h4>
                                             <p><a href="http://www.scify.gr/site/en/" target="_blank" style="color: whitesmoke;">Check out more of our awesome projects at our site.</a></p>

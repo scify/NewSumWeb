@@ -181,7 +181,7 @@ and open the template in the editor.
                             echo '<div class="pagination-centered paging"></div> ';
                             echo '<script>
                                  // init bootpag
-                                 var selectedPage = $("#'.$URLtopicID.'").parents("page");
+                                 var selectedPage = $("#'.$URLtopicID.'").parents(".page");
                                  var index = selectedPage.index()+1;
                                  $(\'.paging\').bootpag({
                                             total:' . $pagecount . ' ,

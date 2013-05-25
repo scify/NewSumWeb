@@ -7,8 +7,8 @@ and open the template in the editor.
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="My personal web page">
-        <meta name="author" content="Panagiotis Giotis">
+        <meta name="description" content="Get informed fast, without losing the pluralism!">
+        <meta name="author" content="SciFY.org">
 
         <!-- Le styles -->
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -33,7 +33,23 @@ and open the template in the editor.
             } 
         </script>
         <?php include ('php/navbar.php'); ?>
-        <title>NewSum Web</title>
+        <title>NewSum on the Web</title>
+        <!-- Google analytics code -->    
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-31632742-5']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+
+
     </head>
     <body>
 

@@ -7,8 +7,8 @@ and open the template in the editor.
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="My personal web page">
-        <meta name="author" content="Panagiotis Giotis">
+        <meta name="description" content="Get informed fast, without losing the pluralism!">
+        <meta name="author" content="SciFY.org">
 
         <script src="js/bootstrap/jquery-1.9.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -56,7 +56,21 @@ and open the template in the editor.
             }
         </script>
         <?php include ('php/navbar.php'); ?>
-        <title>NewSum Web</title>
+        <title>NewSum on the Web</title>
+        <!-- Google analytics code -->    
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-31632742-5']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
     </head>
     <body>
         <div class="container-fluid">
@@ -144,7 +158,7 @@ and open the template in the editor.
                                     echo '</tr></td>';
                                     $tempDate = $convertToDate;
                                 }
-                                echo '<tr id="'.$sCurTopicID.'"><td>';
+                                echo '<tr id="' . $sCurTopicID . '"><td>';
                                 echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $category . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a></td></tr>";
 
                                 if ($count % 10 == 0) {
@@ -175,14 +189,14 @@ and open the template in the editor.
 //
 //                            echo'  </ul>
 //                                    </div>
-                             if ($URLtopicID == "") {
+                            if ($URLtopicID == "") {
                                 $URLtopicID = $idfirstTopic;
                             }
                             echo '<div class="pagination-centered paging"></div> ';
                             echo '<script>
                                  // init bootpag
-                                 var selectedPage = $("#'.$URLtopicID.'").parents(".page");
-                                 $("#'.$URLtopicID.'").addClass("selected");
+                                 var selectedPage = $("#' . $URLtopicID . '").parents(".page");
+                                 $("#' . $URLtopicID . '").addClass("selected");
                                  var index = selectedPage.index()+1;
 
                                  var selectPage = function(pageNum){
@@ -264,8 +278,7 @@ and open the template in the editor.
                                     foreach ($tempSecondLVLsplit as $sCurSourceInfo) {
                                         $ThirdLevelSplit = splitToThirdLevelSeparator($sCurSourceInfo);
                                         $sDomain = getRegisteredDomain(parse_url($ThirdLevelSplit[0], PHP_URL_HOST));
-                                        $tempHTML = $tempHTML . "<a href='$ThirdLevelSplit[0]' target='_new'><img title='".$ThirdLevelSplit[1]."' alt='".$ThirdLevelSplit[1]."' src='http://www.google.com/s2/favicons?domain=".$sDomain."'> </a>  .  ";
-                                     
+                                        $tempHTML = $tempHTML . "<a href='$ThirdLevelSplit[0]' target='_new'><img title='" . $ThirdLevelSplit[1] . "' alt='" . $ThirdLevelSplit[1] . "' src='http://www.google.com/s2/favicons?domain=" . $sDomain . "'> </a>  .  ";
                                     }
                                 } else {
 
@@ -276,9 +289,9 @@ and open the template in the editor.
                                     $sourceLink = $sSecondLVLsplit[1];
                                     $source = $sSecondLVLsplit[3];
                                     $sDomain = getRegisteredDomain(parse_url($sourceLink, PHP_URL_HOST));
-                                                                        
+
                                     if (!is_null($source)) {
-                                        echo '<tr class><td>' . $text . "<br> Source: " . '<a href="' . $sourceLink . '" target="_new"><img title="'.$source.'" alt="'.$source.'" src="http://www.google.com/s2/favicons?domain='.$sDomain.'"></a></td></tr>';
+                                        echo '<tr class><td>' . $text . "<br> Source: " . '<a href="' . $sourceLink . '" target="_new"><img title="' . $source . '" alt="' . $source . '" src="http://www.google.com/s2/favicons?domain=' . $sDomain . '"></a></td></tr>';
                                     }
                                 }
                             }

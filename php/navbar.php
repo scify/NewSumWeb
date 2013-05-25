@@ -14,7 +14,7 @@ echo' <div class="navbar navbar-inverse navbar-fixed-top">
                          <span class="icon-bar"></span>
                          <span class="icon-bar"></span>
                      </button>
-                     <a class="brand" href="./newindex.php" data-toggle="tooltip" title="Go to home page."><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
+                     <a class="brand" href="./index.php" data-toggle="tooltip" title="Go to home page."><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
                      <div class="nav-collapse collapse">
                          <ul class="nav">
                              <li class="menuItem"><a href="#about" data-toggle="tab" data-toggle="tooltip" title="Info about the NewSum Web.">About</a></li>
@@ -44,8 +44,8 @@ echo'  </ul>
                          
 
                      
-                    <li class="menuItem lang clearfix"> <a href="newindex.php?lang=gr" data-toggle="tooltip" title="Ελληνικά"><img src="img/gr.png" alt="Greek Flag" width=16 height=11/></a>
-                    <a href="newindex.php?lang=en" data-toggle="tooltip" title="English"><img src="img/us.png" alt="en Flag" width=16 height=11/></a></li>
+                    <li class="menuItem lang clearfix"> <a href="index.php?lang=gr" data-toggle="tooltip" title="Ελληνικά"><img src="img/gr.png" alt="Greek Flag" width=16 height=11/></a>
+                    <a href="index.php?lang=en" data-toggle="tooltip" title="English"><img src="img/us.png" alt="en Flag" width=16 height=11/></a></li>
                    
                      <li class="menuItem"><a href="http://www.scify.gr/site/en/support-us" target="_new" data-toggle="tooltip" title="Make us a donation and help us to afford the best services." ><i class="icon-gift icon-white"></i></a></li>
                      <li class="menuItem"  style="display: none"><a id="displaySearch" href="javascript:toggleSearch();" data-toggle="tooltip" title="Search an interesting word."><i class="icon-search icon-white"></i></a></li>

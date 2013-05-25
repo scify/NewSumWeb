@@ -12,3 +12,7 @@
   background-color: #cccccc;
   
 }
+
+.selected a {
+    font-weight: bold;
+}

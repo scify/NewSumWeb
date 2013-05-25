@@ -91,7 +91,7 @@ and open the template in the editor.
                                         <img src="img/carousel/newsumontheweb3.png" alt="">
                                         <div class="carousel-caption">
                                             <h4>The unique NewSum android app: news on the go</h4>
-                                            <p>Download NewSum at Google Play</p>
+                                            <p>Download NewSum at <a href="https://play.google.com/store/apps/details?id=gr.scify.newsum.ui">Google Play</a></p>
                                         </div>
                                     </div>
                                     <div class="item">
@@ -104,7 +104,7 @@ and open the template in the editor.
                                         </map>
                                         <div class="carousel-caption">
                                             <h4>We bring cutting-edge technology into everyday life for free</h4>
-                                            <p><a href="http://www.scify.gr/site/en/" target="_blank" style="color: whitesmoke;">Check out more of our awesome projects at our site.</a></p>
+                                            <p>Check out more of our awesome projects <a href="http://www.scify.gr/site/en/" target="_blank">at our site.</a></p>
                                         </div>
                                     </div>
                                 </div>

@@ -91,7 +91,7 @@ and open the template in the editor.
                                     <div class="item active">
                                         <img src="img/carousel/newsumontheweb1.png" alt="">
                                         <div class="carousel-caption">
-                                            <h4>Welcome to NewSum on the Web</h4>
+                                            <h4>Welcome to NewSum on the web</h4>
                                             <p><i>"One news summary from many news sources...for free."</i></p>                                            
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@ and open the template in the editor.
                                         </map>
                                         <div class="carousel-caption">
                                             <h4>The unique NewSum android app: news on the go</h4>
-                                            <p>Download NewSum at <a href="https://play.google.com/store/apps/details?id=gr.scify.newsum.ui">Google Play</a></p>
+                                            <p>Download NewSum at <a href="https://play.google.com/store/apps/details?id=gr.scify.newsum.ui" target="_blank">Google Play</a></p>
                                         </div>
                                     </div>
                                     <div class="item">
@@ -141,8 +141,8 @@ and open the template in the editor.
                                     <div class="item active">
                                         <img src="img/carousel/newsumontheweb1.png" alt="">
                                         <div class="carousel-caption">
-                                            <h4>Καλώς ήλθατε στο NewSum Web</h4>
-                                            <p><i>"Μία περίληψη από πολλές πηγές ειδήσεων. Δωρεάν."</i></p>                                            
+                                            <h4>Καλώς ήλθατε στο NewSum on the web</h4>
+                                            <p><i>"Μία περίληψη από πολλές πηγές για κάθε είδηση...δωρεάν."</i></p>                                            
                                         </div>
                                     </div>
                                     <div class="item">
@@ -159,7 +159,7 @@ and open the template in the editor.
                                         </map>
                                         <div class="carousel-caption">
                                             <h4>Η μοναδική εφαρμογή NewSum για android</h4>
-                                            <p>Κατεβάστε τη στο Google Play για το smarthone / tablet σας.</p>
+                                            <p>Κατεβάστε τη στο <a href="https://play.google.com/store/apps/details?id=gr.scify.newsum.ui" target="_blank">Google Play</a> για το smartphone / tablet σας.</p>
                                         </div>
                                     </div>
                                     <div class="item">
@@ -284,9 +284,9 @@ and open the template in the editor.
 
                                 <p> Tο NewSum δημιουργεί αυτόματα ένα περιληπτικό κείμενο για κάθε είδηση, αντλώντας δεδομένα από πολλές ειδησεογραφικές πηγές!
                                     Σας δίνει τα βασικά σημεία (κάτι σαν “tweets”) όλων των πληροφοριών που θα μαθαίνατε αν μπορούσατε να διαβάσετε όλα τα άρθρα 
-                                    από όλες τις πηγές που χρησιμοποιείτε για την ενημέρωσή σας (ή που θα θέλατε να είχατε το χρόνο να χρησιμοποιείτε για την ενημέρωσή σας ...)
+                                    από όλες τις πηγές που χρησιμοποιείτε για την ενημέρωσή σας (ή που θα θέλατε να είχατε το χρόνο να χρησιμοποιείτε για την ενημέρωσή σας ...). 
                                     Αξιοποιώντας προηγμένη τεχνολογία τεχνητής νοημοσύνης, το NewSum συνοψίζει την είδηση χωρίς να επαναλαμβάνει πληροφορία, χωρίς να παραλείπει 
-                                    κρίσιμα σημεία της.Και επιπλέον έχετε πάντα πρόσβαση στις πηγές των ειδήσεων.</p>
+                                    κρίσιμα σημεία της. Και επιπλέον έχετε πάντα πρόσβαση στις πηγές των ειδήσεων.</p>
 
                             </div>
 

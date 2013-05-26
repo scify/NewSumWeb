@@ -165,14 +165,14 @@ and open the template in the editor.
                                     <div class="item">
                                         <img src="img/carousel/newsumontheweb4.png" alt="" usemap="#Projectmap">
                                         <map name="Projectmap">
-                                            <area shape="rect" coords="372,13,581,213" title="SciFY" href="http://www.scify.gr/site/en/" target="_blank">
-                                            <area shape="rect" coords="693,21,868,85" title="PServer" href="http://www.scify.gr/site/en/pserver-en" target="_blank">
-                                            <area shape="rect" coords="804,100,895,189" title="NewSum" href="http://www.scify.gr/site/en/newsum-en" target="_blank">
-                                            <area shape="rect" coords="612,139,758,205" title="iCSee" href="http://www.scify.gr/site/en/icsee-en" target="_blank">
+                                            <area shape="rect" coords="372,13,581,213" title="SciFY" href="http://www.scify.gr/site/el/" target="_blank">
+                                            <area shape="rect" coords="693,21,868,85" title="PServer" href="http://www.scify.gr/site/el/pserver-el" target="_blank">
+                                            <area shape="rect" coords="804,100,895,189" title="NewSum" href="http://www.scify.gr/site/el/newsum-el" target="_blank">
+                                            <area shape="rect" coords="612,139,758,205" title="iCSee" href="http://www.scify.gr/site/el/icsee-gr" target="_blank">
                                         </map>
                                         <div class="carousel-caption">
                                             <h4>Φέρνουμε κορυφαία τεχνολογία πληροφορικής στην καθημερινή ζωή όλων, δωρεάν!</h4>
-                                            <p><a href="http://www.scify.gr/site/en/" target="_blank" style="color: whitesmoke;">Δείτε κι άλλα εκπληκτικά projects μας στο site μας.</a></p>
+                                            <p><a href="http://www.scify.gr/site/el/" target="_blank" style="color: whitesmoke;">Δείτε κι άλλα εκπληκτικά projects μας στο site μας.</a></p>
                                         </div>
                                     </div>
                                 </div>

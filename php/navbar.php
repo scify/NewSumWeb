@@ -81,7 +81,7 @@ echo'  </ul>
                             <li class="menuItem">
                                  <ul class="nav" role="navigation">
                                      <li class="dropdown">
-                                     <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" title="Επιλέξτε κατηγορία ειδήσεων.">Επιλέξτε κατηγόρια <b class="caret"></b></a>
+                                     <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" title="Επιλέξτε κατηγορία ειδήσεων.">Επιλέξτε κατηγoρία <b class="caret"></b></a>
                                          <ul id="categoryMenu" class="dropdown-menu" role="menu" aria-labelledby="drop1">';
 
 

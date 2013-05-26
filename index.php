@@ -277,21 +277,21 @@ and open the template in the editor.
                         </div>';
                             } else {
                                 echo '  <div class="tab-pane fade" id="about">
-
+                                    
                             <div class="hero-unit">  
-
+                                
                                 <h4> Τι είναι το NewSum;</h4>
-
+                                    
                                 <p> Tο NewSum δημιουργεί αυτόματα ένα περιληπτικό κείμενο για κάθε είδηση, αντλώντας δεδομένα από πολλές ειδησεογραφικές πηγές!
                                     Σας δίνει τα βασικά σημεία (κάτι σαν “tweets”) όλων των πληροφοριών που θα μαθαίνατε αν μπορούσατε να διαβάσετε όλα τα άρθρα 
                                     από όλες τις πηγές που χρησιμοποιείτε για την ενημέρωσή σας (ή που θα θέλατε να είχατε το χρόνο να χρησιμοποιείτε για την ενημέρωσή σας ...). 
                                     Αξιοποιώντας προηγμένη τεχνολογία τεχνητής νοημοσύνης, το NewSum συνοψίζει την είδηση χωρίς να επαναλαμβάνει πληροφορία, χωρίς να παραλείπει 
                                     κρίσιμα σημεία της. Και επιπλέον έχετε πάντα πρόσβαση στις πηγές των ειδήσεων.</p>
-
+                                        
                             </div>
-
-
-
+                                
+                                
+                                
                         </div>';
                             }
                             ?>
@@ -360,10 +360,31 @@ and open the template in the editor.
                     </div><!--/span-->
                 </div><!--/row-->
 
-                <hr>
+<!--                <hr>-->
 
                 <footer>
-                    <p>&copy; <a href="http://www.scify.gr/site/en/" target="_blank" style="color: #0088cc">SciFY</a> 2013</p>
+                    <table class="table">
+                        <tr> 
+                            <!--class="info">-->
+                            <td>
+                                <a HREF="http://www.scify.gr/site/en/" target="_blank"><img src="img/SciFY_logo_trans_75width.png" alt="Visit SciFY"></a>
+                                <!--<p class="text-info"><a href="http://www.scify.gr/site/en/" target="_blank">Visit us!</a> </p>-->
+                            </td>
+                            <td>
+                                <!-- AddThis Follow BEGIN -->
+                                <p class="text-info">Connect with <b>SciFY!</b></p>
+                                <div class="addthis_toolbox addthis_32x32_style addthis_default_style">
+                                    <a class="addthis_button_facebook_follow" addthis:userid="SciFY.org"></a>
+                                    <a class="addthis_button_twitter_follow" addthis:userid="SciFY_org"></a>
+                                    <a class="addthis_button_linkedin_follow" addthis:userid="scify-not-for-profit-company" addthis:usertype="company"></a>
+                                    <a class="addthis_button_google_follow" addthis:userid="109032045993620015107"></a>
+                                    <a class="addthis_button_youtube_follow" addthis:userid="SciFYNPO"></a>
+                                </div>
+                                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51a2142b65a49a07"></script>
+                                <!-- AddThis Follow END -->
+                            </td>
+                        </tr>
+                    </table>
                 </footer>
 
             </div><!--/.fluid-container-->

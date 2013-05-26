@@ -81,11 +81,9 @@ echo'  </ul>
                             <li class="menuItem">
                                  <ul class="nav" role="navigation">
                                      <li class="dropdown">
-<<<<<<< Updated upstream
+
                                      <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" title="Επιλέξτε κατηγορία ειδήσεων">Επιλέξτε κατηγoρία <b class="caret"></b></a>
-=======
-                                     <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" title="Επιλέξτε κατηγορία ειδήσεων">Επιλέξτε κατηγορία <b class="caret"></b></a>
->>>>>>> Stashed changes
+
                                          <ul id="categoryMenu" class="dropdown-menu" role="menu" aria-labelledby="drop1">';
 
 

@@ -178,17 +178,6 @@ and open the template in the editor.
 
 
 
-//                                    <div class="pagination pagination-centered">
-//                                        <ul id="myTab" class="nav pager">';
-//
-//                            echo'   <li class="active"><a href="#page1" data-toggle="tab">1</a></li>';
-//                            for ($i = 2; $i <= $pagecount; $i++) {
-//                                echo'  <li><a  href="#page' . $i . '" data-toggle="tab">' . $i . '</a></li>';
-//                            }
-//
-//
-//                            echo'  </ul>
-//                                    </div>
                             if ($URLtopicID == "") {
                                 $URLtopicID = $idfirstTopic;
                             }
@@ -222,19 +211,6 @@ and open the template in the editor.
 
                             <div class="span7" id="SummaryOutput">';
 
-//                            if ($URLtopicID == "") {
-//                                $URLtopicID = $idfirstTopic;
-//                            }
-//                            echo '<script>
-//                                   var selectedPage = $("#'.$URLtopicID.'").parents("page")  
-//                                       
-//                                   $(".page").hide();
-//                                   $(".page.active").removeClass("active");
-//                                   $(".page.in").removeClass("in");
-//                                   $("#"+selectedPage).show().addClass("active").addClass("in");
-//                                       
-//
-//                                  </script>';
 //                            =================================================
 
 
@@ -253,13 +229,14 @@ and open the template in the editor.
                                 $bShouldRefresh = true;
                             }
 
-// Check for empty response
+                            // Check for empty response
                             if ($bShouldRefresh) {
                                 echo '<div class="notice">The news have been updated. If the page does not refresh automatically in 3 seconds, press <a href="#" onClick="location.reload();">here</a>.</div>
-  <script type="text/javascript">
-    setTimeout("location.reload();", 3000); //3 sec.
-  </script>
-  ';
+                                        <script type="text/javascript">
+                                        window.location.href = "index.php"
+                                        setTimeout("location.reload();", 3000); //3 sec.
+                                        </script>
+                                        ';
                                 die;
                             }
                             echo'<label id="summaryid" style="display:none" >' . $URLtopicID . '</label>';
@@ -271,7 +248,6 @@ and open the template in the editor.
                                 $ThirdLevelSplit = splitToThirdLevelSeparator($sCurSentenceInfo);
 
 
-
                                 if (sizeof($ThirdLevelSplit) != 1) {
 
                                     $tempSecondLVLsplit = splitToSecondLevelSeparator($sCurSentenceInfo);
@@ -281,7 +257,6 @@ and open the template in the editor.
                                         $tempHTML = $tempHTML . "<a href='$ThirdLevelSplit[0]' target='_new'><img title='" . $ThirdLevelSplit[1] . "' alt='" . $ThirdLevelSplit[1] . "' src='http://www.google.com/s2/favicons?domain=" . $sDomain . "'> </a>  .  ";
                                     }
                                 } else {
-
 
 
                                     $sSecondLVLsplit = splitToSecondLevelSeparator($sCurSentenceInfo);
@@ -303,8 +278,6 @@ and open the template in the editor.
                             echo '<div id="ratingDiv"><h5 class="text-left">Please rate this summary:</h5><div id="rating-star"></div></div>';
 
 
-
-
 //                             =================================================
                             echo '';
                             echo' </div><!--/span-->';
@@ -317,7 +290,7 @@ and open the template in the editor.
                                 <table>
                                     <tr>
                                         <td>
-                                            <img src="img/rightdownloadbanner.png" class="img-polaroid">
+                                            <img src="img/rightdownloadbanner.png" class="img-polaroid" width="90%">
                                         </td>
                                     </tr>
                                     <tr>  
@@ -328,17 +301,11 @@ and open the template in the editor.
 
                                     </tr>
                                 </table>
-<!--                                <img src="img/rightdownloadbanner.png" class="img-polaroid">
-                                <br></br>
-                            
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary">Download Now</a>-->
 
-                            </div>
+                            </div><!--/span-->
 
-
-                        </div>
-
-
+                        </div><!-- tab categories-->
+                              
 
                         <?php
                         if ($lang == "en") {
@@ -360,8 +327,6 @@ and open the template in the editor.
 
                             </div>
 
-
-
                         </div>';
                         } else {
                             echo '  <div class="tab-pane fade" id="about">
@@ -378,8 +343,6 @@ and open the template in the editor.
 
                             </div>
 
-
-
                         </div>';
                         }
                         ?>
@@ -388,8 +351,7 @@ and open the template in the editor.
 
                             <div class="row-fluid">
 
-                                <div class="span3">
-
+                                <div class="span4">
 
                                     <div class="hero-unit">  
                                         <address>
@@ -427,10 +389,9 @@ and open the template in the editor.
 
 
                                         </address>
-                                    </div>
+                                    </div><!--/hero-unit-->
 
-                                </div>
-
+                                </div><!--/span-->
 
 
                                 <div class="span3">
@@ -438,16 +399,8 @@ and open the template in the editor.
                                     <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=el&amp;geocode=&amp;q=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%BF%CF%85+%CE%92%CE%B1%CF%81%CE%B2%CE%AC%CE%BA%CE%B7+4+%CE%91%CE%B8%CE%AE%CE%BD%CE%B1+114+74,+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=62.99906,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%BF%CF%85+%CE%92%CE%B1%CF%81%CE%B2%CE%AC%CE%BA%CE%B7+4,+%CE%91%CE%B8%CE%AE%CE%BD%CE%B1,+%CE%9A%CE%B5%CE%BD%CF%84%CF%81%CE%B9%CE%BA%CF%8C%CF%82+%CE%A4%CE%BF%CE%BC%CE%AD%CE%B1%CF%82+%CE%91%CE%B8%CE%B7%CE%BD%CF%8E%CE%BD,+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1&amp;t=m&amp;ll=37.993525,23.743687&amp;spn=0.023675,0.036478&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
                                 </div>
 
-
-
                             </div>
                         </div>
-
-
-
-
-
-
 
 
                     </div><!--myTabContent-->
@@ -457,7 +410,28 @@ and open the template in the editor.
             <hr>
 
             <footer>
-                <p>&copy; <a href="http://www.scify.gr/site/en/" target="_blank">SciFY</a> 2013</p>               
+               <div class="row-fluid show-grid">
+                        <!--class="info">-->
+
+                        <!--<a HREF="http://www.scify.gr/site/en/" target="_blank"><img src="img/SciFY_logo_trans_75width.png" alt="Visit SciFY"></a>-->
+                        <div class="span2">
+                            by <a href="http://www.scify.gr/site/en/" target="_blank" style="color:#0088CC;">SciFY</a> 2013             
+                        </div>   
+                        <div class="span7"></div>
+                        <div class="span3">
+                            <!-- AddThis Follow BEGIN -->
+                           Connect with <b>SciFY!</b>
+                            <div class="addthis_toolbox addthis_32x32_style addthis_default_style">
+                                <a class="addthis_button_facebook_follow" addthis:userid="SciFY.org"></a>
+                                <a class="addthis_button_twitter_follow" addthis:userid="SciFY_org"></a>
+                                <a class="addthis_button_linkedin_follow" addthis:userid="scify-not-for-profit-company" addthis:usertype="company"></a>
+                                <a class="addthis_button_google_follow" addthis:userid="109032045993620015107"></a>
+                                <a class="addthis_button_youtube_follow" addthis:userid="SciFYNPO"></a>
+                            </div>
+                        </div>
+                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51a2142b65a49a07"></script>
+                        <!-- AddThis Follow END -->
+                    </div>        
             </footer>
 
         </div><!--/.fluid-container-->

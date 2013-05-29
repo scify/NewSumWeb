@@ -19,18 +19,18 @@ and open the template in the editor.
         <script src="js/scify.index.js"></script>
 
         <script>
-           
+
             function toggleSearch() {
                 var ele = document.getElementById("toggleSearch");
                 var text = document.getElementById("displaySearch");
-                if(ele.style.display == "block") {
+                if (ele.style.display == "block") {
                     ele.style.display = "none";
-                    
+
                 }
                 else {
-                    ele.style.display = "block";     
+                    ele.style.display = "block";
                 }
-            } 
+            }
         </script>
         <?php include ('php/navbar.php'); ?>
         <title>NewSum on the Web</title>
@@ -42,9 +42,12 @@ and open the template in the editor.
             _gaq.push(['_trackPageview']);
 
             (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
             })();
 
         </script>
@@ -62,14 +65,9 @@ and open the template in the editor.
                     <div id="myTabContent" class="tab-content">
 
 
-
                         <div class="tab-pane fade in active" id="home">
                             <?php
                             require_once 'php/common.php';
-
-
-
-
 
 
                             $lang = $_GET["lang"];
@@ -299,7 +297,7 @@ and open the template in the editor.
 
                                 <div class="row-fluid">
 
-                                    <div class="span3">
+                                    <div class="span4">
 
 
                                         <div class="hero-unit">  
@@ -360,31 +358,31 @@ and open the template in the editor.
                     </div><!--/span-->
                 </div><!--/row-->
 
-<!--                <hr>-->
+                                <hr>
 
                 <footer>
-                    <table class="table">
-                        <tr> 
-                            <!--class="info">-->
-                            <td>
-                                <a HREF="http://www.scify.gr/site/en/" target="_blank"><img src="img/SciFY_logo_trans_75width.png" alt="Visit SciFY"></a>
-                                <!--<p class="text-info"><a href="http://www.scify.gr/site/en/" target="_blank">Visit us!</a> </p>-->
-                            </td>
-                            <td>
-                                <!-- AddThis Follow BEGIN -->
-                                <p class="text-info">Connect with <b>SciFY!</b></p>
-                                <div class="addthis_toolbox addthis_32x32_style addthis_default_style">
-                                    <a class="addthis_button_facebook_follow" addthis:userid="SciFY.org"></a>
-                                    <a class="addthis_button_twitter_follow" addthis:userid="SciFY_org"></a>
-                                    <a class="addthis_button_linkedin_follow" addthis:userid="scify-not-for-profit-company" addthis:usertype="company"></a>
-                                    <a class="addthis_button_google_follow" addthis:userid="109032045993620015107"></a>
-                                    <a class="addthis_button_youtube_follow" addthis:userid="SciFYNPO"></a>
-                                </div>
-                                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51a2142b65a49a07"></script>
-                                <!-- AddThis Follow END -->
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="row-fluid show-grid">
+                        <!--class="info">-->
+
+                       
+                        <div class="span2">
+                            by <a href="http://www.scify.gr/site/en/" target="_blank" style="color:#0088CC;">SciFY</a> 2013             
+                        </div>   
+                        <div class="span7"></div>
+                        <div class="span3">
+                            <!-- AddThis Follow BEGIN -->
+                           Connect with <b>SciFY!</b>
+                            <div class="addthis_toolbox addthis_32x32_style addthis_default_style">
+                                <a class="addthis_button_facebook_follow" addthis:userid="SciFY.org"></a>
+                                <a class="addthis_button_twitter_follow" addthis:userid="SciFY_org"></a>
+                                <a class="addthis_button_linkedin_follow" addthis:userid="scify-not-for-profit-company" addthis:usertype="company"></a>
+                                <a class="addthis_button_google_follow" addthis:userid="109032045993620015107"></a>
+                                <a class="addthis_button_youtube_follow" addthis:userid="SciFYNPO"></a>
+                            </div>
+                        </div>
+                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51a2142b65a49a07"></script>
+                        <!-- AddThis Follow END -->
+                    </div>
                 </footer>
 
             </div><!--/.fluid-container-->
@@ -409,12 +407,12 @@ and open the template in the editor.
             <script src="js/bootstrap/bootstrap-carousel.js"></script>
             <script src="js/bootstrap/bootstrap-typeahead.js"></script>
             <script>
-                $(function(){
+                $(function() {
                     $('.carousel').carousel({
                         interval: 7000
-                    });    
+                    });
                 });
-    
+
 
             </script>
     </body>

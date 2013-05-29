@@ -18,7 +18,11 @@ echo' <div class="navbar navbar-inverse navbar-fixed-top">
                          <span class="icon-bar"></span>
                      </button>
                      <a class="brand" href="./index.php" data-toggle="tooltip" title="Home page"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
-                     <div class="nav-collapse collapse">
+      <p class="navbar-text pull-right">
+              <a href="javascript:void(0);" onclick="resize(1)"><i class="icon-plus icon-white"></i></a>  
+              <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a>TEXT_SIZE 
+            </p>                     
+<div class="nav-collapse collapse">
                          <ul class="nav">
                              <li class="menuItem"><a href="#about" data-toggle="tab" data-toggle="tooltip" title="Info about NewSum Web">About</a></li>
                              <li class="menuItem"><a href="#contact" data-toggle="tab" data-toggle="tooltip" title="Find out how you can contact us">Contact</a></li>
@@ -74,7 +78,12 @@ echo'  </ul>
                          <span class="icon-bar"></span>
                      </button>
                      <a class="brand" href="./index.php" data-toggle="tooltip" title="Αρχική σελίδα"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
+                         <p class="navbar-text pull-right">
+              <a href="javascript:void(0);" onclick="resize(1)"><i class="icon-plus icon-white"></i></a>  
+              <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a>TEXT_SIZE 
+            </p>
                      <div class="nav-collapse collapse">
+                     
                          <ul class="nav">
                              <li class="menuItem"><a href="#about" data-toggle="tab" data-toggle="tooltip" title="Πληροφορίες σχετικά με το NewSum Web.">Σχετικά</a></li>
                              <li class="menuItem"><a href="#contact" data-toggle="tab" data-toggle="tooltip" title="Επικοινωνήστε μαζί μας">Επικοινωνία</a></li>
@@ -121,7 +130,16 @@ echo'  </ul>
 </ul>
                  </div>
              </div>
-         </div><br>';
+         </div><br><script type="text/javascript">
+
+            function resize(multiplier) {
+                if (document.body.style.fontSize == "") {
+                    document.body.style.fontSize = "1.0em";
+                }
+                document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.2) + "em";
+            }
+
+        </script>';
     
     
 }

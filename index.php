@@ -17,6 +17,16 @@ and open the template in the editor.
         <link href="css/global.css" rel="stylesheet">
 
         <script src="js/scify.index.js"></script>
+<!--        <script type="text/javascript">
+
+            function resize(multiplier) {
+                if (document.body.style.fontSize == "") {
+                    document.body.style.fontSize = "1.0em";
+                }
+                document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.2) + "em";
+            }
+
+        </script>-->
 
         <script>
 
@@ -32,7 +42,7 @@ and open the template in the editor.
                 }
             }
         </script>
-        <?php include ('php/navbar.php'); ?>
+<?php include ('php/navbar.php'); ?>
         <title>NewSum on the Web</title>
         <!-- Google analytics code -->    
         <script type="text/javascript">
@@ -358,20 +368,20 @@ and open the template in the editor.
                     </div><!--/span-->
                 </div><!--/row-->
 
-                                <hr>
+                <hr>
 
                 <footer>
                     <div class="row-fluid show-grid">
                         <!--class="info">-->
 
-                       
+
                         <div class="span2">
                             by <a href="http://www.scify.gr/site/en/" target="_blank" style="color:#0088CC;">SciFY</a> 2013             
                         </div>   
                         <div class="span7"></div>
                         <div class="span3">
                             <!-- AddThis Follow BEGIN -->
-                           Connect with <b>SciFY!</b>
+                            Connect with <b>SciFY!</b>
                             <div class="addthis_toolbox addthis_32x32_style addthis_default_style">
                                 <a class="addthis_button_facebook_follow" addthis:userid="SciFY.org"></a>
                                 <a class="addthis_button_twitter_follow" addthis:userid="SciFY_org"></a>
@@ -407,11 +417,11 @@ and open the template in the editor.
             <script src="js/bootstrap/bootstrap-carousel.js"></script>
             <script src="js/bootstrap/bootstrap-typeahead.js"></script>
             <script>
-                $(function() {
-                    $('.carousel').carousel({
-                        interval: 7000
-                    });
+            $(function() {
+                $('.carousel').carousel({
+                    interval: 7000
                 });
+            });
 
 
             </script>

@@ -20,7 +20,7 @@ echo' <div class="navbar navbar-inverse navbar-fixed-top">
                      <a class="brand" href="./index.php" data-toggle="tooltip" title="Home page"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
       <p class="navbar-text pull-right">
               <a href="javascript:void(0);" onclick="resize(1)"><i class="icon-plus icon-white"></i></a>  
-              <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a>TEXT_SIZE 
+              <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a><i class="icon-text-height icon-white" data-toggle="tooltip" title="Change font size"></i> 
             </p>                     
 <div class="nav-collapse collapse">
                          <ul class="nav">
@@ -80,7 +80,7 @@ echo'  </ul>
                      <a class="brand" href="./index.php" data-toggle="tooltip" title="Αρχική σελίδα"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
                          <p class="navbar-text pull-right">
               <a href="javascript:void(0);" onclick="resize(1)"><i class="icon-plus icon-white"></i></a>  
-              <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a>TEXT_SIZE 
+              <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a><i class="icon-text-height icon-white" data-toggle="tooltip" title="Άλλαξε το μέγεθος των γραμμάτων"></i>
             </p>
                      <div class="nav-collapse collapse">
                      

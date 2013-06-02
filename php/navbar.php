@@ -18,7 +18,7 @@ echo' <div class="navbar navbar-inverse navbar-fixed-top">
                          <span class="icon-bar"></span>
                      </button>
                      <a class="brand" href="./index.php" data-toggle="tooltip" title="Home page"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
-      <p class="navbar-text pull-right">
+      <p class="navbar-text pull-right" style="margin-top: 12px;">
               <a href="javascript:void(0);" onclick="resize(1)"><i class="icon-plus icon-white"></i></a>  
               <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a><i class="icon-text-height icon-white" data-toggle="tooltip" title="Change font size"></i> 
             </p>                     
@@ -78,7 +78,7 @@ echo'  </ul>
                          <span class="icon-bar"></span>
                      </button>
                      <a class="brand" href="./index.php" data-toggle="tooltip" title="Αρχική σελίδα"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
-                         <p class="navbar-text pull-right">
+                         <p class="navbar-text pull-right" style="margin-top: 12px;">
               <a href="javascript:void(0);" onclick="resize(1)"><i class="icon-plus icon-white"></i></a>  
               <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a><i class="icon-text-height icon-white" data-toggle="tooltip" title="Άλλαξε το μέγεθος των γραμμάτων"></i>
             </p>

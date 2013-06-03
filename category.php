@@ -233,7 +233,7 @@ and open the template in the editor.
                             if ($bShouldRefresh) {
                                 echo '<div class="notice">The news have been updated. If the page does not refresh automatically in 3 seconds, press <a href="#" onClick="location.reload();">here</a>.</div>
                                         <script type="text/javascript">
-                                        window.location.href = "index.php"
+                                        window.location.href = "category.php?lang=' . $lang . '&categname=' . $category . '"
                                         setTimeout("location.reload();", 3000); //3 sec.
                                         </script>
                                         ';

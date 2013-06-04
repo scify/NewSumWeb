@@ -191,8 +191,22 @@ and open the template in the editor.
 
                             echo '<div class="row-fluid">';
 
-                            $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
-
+                            // Check if server online, and if not, show error page
+                            $bErrorPage = false;
+                            try {
+                                $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
+                            } catch (Exception $e) {
+                                // Should show Error Page
+                                $bErrorPage = true;
+                            }
+                            if ($bErrorPage) {
+                                echo  '
+                                        <script type="text/javascript">
+                                        window.location.href = "Error.php?lang=' . $lang . ' "
+                                        setTimeout("location.reload();", 1000); //1 sec.
+                                        </script> ';
+                            }
+                            //Fetch content from the server
                             $count = 1;
                             //load 8 first kategories
                             foreach ($saCategories as $sCurCat) {

@@ -56,6 +56,19 @@ and open the template in the editor.
             }
         </script>
         <?php include ('php/navbar.php'); ?>
+        
+<!--        google analytics-->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-31632742-6', 'newsumontheweb.org');
+            ga('send', 'pageview');
+
+        </script>
+
         <title>NewSum on the Web</title>
 
     </head>
@@ -292,7 +305,7 @@ and open the template in the editor.
                             </div><!--/span-->
 
                         </div><!-- tab categories-->
-                              
+
 
                         <?php
                         if ($lang == "en") {
@@ -397,28 +410,28 @@ and open the template in the editor.
             <hr>
 
             <footer>
-               <div class="row-fluid show-grid">
-                        <!--class="info">-->
+                <div class="row-fluid show-grid">
+                    <!--class="info">-->
 
                         <!--<a HREF="http://www.scify.gr/site/en/" target="_blank"><img src="img/SciFY_logo_trans_75width.png" alt="Visit SciFY"></a>-->
-                        <div class="span2">
-                            by <a href="http://www.scify.gr/site/en/" target="_blank" style="color:#0088CC;">SciFY</a> 2013             
-                        </div>   
-                        <div class="span7"></div>
-                        <div class="span3">
-                            <!-- AddThis Follow BEGIN -->
-                           Connect with <b>SciFY!</b>
-                            <div class="addthis_toolbox addthis_32x32_style addthis_default_style">
-                                <a class="addthis_button_facebook_follow" addthis:userid="SciFY.org"></a>
-                                <a class="addthis_button_twitter_follow" addthis:userid="SciFY_org"></a>
-                                <a class="addthis_button_linkedin_follow" addthis:userid="scify-not-for-profit-company" addthis:usertype="company"></a>
-                                <a class="addthis_button_google_follow" addthis:userid="109032045993620015107"></a>
-                                <a class="addthis_button_youtube_follow" addthis:userid="SciFYNPO"></a>
-                            </div>
+                    <div class="span2">
+                        by <a href="http://www.scify.gr/site/en/" target="_blank" style="color:#0088CC;">SciFY</a> 2013             
+                    </div>   
+                    <div class="span7"></div>
+                    <div class="span3">
+                        <!-- AddThis Follow BEGIN -->
+                        Connect with <b>SciFY!</b>
+                        <div class="addthis_toolbox addthis_32x32_style addthis_default_style">
+                            <a class="addthis_button_facebook_follow" addthis:userid="SciFY.org"></a>
+                            <a class="addthis_button_twitter_follow" addthis:userid="SciFY_org"></a>
+                            <a class="addthis_button_linkedin_follow" addthis:userid="scify-not-for-profit-company" addthis:usertype="company"></a>
+                            <a class="addthis_button_google_follow" addthis:userid="109032045993620015107"></a>
+                            <a class="addthis_button_youtube_follow" addthis:userid="SciFYNPO"></a>
                         </div>
-                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51a2142b65a49a07"></script>
-                        <!-- AddThis Follow END -->
-                    </div>        
+                    </div>
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51a2142b65a49a07"></script>
+                    <!-- AddThis Follow END -->
+                </div>        
             </footer>
 
         </div><!--/.fluid-container-->

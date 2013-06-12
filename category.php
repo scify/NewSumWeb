@@ -254,7 +254,7 @@ and open the template in the editor.
                                     foreach ($tempSecondLVLsplit as $sCurSourceInfo) {
                                         $ThirdLevelSplit = splitToThirdLevelSeparator($sCurSourceInfo);
                                         $sDomain = getRegisteredDomain(parse_url($ThirdLevelSplit[0], PHP_URL_HOST));
-                                        $tempHTML = $tempHTML . "<a href='$ThirdLevelSplit[0]' target='_new'><img title='" . $ThirdLevelSplit[1] . "' alt='" . $ThirdLevelSplit[1] . "' src='http://www.google.com/s2/favicons?domain=" . $sDomain . "'> </a>  .  ";
+                                        $tempHTML = $tempHTML . "<a href='$ThirdLevelSplit[0]' target='_blank'><img title='" . $ThirdLevelSplit[1] . "' alt='" . $ThirdLevelSplit[1] . "' src='http://www.google.com/s2/favicons?domain=" . $sDomain . "'> </a>  .  ";
                                     }
                                 } else {
 
@@ -266,7 +266,7 @@ and open the template in the editor.
                                     $sDomain = getRegisteredDomain(parse_url($sourceLink, PHP_URL_HOST));
 
                                     if (!is_null($source)) {
-                                        echo '<tr class><td>' . $text . "<br> Source: " . '<a href="' . $sourceLink . '" target="_new"><img title="' . $source . '" alt="' . $source . '" src="http://www.google.com/s2/favicons?domain=' . $sDomain . '"></a></td></tr>';
+                                        echo '<tr class><td>' . $text . "<br> Source: " . '<a href="' . $sourceLink . '" target="_blank"><img title="' . $source . '" alt="' . $source . '" src="http://www.google.com/s2/favicons?domain=' . $sDomain . '"></a></td></tr>';
                                     }
                                 }
                             }

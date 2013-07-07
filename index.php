@@ -223,7 +223,7 @@ and open the template in the editor.
 
                                     $sCurTopicID = $tempinfo[0];
 
-                                    $sCurTopic = substr($tempinfo[1], 0, -3);
+                                    $sCurTopic = preg_replace("/\(\d+\)$/", "", $tempinfo[1]);
                                     $sCurTopicDate = $tempinfo[2];
                                     $seconds = $sCurTopicDate / 1000;
                                     $convertToDate = date("d-m-Y", $seconds);

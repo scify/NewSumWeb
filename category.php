@@ -56,8 +56,8 @@ and open the template in the editor.
             }
         </script>
         <?php include ('php/navbar.php'); ?>
-        
-<!--        google analytics-->
+
+        <!--        google analytics-->
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -130,7 +130,7 @@ and open the template in the editor.
 
                                 $sCurTopicID = $tempinfo[0];
 
-                                $sCurTopic = substr($tempinfo[1], 0, -3);
+                                $sCurTopic = preg_replace("/\(\d+\)$/", "", $tempinfo[1]);
                                 $sCurTopicDate = $tempinfo[2];
                                 $seconds = $sCurTopicDate / 1000;
                                 $convertToDate = date("d-m-Y", $seconds);

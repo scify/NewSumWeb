@@ -176,6 +176,7 @@ and open the template in the editor.
                             
                             require_once 'static_parts/about_'.$lang.'.php';
                             require_once 'static_parts/contact_tab.php';
+                            require_once 'static_parts/login_'.$lang.'.php';
                             ?>
                         </div><!--myTabContent-->
                     </div><!--/span-->

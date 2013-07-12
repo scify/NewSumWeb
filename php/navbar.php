@@ -21,8 +21,13 @@ echo' <div class="navbar navbar-inverse navbar-fixed-top">
       <p class="navbar-text pull-right" style="margin-top: 12px;">
               <a href="javascript:void(0);" onclick="resize(1)"><i class="icon-plus icon-white"></i></a>  
               <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a><i class="icon-text-height icon-white" data-toggle="tooltip" title="Change font size"></i> 
-            </p>                     
-<div class="nav-collapse collapse">
+            </p>
+            
+
+            <a class="navbar-text pull-right" style="margin-top: 12px;margin-right: 10px;" href="#login" data-toggle="tab" data-toggle="tooltip" title="user login">Login</a> 
+
+
+                <div class="nav-collapse collapse">
                          <ul class="nav">
                              <li class="menuItem"><a href="#about" data-toggle="tab" data-toggle="tooltip" title="Info about NewSum Web">About</a></li>
                              <li class="menuItem"><a href="#contact" data-toggle="tab" data-toggle="tooltip" title="Find out how you can contact us">Contact</a></li>
@@ -82,7 +87,12 @@ echo'  </ul>
               <a href="javascript:void(0);" onclick="resize(1)"><i class="icon-plus icon-white"></i></a>  
               <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a><i class="icon-text-height icon-white" data-toggle="tooltip" title="Άλλαξε το μέγεθος των γραμμάτων"></i>
             </p>
-                     <div class="nav-collapse collapse">
+            
+
+            <a class="navbar-text pull-right" style="margin-top: 12px;margin-right: 10px;" href="#login" data-toggle="tab" data-toggle="tooltip" title="Είσοδος χρήστη">Είσοδος χρήστη</a> 
+
+
+                <div class="nav-collapse collapse">
                      
                          <ul class="nav">
                              <li class="menuItem"><a href="#about" data-toggle="tab" data-toggle="tooltip" title="Πληροφορίες σχετικά με το NewSum Web.">Σχετικά</a></li>
@@ -125,8 +135,8 @@ echo'  </ul>
                                          <button type="submit" class="btn">Search</button>
                                     </form>
                                  </div></li>
-                                 </div>
-                         
+                                 </div>    
+                                 
 </ul>
                  </div>
              </div>

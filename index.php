@@ -59,7 +59,6 @@ and open the template in the editor.
     </head>
     <body>
 
-
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span12">
@@ -70,18 +69,18 @@ and open the template in the editor.
                                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                                     <li data-target="#myCarousel" data-slide-to="1"></li>
                                     <li data-target="#myCarousel" data-slide-to="2"></li>
-                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                    <li data-target="#myCarousel" data-slide-to="3"></li>
                                 </ol>
                                 <div class="carousel-inner">
                                
                                    <!--fill carousel-->
                                     <?php
                                         require_once 'php/common.php';
-                                        require_once 'statics.php';
 
                                         $lang = $_GET["lang"];
-
-                                        fill_carousel($lang);
+                                        if ($lang=="") $lang="gr";
+                                        
+                                        require_once 'static_parts/carousel_'.$lang.'.php';
                                     ?> 
                                 </div>
                                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -175,44 +174,19 @@ and open the template in the editor.
 
                             echo'    </div><!--   tab-pane fade-->';
                             
-                            create_about_tab($lang);
-                            create_contact_tab();
+                            require_once 'static_parts/about_'.$lang.'.php';
+                            require_once 'static_parts/contact_tab.php';
                             ?>
                         </div><!--myTabContent-->
                     </div><!--/span-->
                 </div><!--/row-->
 
                 <hr>
-
-                <footer>
-                    <div class="row-fluid show-grid">
-                        <!--class="info">-->
-
-
-                        <div class="span2">
-                            by <a href="http://www.scify.gr/site/en/" target="_blank" style="color:#0088CC;">SciFY</a> 2013             
-                        </div>   
-                        <div class="span7"></div>
-                        <div class="span3">
-                            <!-- AddThis Follow BEGIN -->
-                            Connect with <b>SciFY!</b>
-                            <div class="addthis_toolbox addthis_32x32_style addthis_default_style">
-                                <a class="addthis_button_facebook_follow" addthis:userid="SciFY.org"></a>
-                                <a class="addthis_button_twitter_follow" addthis:userid="SciFY_org"></a>
-                                <a class="addthis_button_linkedin_follow" addthis:userid="scify-not-for-profit-company" addthis:usertype="company"></a>
-                                <a class="addthis_button_google_follow" addthis:userid="109032045993620015107"></a>
-                                <a class="addthis_button_youtube_follow" addthis:userid="SciFYNPO"></a>
-                            </div>
-                        </div>
-                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51a2142b65a49a07"></script>
-                        <!-- AddThis Follow END -->
-                    </div>
-                </footer>
-
+                <?php
+                    require_once 'static_parts/footer.php';
+                ?>
+                
             </div><!--/.fluid-container-->
-
-            
-
 
             <!-- Le javascript
             ================================================== -->

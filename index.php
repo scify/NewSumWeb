@@ -42,7 +42,6 @@ and open the template in the editor.
                 }
             }
         </script>
-<?php include ('php/navbar.php'); ?>
         <!--        google analytics-->
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -58,7 +57,13 @@ and open the template in the editor.
 
     </head>
     <body>
-
+        <?php
+            require_once 'php/common.php';
+            $lang = $_GET["lang"];
+            if ($lang=="") $lang="gr";
+            $static_home='static_parts/'.$lang.'/';
+            require_once $static_home.'navbar.php';
+        ?>
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span12">
@@ -75,109 +80,103 @@ and open the template in the editor.
                                
                                    <!--fill carousel-->
                                     <?php
-                                        require_once 'php/common.php';
-
-                                        $lang = $_GET["lang"];
-                                        if ($lang=="") $lang="gr";
-                                        $static_home='static_parts/'.$lang.'/';
-                                        
                                         require_once $static_home.'carousel.php';
-                                    ?> 
+                                    ?>
                                 </div>
                                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
                                 <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
                             </div>
                             
                             <?php //main page
-                            echo '<div class="row-fluid">';
+                                echo '<div class="row-fluid">';
 
-                            // Check if server online, and if not, show error page
-                            $bErrorPage = false;
-                            try {
-                                $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
-                            } catch (Exception $e) {
-                                // Should show Error Page
-                                $bErrorPage = true;
-                            }
-                            if ($bErrorPage) {
-                                echo  '
-                                        <script type="text/javascript">
-                                        window.location.href = "Error.php?lang=' . $lang . ' "
-                                        setTimeout("location.reload();", 1000); //1 sec.
-                                        </script> ';
-                            }
-                            //Fetch content from the server
-                            $count = 1;
-                            //load 8 first kategories
-                            foreach ($saCategories as $sCurCat) {
+                                // Check if server online, and if not, show error page
+                                $bErrorPage = false;
+                                try {
+                                    $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
+                                } catch (Exception $e) {
+                                    // Should show Error Page
+                                    $bErrorPage = true;
+                                }
+                                if ($bErrorPage) {
+                                    echo  '
+                                            <script type="text/javascript">
+                                            window.location.href = "Error.php?lang=' . $lang . ' "
+                                            setTimeout("location.reload();", 1000); //1 sec.
+                                            </script> ';
+                                }
+                                //Fetch content from the server
+                                $count = 1;
+                                //load 8 first kategories
+                                foreach ($saCategories as $sCurCat) {
 
-                                echo '      <div class="span3">
-                                    <h3><a href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' ">' . $sCurCat . '</a></h3>
-                                    <table class="table table-striped">
-                                        <tbody>';
+                                    echo '      <div class="span3">
+                                        <h3><a href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' ">' . $sCurCat . '</a></h3>
+                                        <table class="table table-striped">
+                                            <tbody>';
 
-                                //load 2 first topics
+                                    //load 2 first topics
 
-                                $paramsTitles = new getTopicTitles();
-                                $paramsTitles->sUserSources = "All";
-                                $paramsTitles->sCategory = $sCurCat;
-                                $saTopics = splitToFirstLevelSeparator($newsum->getTopicTitles($paramsTitles)->return);
+                                    $paramsTitles = new getTopicTitles();
+                                    $paramsTitles->sUserSources = "All";
+                                    $paramsTitles->sCategory = $sCurCat;
+                                    $saTopics = splitToFirstLevelSeparator($newsum->getTopicTitles($paramsTitles)->return);
 
-                                $topicCount = 1;
-                                $tempDate = "";
-                                foreach ($saTopics as $sCurTopicInfo) {
-                                    $tempinfo = splitToSecondLevelSeparator($sCurTopicInfo);
+                                    $topicCount = 1;
+                                    $tempDate = "";
+                                    foreach ($saTopics as $sCurTopicInfo) {
+                                        $tempinfo = splitToSecondLevelSeparator($sCurTopicInfo);
 
-                                    $sCurTopicID = $tempinfo[0];
+                                        $sCurTopicID = $tempinfo[0];
 
-                                    $sCurTopic = preg_replace("/\(\d+\)$/", "", $tempinfo[1]);
-                                    $sCurTopicDate = $tempinfo[2];
-                                    $seconds = $sCurTopicDate / 1000;
-                                    $convertToDate = date("d-m-Y", $seconds);
-                                    echo '<tr><td>';
+                                        $sCurTopic = preg_replace("/\(\d+\)$/", "", $tempinfo[1]);
+                                        $sCurTopicDate = $tempinfo[2];
+                                        $seconds = $sCurTopicDate / 1000;
+                                        $convertToDate = date("d-m-Y", $seconds);
+                                        echo '<tr><td>';
 
-//                                    if($topicCount == 1){
-//                                       $tempDate= $convertToDate;
-//                                         echo'<small class="text-center">' . $convertToDate . '</small>';
-//                                    }
-//                                   
-//                                    if($tempDate!=$convertToDate){
-//                                    echo'<small class="text-center">' . $convertToDate . '</small>';
-//                                    }
+    //                                    if($topicCount == 1){
+    //                                       $tempDate= $convertToDate;
+    //                                         echo'<small class="text-center">' . $convertToDate . '</small>';
+    //                                    }
+    //                                   
+    //                                    if($tempDate!=$convertToDate){
+    //                                    echo'<small class="text-center">' . $convertToDate . '</small>';
+    //                                    }
 
-                                    echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a>";
-                                    echo'<br><small class="muted">' . $convertToDate . '</small></td></tr>';
+                                        echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a>";
+                                        echo'<br><small class="muted">' . $convertToDate . '</small></td></tr>';
 
-                                    if ($topicCount % 2 == 0) {
+                                        if ($topicCount % 2 == 0) {
+                                            break;
+                                        }
+                                        $topicCount++;
+                                    }
+
+
+                                    echo '   </tbody>
+                                        </table>
+                                    </div><!--/span-->';
+
+                                    if ($count % 8 == 0) {
                                         break;
                                     }
-                                    $topicCount++;
+                                    if ($count % 4 == 0) {
+                                        echo '   </div><!--/row-->
+                                         <div class="row-fluid">';
+                                    }
+
+                                    $count++;
                                 }
-
-
-                                echo '   </tbody>
-                                    </table>
-                                </div><!--/span-->';
-
-                                if ($count % 8 == 0) {
-                                    break;
-                                }
-                                if ($count % 4 == 0) {
-                                    echo '   </div><!--/row-->
-                                     <div class="row-fluid">';
-                                }
-
-                                $count++;
-                            }
-                            echo '   </div><!--/row-->';
+                                echo '   </div><!--/row-->';
 
 
 
-                            echo'    </div><!--   tab-pane fade-->';
-                            
-                            require_once $static_home.'about.php';
-                            require_once $static_home.'contact_tab.php';
-                            require_once $static_home.'login.php';
+                                echo'    </div><!--   tab-pane fade-->';
+
+                                require_once $static_home.'about.php';
+                                require_once $static_home.'contact_tab.php';
+                                require_once $static_home.'login.php';
                             ?>
                         </div><!--myTabContent-->
                     </div><!--/span-->

@@ -91,10 +91,8 @@ and open the template in the editor.
                             $category = $_GET["categname"];
                             $URLtopicID = $_GET["topicID"];
                             $lang = $_GET["lang"];
-
-                            if ($lang == "") {
-                                $lang = "gr";
-                            }
+                            if ($lang=="") $lang="gr";
+                            $static_home='static_parts/'.$lang.'/';
 
 
                             echo '<div class="span3">
@@ -308,9 +306,9 @@ and open the template in the editor.
 
 
                         <?php
-                            require_once 'static_parts/about_'.$lang.'.php';
-                            require_once 'static_parts/contact_tab.php';
-                            require_once 'static_parts/login_'.$lang.'.php';
+                            require_once $static_home.'about.php';
+                            require_once $static_home.'contact_tab.php';
+                            require_once $static_home.'login.php';
                         ?>
                     </div><!--myTabContent-->
                 </div><!--/span-->
@@ -319,7 +317,7 @@ and open the template in the editor.
             <hr>
 
             <?php
-                require_once 'static_parts/footer.php';
+                require_once $static_home.'footer.php';
             ?>
 
         </div><!--/.fluid-container-->

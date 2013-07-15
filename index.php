@@ -79,8 +79,9 @@ and open the template in the editor.
 
                                         $lang = $_GET["lang"];
                                         if ($lang=="") $lang="gr";
+                                        $static_home='static_parts/'.$lang.'/';
                                         
-                                        require_once 'static_parts/carousel_'.$lang.'.php';
+                                        require_once $static_home.'carousel.php';
                                     ?> 
                                 </div>
                                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -174,9 +175,9 @@ and open the template in the editor.
 
                             echo'    </div><!--   tab-pane fade-->';
                             
-                            require_once 'static_parts/about_'.$lang.'.php';
-                            require_once 'static_parts/contact_tab.php';
-                            require_once 'static_parts/login_'.$lang.'.php';
+                            require_once $static_home.'about.php';
+                            require_once $static_home.'contact_tab.php';
+                            require_once $static_home.'login.php';
                             ?>
                         </div><!--myTabContent-->
                     </div><!--/span-->
@@ -184,7 +185,7 @@ and open the template in the editor.
 
                 <hr>
                 <?php
-                    require_once 'static_parts/footer.php';
+                    require_once $static_home.'footer.php';
                 ?>
                 
             </div><!--/.fluid-container-->

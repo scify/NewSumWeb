@@ -238,7 +238,8 @@ and open the template in the editor.
 //                                    echo'<small class="text-center">' . $convertToDate . '</small>';
 //                                    }
 
-                                    echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a>";
+				    // Move directly to summary part of the page
+                                    echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '#summary">' . $sCurTopic . "</a>";
                                     echo'<br><small class="muted">' . $convertToDate . '</small></td></tr>';
 
                                     if ($topicCount % 2 == 0) {

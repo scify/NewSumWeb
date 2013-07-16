@@ -102,6 +102,8 @@ and open the template in the editor.
                                     <h3 class="text-center">';
 
 
+			    # Topic Index anchor
+			    echo'<a name="topicList"></a>';
                             echo $category;
 
 
@@ -117,6 +119,7 @@ and open the template in the editor.
                             $paramsTitles->sUserSources = "All";
                             $paramsTitles->sCategory = $category;
                             $saTopics = splitToFirstLevelSeparator($newsum->getTopicTitles($paramsTitles)->return);
+
 
 
                             echo'<div class="tab-pane fade in active page" id="page' . $pagecount . '">
@@ -159,7 +162,8 @@ and open the template in the editor.
                                     $tempDate = $convertToDate;
                                 }
                                 echo '<tr id="' . $sCurTopicID . '"><td>';
-                                echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $category . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a></td></tr>";
+				//  Directly move to summary
+                                echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $category . '&topicID=' . $sCurTopicID . '#summary">' . $sCurTopic . "</a></td></tr>";
 
                                 if ($count % 10 == 0) {
 
@@ -215,8 +219,11 @@ and open the template in the editor.
 
 
 
-                            echo'  <div class="hero-unit text-center"><img src="img/bee2.png">  <i>   ' . $summaryTopicTitle . '   </i>  <img src="img/bee1.png"></div>';
+			    // Title and summary anchor
+                            echo'  <div class="hero-unit text-center"><img src="img/bee2.png"><a name="summary"></a>  <i>   ' . $summaryTopicTitle . '   </i>  <img src="img/bee1.png"></div>';
 
+			    // Back to topics. Visible only on Non-desktop layouts
+                            echo'  <div class="text-center hidden-desktop"><a class="button" href="#topicList">Back to topic list</a></div>';
 
                             $params = new getSummary();
                             $params->sTopicID = $URLtopicID;

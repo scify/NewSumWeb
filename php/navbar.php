@@ -25,32 +25,31 @@ echo' <div class="navbar navbar-inverse navbar-fixed-top">
 <div class="nav-collapse collapse">
                          <ul class="nav">
                              <li class="menuItem"><a href="#about" data-toggle="tab" data-toggle="tooltip" title="Info about NewSum Web">About</a></li>
-                             <li class="menuItem"><a href="#contact" data-toggle="tab" data-toggle="tooltip" title="Find out how you can contact us">Contact</a></li>
-                            <li class="menuItem">
-                                 <ul class="nav" role="navigation">
-                                     <li class="dropdown">
-                                     <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" title="Select a news category">Choose Category <b class="caret"></b></a>
-                                         <ul id="categoryMenu" class="dropdown-menu" role="menu" aria-labelledby="drop1">';
-
-
-
-$saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
-
-
-
-foreach ($saCategories as $sCurCat) {
-
-    echo' <li role="presentation"><a role="menuitem" tabindex="-1" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' "  id="SelectedCategory">' . $sCurCat . "</a></li>";
-}
-
-
-echo'  </ul>
-                                     </li>
-                                 </ul>
-                             </li>
-                         
+                             <li class="menuItem"><a href="#contact" data-toggle="tab" data-toggle="tooltip" title="Find out how you can contact us">Contact</a></li>';
+# Original code for categories menu
+// echo '
+//                             <li class="menuItem">
+//                                  <ul class="nav" role="navigation">
+//                                      <li class="dropdown">
+//                                      <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" title="Select a news category">Choose Category <b class="caret"></b></a>
+//                                          <ul id="categoryMenu" class="dropdown-menu" role="menu" aria-labelledby="drop1">';
+// 				      $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
+// 
+// 
+// 
+// 				      foreach ($saCategories as $sCurCat) {
+// 
+// 					  echo' <li role="presentation"><a role="menuitem" tabindex="-1" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' "  id="SelectedCategory">' . $sCurCat . "</a></li>";
+// 				      }
+// 
+// 
+// 				      echo'  </ul>
+//                                      </li>
+//                                  </ul>
+//                              </li>';
 
                      
+echo '
                     <li class="menuItem lang clearfix"> <a href="index.php?lang=gr" data-toggle="tooltip" title="Ελληνικά"><img src="img/gr.png" alt="Greek Flag" width=16 height=11/></a>
                     <a href="index.php?lang=en" data-toggle="tooltip" title="English"><img src="img/us.png" alt="en Flag" width=16 height=11/></a></li>
                    
@@ -66,9 +65,25 @@ echo'  </ul>
                          
 </ul>
                  </div>
-             </div>
-         </div><br>';
-}else{
+             </div>';
+
+// Add categories as titles
+$saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
+?>
+	    <div class="navbar-inner container-fluid">
+                         <ul class="nav">
+			      
+<?
+				      foreach ($saCategories as $sCurCat) {
+					  echo'<li ><a href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' "  id="SelectedCategory">' . $sCurCat . "</a></li>";
+				      }
+?>
+			</ul>
+	    </div>
+         </div><br/>
+
+<?
+}else{ // if not english
     echo' <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                  <div class="container-fluid">
@@ -87,50 +102,70 @@ echo'  </ul>
                          <ul class="nav">
                              <li class="menuItem"><a href="#about" data-toggle="tab" data-toggle="tooltip" title="Πληροφορίες σχετικά με το NewSum Web.">Σχετικά</a></li>
                              <li class="menuItem"><a href="#contact" data-toggle="tab" data-toggle="tooltip" title="Επικοινωνήστε μαζί μας">Επικοινωνία</a></li>
-                            <li class="menuItem">
-                                 <ul class="nav" role="navigation">
-                                     <li class="dropdown">
-
-                                     <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" title="Επιλέξτε κατηγορία ειδήσεων">Επιλέξτε κατηγoρία <b class="caret"></b></a>
-
-                                         <ul id="categoryMenu" class="dropdown-menu" role="menu" aria-labelledby="drop1">';
-
-
-
-$saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
-
-
-
-foreach ($saCategories as $sCurCat) {
-
-    echo' <li role="presentation"><a role="menuitem" tabindex="-1" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' "  id="SelectedCategory">' . $sCurCat . "</a></li>";
-}
-
+    ';
+// Old menu
+// echo '
+//                             <li class="menuItem">
+//                                  <ul class="nav" role="navigation">
+//                                      <li class="dropdown">
+// 
+//                                      <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" title="Επιλέξτε κατηγορία ειδήσεων">Επιλέξτε κατηγoρία <b class="caret"></b></a>
+// 
+//                                          <ul id="categoryMenu" class="dropdown-menu" role="menu" aria-labelledby="drop1">';
+// 
+// 
+// 
+// $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
+// 
+// 
+// 
+// foreach ($saCategories as $sCurCat) {
+// 
+//     echo' <li role="presentation"><a role="menuitem" tabindex="-1" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' "  id="SelectedCategory">' . $sCurCat . "</a></li>";
+// }
+/*
 
 echo'  </ul>
                                      </li>
                                  </ul>
-                             </li>
-                         
-
-                     
+                             </li>';*/
+echo '                         
                     <li class="menuItem lang clearfix"> <a href="index.php?lang=gr" data-toggle="tooltip" title="Ελληνικά"><img src="img/gr.png" alt="Greek Flag" width=16 height=11/></a>
                     <a href="index.php?lang=en" data-toggle="tooltip" title="English"><img src="img/us.png" alt="en Flag" width=16 height=11/></a></li>
                    
                      <li class="menuItem"><a href="http://www.scify.gr/site/el/support-us-el/help-us-el" target="_blank" data-toggle="tooltip" title="Ακόμα και ένα μικρό ποσό δωρεάς θα μας βοηθήσει να προσφέρουμε λύσεις... απίστευτες μέχρι σήμερα" ><i class="icon-gift icon-white"></i></a></li>
                      <li class="menuItem"  style="display: none"><a id="displaySearch" href="javascript:toggleSearch();" data-toggle="tooltip" title="Search for an interesting word"><i class="icon-search icon-white"></i></a></li>
-                     <li class="menuItem" style="display: none"><div id="toggleSearch" style="display: none" > 
+                     <li class="menuItem" style="display: none">
+			<div id="toggleSearch" style="display: none" > 
                                     <form class="form-search">
                                          <input type="text" class="input-small search-query">
                                          <button type="submit" class="btn">Search</button>
                                     </form>
-                                 </div></li>
-                                 </div>
-                         
+                        </div>
+		      </li>
+		  </div>
 </ul>
                  </div>
-             </div>
-         </div><br><script type="text/javascript">
+             </div>';
+                         
+// Add categories as titles
+$saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
+?>
+	    <div class="navbar-inner container-fluid">
+                         <ul class="nav">
+			      
+<?
+				      foreach ($saCategories as $sCurCat) {
+					  echo'<li ><a href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' "  id="SelectedCategory">' . $sCurCat . "</a></li>";
+				      }
+?>
+			</ul>
+	    </div>
+         </div><br/>
+
+<?
+echo '
+         <script type="text/javascript">
 
             function resize(multiplier) {
                 if (document.body.style.fontSize == "") {

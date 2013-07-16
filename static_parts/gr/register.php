@@ -9,19 +9,19 @@
                 <div class="control-group">
                     <label class="control-label">Ηλεκτρονική διεύθυνση:</label>
                     <div class="controls">
-                        <input type="email" name="register" class="input-large" required>
+                        <input type="email" name="register" pattern="[^\']*" class="input-large" required>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Κωδικός χρήστη:</label>
                     <div class="controls">
-                        <input type="password" id="password" name="pass" class="input-medium" required>
+                        <input type="password" id="password" pattern="[^\']*" name="pass" class="input-medium" required>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Επανάληψη κωδικού:</label>
                     <div class="controls">
-                        <input type="password" class="input-medium" oninput="check(this)" required>
+                        <input type="password" pattern="[^\']*" class="input-medium" oninput="check(this)" required>
                     </div>
                 </div>
                 <div class="control-group">
@@ -38,8 +38,8 @@
                 <div class="control-group">
                     <label class="control-label">Χώρα/Πόλη:</label>
                     <div class="controls">
-                        <input type="text" name="country" class="input-small" required>
-                        <input type="text" name="city" class="input-small" required>
+                        <input type="text" pattern="[^\']*" name="country" class="input-small" required>
+                        <input type="text" name="city" pattern="[^\']*" class="input-small" required>
                     </div>
                 </div>
             </fieldset>

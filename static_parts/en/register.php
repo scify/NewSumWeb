@@ -9,19 +9,19 @@
                 <div class="control-group">
                     <label class="control-label">E-mail:</label>
                     <div class="controls">
-                        <input type="email" name="register" class="input-large" required>
+                        <input type="email" name="register" pattern="[^\']*" class="input-large" required>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Password:</label>
                     <div class="controls">
-                        <input type="password" id="password" name="pass" class="input-medium" required>
+                        <input type="password" id="password" pattern="[^\']{6-18}" name="pass" class="input-medium" required>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Confirm password:</label>
                     <div class="controls">
-                        <input type="password" class="input-medium" oninput="check(this)" required>
+                        <input type="password" class="input-medium" pattern="[^\']{6-18}" oninput="check(this)" required>
                     </div>
                 </div>
                 <div class="control-group">
@@ -38,8 +38,8 @@
                 <div class="control-group">
                     <label class="control-label">Country/City:</label>
                     <div class="controls">
-                        <input type="text" name="country" class="input-small" required>
-                        <input type="text" name="city" class="input-small" required>
+                        <input type="text" pattern="[^\']*" name="country" class="input-small" required>
+                        <input type="text" name="city" pattern="[^\']*" class="input-small" required>
                     </div>
                 </div>
             </fieldset>

@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="./index.php?lang=en" data-toggle="tooltip" title="Home page"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
+            <a class="brand" href="./index.php" data-toggle="tooltip" title="Home page"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
             <p class="navbar-text pull-right" style="margin-top: 12px;">
                 <a href="javascript:void(0);" onclick="resize(1)"><i class="icon-plus icon-white"></i></a>  
                 <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a><i class="icon-text-height icon-white" data-toggle="tooltip" title="Change font size"></i> 
@@ -18,8 +18,8 @@
                 }
                 else {
                     echo '
-                        <p class="navbar-text pull-right" style="margin-top: 12px;">
-                            Welcome '.$_SESSION["USER_ID"].' <a class="navbar-text" href="?logout">Logout</a> 
+                        <p class="navbar-text pull-right" style="margin-top: 12px;margin-right: 12px;">
+                            Welcome '.$_SESSION["USER_ID"].' <a class="navbar-text" href="index.php?logout">Logout</a> 
                         </p>';
                 }
             ?>

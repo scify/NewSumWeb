@@ -18,8 +18,8 @@
                 }
                 else {
                     echo '
-                        <p class="navbar-text pull-right" style="margin-top: 12px;">
-                            Καλωσήρθες '.$_SESSION["USER_ID"].' <a class="navbar-text" href="?logout">Αποσύνδεση</a> 
+                        <p class="navbar-text pull-right" style="margin-top: 12px;margin-right: 12px;">
+                            Καλωσήρθες '.$_SESSION["USER_ID"].' <a class="navbar-text" href="index.php?logout">Αποσύνδεση</a> 
                         </p>';
                 }
             ?>

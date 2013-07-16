@@ -33,9 +33,15 @@
         }
     }
     if (isset($_GET["logout"])){
+        $lang=null;
+        if (isset($_SESSION["lang"])){
+            $lang=$_SESSION["lang"];
+        }
         session_destroy();
-        unset($_COOKIE["USER_ID"]);
-        unset($_COOKIE["USER_PASS"]);
+        if ($lang!=null){
+            session_start();
+            $_SESSION["lang"]=$lang;
+        }
         header("Location: ".$_SERVER['PHP_SELF']);
         exit;
     }
@@ -70,6 +76,12 @@
         }
     }
     $lang = $_GET["lang"];
-    if ($lang=="") $lang="gr";
+    if ($lang!=""){
+        $_SESSION["lang"]=$lang;
+    } else if (isset($_SESSION["lang"])){
+        $lang=$_SESSION["lang"];
+    } else {
+        $lang="gr";
+    }
     $static_home='static_parts/'.$lang.'/';
 ?>

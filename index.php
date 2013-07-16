@@ -42,7 +42,9 @@ and open the template in the editor.
                 }
             }
         </script>
-<?php include ('php/navbar.php'); ?>
+<?php 
+  include ('php/navbar.php');
+?>
         <!--        google analytics-->
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

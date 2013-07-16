@@ -223,7 +223,7 @@ and open the template in the editor.
                             echo'  <div class="hero-unit text-center"><img src="img/bee2.png"><a name="summary"></a>  <i>   ' . $summaryTopicTitle . '   </i>  <img src="img/bee1.png"></div>';
 
 			    // Back to topics. Visible only on Non-desktop layouts
-                            echo'  <div class="text-center hidden-desktop"><a class="button" href="#topicList">Back to topic list</a></div>';
+                            echo'  <div class="text-center hidden-desktop"><a class="button" href="#topicList">'.$TR['BackToTopicList.'.$lang].'</a></div>';
 
                             $params = new getSummary();
                             $params->sTopicID = $URLtopicID;

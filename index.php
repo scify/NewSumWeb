@@ -59,9 +59,10 @@ and open the template in the editor.
     <body>
         <?php
             require_once 'php/common.php';
-            $lang = $_GET["lang"];
-            if ($lang=="") $lang="gr";
-            $static_home='static_parts/'.$lang.'/';
+            require_once 'php/PserverCommunicator.php';
+            require_once 'php/mysqlCommunicator.php';
+            require_once 'sessionHandler.php';
+            
             require_once $static_home.'navbar.php';
         ?>
         <div class="container-fluid">

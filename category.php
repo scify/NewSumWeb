@@ -72,9 +72,12 @@ and open the template in the editor.
 
     </head>
     <body>
-        <?php 
-            require_once ('php/common.php');
-            require_once("php/regDomain.inc.php");
+        <?php
+            require_once 'php/common.php';
+            require_once 'php/regDomain.inc.php';
+            require_once 'php/PserverCommunicator.php';
+            require_once 'php/mysqlCommunicator.php';
+            require_once 'sessionHandler.php';
 
 
             $category = $_GET["categname"];

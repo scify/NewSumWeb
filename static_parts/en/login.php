@@ -1,7 +1,7 @@
 <div class="tab-pane fade" id="login">
     <div class="row-fluid">
         <div class="span6" id="login">
-            <form class="form-horizontal span2 offset4">
+            <form class="form-horizontal span6">
                 <fieldset>
                     <legend class="text-center">Log in</legend>
                     <div class="control-group">

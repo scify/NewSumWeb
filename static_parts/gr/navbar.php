@@ -41,17 +41,13 @@
                     </li>
                     <li class="menuItem lang clearfix"> <a href="index.php?lang=gr" data-toggle="tooltip" title="Ελληνικά"><img src="img/gr.png" alt="Greek Flag" width=16 height=11 /></a>
                         <a href="index.php?lang=en" data-toggle="tooltip" title="English"><img src="img/us.png" alt="en Flag" width=16 height=11 /></a></li>
-
+                    
                     <li class="menuItem"><a href="http://www.scify.gr/site/el/support-us-el/help-us-el" target="_blank" data-toggle="tooltip" title="Ακόμα και ένα μικρό ποσό δωρεάς θα μας βοηθήσει να προσφέρουμε λύσεις... απίστευτες μέχρι σήμερα" ><i class="icon-gift icon-white"></i></a></li>
-                    <li class="menuItem"  style="display: none"><a id="displaySearch" href="javascript:toggleSearch();" data-toggle="tooltip" title="Search for an interesting word"><i class="icon-search icon-white"></i></a></li>
-                    <li class="menuItem" style="display: none">
-                        <div id="toggleSearch" style="display: none" > 
-                            <form class="form-search">
-                                <input type="text" class="input-small search-query">
-                                <button type="submit" class="btn">Search</button>
-                            </form>
-                        </div>
-                    </li>
+                    <li><form class="form-horizontal" style="margin-top: 14px;margin-left: 150px;">
+                        <input type="email" title="Λογαριασμός ηλεκτρονικού ταχυδρομείου" placeholder="E-mail" class="input-medium" required>
+                        <input type="password" pattern="[^\']{6,18}" title="6-18 χαρακτήρες" placeholder="κωδικός" class="input-medium" required>
+                        <button type="submit" class="btn btn-primary" style="margin-top: -1.5px;">Είσοδος</button>
+                    </form></li>
             </div> 
         </div>
     </div>

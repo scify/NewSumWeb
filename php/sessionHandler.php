@@ -3,9 +3,23 @@
     if (isset($_GET["failedLogin"])){
         #TODO nice error message
     }
+    if (isset($_GET["failedRegistration"])){
+        #TODO nice error message
+    }
+    if (isset($_POST["register"])){
+        $user=$_POST["register"];
+        $pass=$_POST["pass"];
+        if (register($user, $pass)){
+            $_SESSION["USER_ID"]=$user;
+        }
+        else {
+            header("Location: ".$_SERVER['PHP_SELF']."?failedRegistration");
+            exit;
+        }
+    }
     if (isset($_POST["login"])){
-        $user=$_POST("login");
-        $pass=$_POST("pass");
+        $user=$_POST["login"];
+        $pass=$_POST["pass"];
         if (checkLogin($user,$pass)){
             $_SESSION["USER_ID"]=$_POST["login"];
             if (isset($_POST["remember"])){

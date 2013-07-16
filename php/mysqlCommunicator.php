@@ -33,7 +33,7 @@
     function register($userid,$pass){
         global $mysqli;
         
-        $mysqli->query("insert into users values ('".$userid."',MD5('".$pass."'));");
+        return $mysqli->query("insert into users values ('".$userid."',MD5('".$pass."'));");
     }
     
     function getUserPass($userid){

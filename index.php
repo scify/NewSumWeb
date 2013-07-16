@@ -53,6 +53,16 @@ and open the template in the editor.
             ga('send', 'pageview');
 
         </script>
+        
+        <script language='javascript' type='text/javascript'>
+            function check(input) {
+                if (input.value != document.getElementById('password').value) {
+                    input.setCustomValidity('The two passwords must match.');
+                } else {
+                    input.setCustomValidity('');
+               }
+            }
+        </script>
         <title>NewSum on the Web</title>
 
     </head>
@@ -61,7 +71,7 @@ and open the template in the editor.
             require_once 'php/common.php';
             require_once 'php/PserverCommunicator.php';
             require_once 'php/mysqlCommunicator.php';
-            require_once 'sessionHandler.php';
+            require_once 'php/sessionHandler.php';
             
             require_once $static_home.'navbar.php';
         ?>
@@ -177,7 +187,7 @@ and open the template in the editor.
 
                                 require_once $static_home.'about.php';
                                 require_once $static_home.'contact_tab.php';
-                                require_once $static_home.'login.php';
+                                require_once $static_home.'register.php';
                             ?>
                         </div><!--myTabContent-->
                     </div><!--/span-->

@@ -83,21 +83,16 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+            require_once 'php/mysqlCommunicator.php';
+            require_once 'php/sessionHandler.php';
             require_once 'php/common.php';
             require_once 'php/regDomain.inc.php';
             require_once 'php/PserverCommunicator.php';
-            require_once 'php/mysqlCommunicator.php';
-            require_once 'php/sessionHandler.php';
 
 
             $category = $_GET["categname"];
             $URLtopicID = $_GET["topicID"];
-            
-            $lang = $_GET["lang"];
-            if ($lang=="") $lang="gr";
-            $static_home='static_parts/'.$lang.'/';
-            
-            require_once $static_home.'navbar.php';
+
         ?>
         <div class="container-fluid">
             <div class="row-fluid">
@@ -330,10 +325,6 @@ and open the template in the editor.
             </div><!--/row-->
 
             <hr>
-
-            <?php
-                require_once $static_home.'footer.php';
-            ?>
 
         </div><!--/.fluid-container-->
 

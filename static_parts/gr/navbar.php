@@ -1,12 +1,6 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container-fluid">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="brand" href="./index.php" data-toggle="tooltip" title="Αρχική σελίδα"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
             <p class="navbar-text pull-right" style="margin-top: 12px;">
                 <a href="javascript:void(0);" onclick="resize(1)"><i class="icon-plus icon-white"></i></a>  
                 <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a><i class="icon-text-height icon-white" data-toggle="tooltip" title="Άλλαξε το μέγεθος των γραμμάτων"></i>
@@ -25,26 +19,22 @@
             ?>
                         
             <div class="nav-collapse collapse">
-
                 <ul class="nav">
+                    <li><a class="brand" href="#home" data-toggle="tab" title="Αρχική σελίδα"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a></li>
                     <li class="menuItem"><a href="#about" data-toggle="tab" title="Πληροφορίες σχετικά με το NewSum Web.">Σχετικά</a></li>
                     <li class="menuItem"><a href="#contact" data-toggle="tab" title="Επικοινωνήστε μαζί μας">Επικοινωνία</a></li>
                     <li class="menuItem">
                         <ul class="nav" role="navigation">
                             <li class="dropdown">
-
                                 <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" title="Επιλέξτε κατηγορία ειδήσεων">Επιλέξτε κατηγoρία <b class="caret"></b></a>
-
                                 <ul id="categoryMenu" class="dropdown-menu" role="menu" aria-labelledby="drop1">
                                     <?php
                                         $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
 
                                         foreach ($saCategories as $sCurCat) {
-
-                                            echo' <li role="presentation"><a role="menuitem" tabindex="-1" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' "  id="SelectedCategory">' . $sCurCat . "</a></li>";
+                                            echo' <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" onclick="GoToCategory(\''.$sCurCat.'\')"  id="SelectedCategory">' . $sCurCat . "</a></li>";
                                         }
                                     ?>
-
                                 </ul>
                             </li>
                         </ul>

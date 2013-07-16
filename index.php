@@ -63,15 +63,29 @@ and open the template in the editor.
                }
             }
         </script>
+        
+        <script type='text/javascript'>
+            function GoToCategory(cat) {
+                document.getElementById('myIFrame').src="./category.php?categname="+cat;
+                document.getElementById('categoryLink').click();
+            }
+        </script>
+        
+        <script language="javascript" type="text/javascript">
+            function resizeIframe(obj) {
+              obj.style.height = obj.contentWindow.document.body.scrollHeight - 80 + 'px';
+            }
+        </script>
+        
         <title>NewSum on the Web</title>
 
     </head>
     <body>
         <?php
-            require_once 'php/common.php';
-            require_once 'php/PserverCommunicator.php';
             require_once 'php/mysqlCommunicator.php';
             require_once 'php/sessionHandler.php';
+            require_once 'php/common.php';
+            require_once 'php/PserverCommunicator.php';
             
             require_once $static_home.'navbar.php';
         ?>
@@ -158,7 +172,7 @@ and open the template in the editor.
                                         echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '">' . $sCurTopic . "</a>";
                                         echo'<br><small class="muted">' . $convertToDate . '</small></td></tr>';
 
-                                        if ($topicCount % 2 == 0) {
+                                        if ($topicCount % 4 == 0) {
                                             break;
                                         }
                                         $topicCount++;
@@ -169,12 +183,8 @@ and open the template in the editor.
                                         </table>
                                     </div><!--/span-->';
 
-                                    if ($count % 8 == 0) {
-                                        break;
-                                    }
                                     if ($count % 4 == 0) {
-                                        echo '   </div><!--/row-->
-                                         <div class="row-fluid">';
+                                        break;
                                     }
 
                                     $count++;
@@ -183,12 +193,17 @@ and open the template in the editor.
 
 
 
-                                echo'    </div><!--   tab-pane fade-->';
-
+                                echo'    </div><!--   tab-pane fade-->
+                                    ';
                                 require_once $static_home.'about.php';
                                 require_once $static_home.'contact_tab.php';
                                 require_once $static_home.'register.php';
                             ?>
+                                <div class="tab-pane fade" id="category">
+                                    <iframe frameborder="0" onload='javascript:resizeIframe(this);' scrolling="no" style='height:100%;width:100%;margin:0px;border:0px;padding:0px;' id="myIFrame">
+                                    </iframe>
+                                </div>
+                            <a style='display:none;' href='#category' data-toggle="tab" id='categoryLink'></a>
                         </div><!--myTabContent-->
                     </div><!--/span-->
                 </div><!--/row-->

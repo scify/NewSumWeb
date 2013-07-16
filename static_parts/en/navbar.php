@@ -1,12 +1,6 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container-fluid">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="brand" href="./index.php" data-toggle="tooltip" title="Home page"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a>
             <p class="navbar-text pull-right" style="margin-top: 12px;">
                 <a href="javascript:void(0);" onclick="resize(1)"><i class="icon-plus icon-white"></i></a>  
                 <a href="javascript:void(0);" onclick="resize(-1)"><i class="icon-minus icon-white"></i></a><i class="icon-text-height icon-white" data-toggle="tooltip" title="Change font size"></i> 
@@ -26,6 +20,7 @@
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
+                    <li><a class="brand" href="#home" data-toggle="tab" title="Αρχική σελίδα"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a></li>
                     <li class="menuItem"><a href="#about" data-toggle="tab" title="Info about NewSum Web">About</a></li>
                     <li class="menuItem"><a href="#contact" data-toggle="tab" title="Find out how you can contact us">Contact</a></li>
                     <li class="menuItem">
@@ -37,14 +32,13 @@
                                         $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
 
                                         foreach ($saCategories as $sCurCat) {
-                                            echo' <li role="presentation"><a role="menuitem" tabindex="-1" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' "  id="SelectedCategory">' . $sCurCat . "</a></li>";
+                                            echo' <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" onclick="GoToCategory(\''.$sCurCat.'\')"  id="SelectedCategory">' . $sCurCat . "</a></li>";
                                         }
                                     ?>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-
                     <li class="menuItem lang clearfix"> <a href="index.php?lang=gr" data-toggle="tooltip" title="Ελληνικά"><img src="img/gr.png" alt="Greek Flag" width=16 height=11 /></a>
                         <a href="index.php?lang=en" data-toggle="tooltip" title="English"><img src="img/us.png" alt="en Flag" width=16 height=11 /></a></li>
 

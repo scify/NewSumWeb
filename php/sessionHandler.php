@@ -7,10 +7,18 @@
         #TODO nice error message
     }
     if (isset($_POST["register"])){
+        global $lang;
         $user=$_POST["register"];
         $pass=$_POST["pass"];
+        $attributes=array();
+        $attributes["age"]=$_POST["age"];
+        $attributes["gender"]=$_POST["gender"];
+        $attributes["city"]=$_POST["city"];
+        $attributes["country"]=$_POST["country"];
+        $attributes["lang"]=$lang;
         if (register($user, $pass)){
             $_SESSION["USER_ID"]=$user;
+            adduser($user, $attributes);
         }
         else {
             header("Location: ".$_SERVER['PHP_SELF']."?failedRegistration");
@@ -75,13 +83,15 @@
             }
         }
     }
-    $lang = $_GET["lang"];
-    if ($lang!=""){
-        $_SESSION["lang"]=$lang;
-    } else if (isset($_SESSION["lang"])){
-        $lang=$_SESSION["lang"];
-    } else {
-        $lang="gr";
-    }
     $static_home='static_parts/'.$lang.'/';
+    if (isset($_SESSION["USER_ID"])) {
+        $CURRENT_USER=$_SESSION["USER_ID"];
+    }
+    else if (isset($_SESSION["TEMP_USER_ID"])){
+        $CURRENT_USER=$_SESSION["TEMP_USER_ID"];
+    }
+    else {
+        header("Location: ".$_SERVER['PHP_SELF']."?failedLogin=1");
+        exit;
+    }
 ?>

@@ -6,88 +6,98 @@
     $stereotype=$server_IP."stereotype/".$clientCredentials."/";
     $community=$server_IP."community/".$clientCredentials."/";
     
-    function customJsonizeArray($array){
+    function cleanFeature($string){
+        global $lang;
+        $res=str_replace("$=$"," ",$string);
+        return str_replace($lang.".","",$res);
+    }
+    
+    function customArrayToString($array){
         $res="{";
         foreach ($array as $x=>$x_value){
             $res=$res.'"'.$x.'":"'.$x_value.'",';
         }
         $res=$res."}";
-        return $res;
+        return str_replace(" ","$=$",$res);
     }
     
     function adduser($usr, $attr){
+        //TODO maybe call another function to initialize the users features to 1 for his language
         global $personal;
+        global $lang;
         
-        $request=$personal.'post_user.json';
-        $attrs=json_encode($attr, true);
-        $postargs='username='.$usr.'&attr='.$attrs;
-        $session=curl_init($session);
-        
-        curl_setopt($session, CURLOPT_POST, true);
-        curl_setopt($session, CURLOPT_POSTFIELDS, $postargs);
-        curl_setopt($session, CURLOPT_HEADER, false);
-        curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-        
-        $response=curl_exec($session);
-        curl_close($session);
-        return json_decode($response,true);
+        if ($usr==null){
+            return false;
+        }
+        else if (count($attr)==0){
+            $request=$personal.'post_user.xml?username='.$usr.'&atr={"lang":'.$lang.'}';
+            $response=file_get_contents($request);
+            return !$response==null;
+        }
+        else {
+            $request=$personal.'post_user.xml?username='.$usr.'&attr='.customArrayToString($attr);
+            $response=file_get_contents($request);
+            return !$response==null;
+        }
     }
     
-    function getUserFeatureList($usr) {
+    function getUserFeatureList($usr,$patt) {
         global $personal;
+        global $lang;
         
-        $request=$personal.'users_features.json?username='.$usr;
-        $session=curl_init($request);
-        curl_setopt($session, CURLOPT_HEADER, false);
-        curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+        if ($usr==null) {
+            return false;
+        }
+        else if ($patt==null) {
+            $request=$personal.'users_features.json?username='.$usr;
+            $response=file_get_contents($request);
+            $result=json_decode($response,true);
         
-        $response=curl_exec($session);
-        curl_close($session);
-        return json_decode($response,true);
+            $result2=$result["result"]["row"];
+            $features=array();
+            for ($i=1;$i<count($result2);$i++){
+                if (strstr($result2[$i]["ftr"],$lang)){
+                    $features[$i]=cleanFeature($result2[$i]["ftr"]);
+                }
+            }
+            return $features;
+        }
+        else {
+            $request=$personal.'users_features.json?username='.$usr.'&features='.$patt;
+            $response=file_get_contents($request);
+            $result=json_decode($response,true);
+            
+            $result2=$result["result"]["row"];
+            $features=array();
+            for ($i=1;$i<count($result2);$i++){
+                $features[$i]=strstr($result2[$i]["ftr"],$patt);
+            }
+            return $features;
+        }
     }
     
     function increaseFeatureValue($usr,$ftr) {
         global $personal;
         
-        $request=$personal.'increase_users_values.json';
-        $ftrs=json_encode($ftr, true);
-        $postargs='username='.$usr.'&featurelist='.$ftrs;
-        $session=curl_init($session);
-        
-        curl_setopt($session, CURLOPT_POST, true);
-        curl_setopt($session, CURLOPT_POSTFIELDS, $postargs);
-        curl_setopt($session, CURLOPT_HEADER, false);
-        curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-        
-        $response=curl_exec($session);
-        curl_close($session);
-        return json_decode($response,true);
-    }
-    
-    function getUsers(){
-        global $personal;
-        
-        $request=$personal.'users.json?where=*';
-        $session=curl_init($request);
-        curl_setopt($session, CURLOPT_HEADER, false);
-        curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-        
-        $response=curl_exec($session);
-        curl_close($session);
-        return json_decode($response,true);
+        if ($usr==null||count($ftr)==0){
+            return false;
+        }
+        else {
+            $request=$personal.'increase_users_values.json?username='.$usr.'features='.customArrayToString($ftr);
+            $response=file_get_contents($request);
+            return !$response==null;
+        }
     }
     
     function getFeaturesList(){
         global $personal;
         
         $request=$personal.'features.json?featuresPattern=*';
-        $session=curl_init($request);
-        curl_setopt($session, CURLOPT_HEADER, false);
-        curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+        $response=file_get_contents($request);
+        $response=str_replace("$=$"," ",$response);
         
-        $response=curl_exec($session);
-        curl_close($session);
         $result=json_decode($response,true);
+        
         return $result["result"]["row"];
     }
     
@@ -96,9 +106,9 @@
 
         $curftrs=getFeaturesList();
         for ($i=0;$i<count($curftrs);$i++){
-            $attr=$curftrs[$i]["attr"];
+            $ftr=$curftrs[$i]["ftr"];
             $defval=$curftrs[$i]["defval"];
-            $tempftrs[$attr]=$defval;
+            $tempftrs[$ftr]=$defval;
         }
         foreach ($ftrs as $x=>$x_value){
             if (!array_key_exists($x,$tempftrs)){
@@ -106,20 +116,15 @@
             }
         }
         
-        $request=$personal.'add_features.json';
-        $Jftrs=json_encode($newftrs);
-        $Jftrs=str_replace(" ","\u0009",$Jftrs);
-        $postargs='features='.$Jftrs;
-        $session=curl_init($request);
+        if (count($newftrs)!=0){
+            $request=$personal.'add_features.json?features='.customArrayToString($newftrs);
+            $response=file_get_contents($request);
+            return !$response==null;
+        }
+        else {
+            return false;
+        }
         
-        curl_setopt($session, CURLOPT_POST, true);
-        curl_setopt($session, CURLOPT_POSTFIELDS, $postargs);
-        curl_setopt($session, CURLOPT_HEADER, false);
-        curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-        
-        $response=curl_exec($session);
-        curl_close($session);
-        return json_decode($response,true);
     }
     
 ?>

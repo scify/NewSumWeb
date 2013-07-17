@@ -15,13 +15,13 @@
                 <div class="control-group">
                     <label class="control-label">Κωδικός χρήστη:</label>
                     <div class="controls">
-                        <input type="password" id="password" pattern="[^\']*" name="pass" class="input-medium" required>
+                        <input type="password" id="password" title="6-18 χαρακτήρες" pattern="[^\']{6,18}" name="pass" class="input-medium" required>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Επανάληψη κωδικού:</label>
                     <div class="controls">
-                        <input type="password" pattern="[^\']*" class="input-medium" oninput="check(this)" required>
+                        <input type="password" pattern="[^\']{6,18}" title="6-18 χαρακτήρες" class="input-medium" oninput="check(this)" required>
                     </div>
                 </div>
                 <div class="control-group">

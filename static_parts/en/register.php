@@ -15,13 +15,13 @@
                 <div class="control-group">
                     <label class="control-label">Password:</label>
                     <div class="controls">
-                        <input type="password" id="password" pattern="[^\']{6-18}" name="pass" class="input-medium" required>
+                        <input type="password" id="password" title="6-18 characters" pattern="[^\']{6,18}" name="pass" class="input-medium" required>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Confirm password:</label>
                     <div class="controls">
-                        <input type="password" class="input-medium" pattern="[^\']{6-18}" oninput="check(this)" required>
+                        <input type="password" class="input-medium" title="6-18 characters" pattern="[^\']{6,18}" oninput="check(this)" required>
                     </div>
                 </div>
                 <div class="control-group">

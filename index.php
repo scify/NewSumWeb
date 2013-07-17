@@ -12,24 +12,12 @@ and open the template in the editor.
 
         <!-- Le styles -->
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="css/index.css" rel="stylesheet">
         <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
         <link href="css/global.css" rel="stylesheet">
-
-        <script src="js/scify.index.js"></script>
-<!--        <script type="text/javascript">
-
-            function resize(multiplier) {
-                if (document.body.style.fontSize == "") {
-                    document.body.style.fontSize = "1.0em";
-                }
-                document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.2) + "em";
-            }
-
-        </script>-->
-
+        
         <script>
-
             function toggleSearch() {
                 var ele = document.getElementById("toggleSearch");
                 var text = document.getElementById("displaySearch");
@@ -83,10 +71,10 @@ and open the template in the editor.
     <body>
         <?php
             set_include_path('./php');
-            require_once 'mysqlCommunicator.php';
-            require_once 'sessionHandler.php';
             require_once 'common.php';
+            require_once 'mysqlCommunicator.php';
             require_once 'PserverCommunicator.php';
+            require_once 'sessionHandler.php';
             
             require_once $static_home.'navbar.php';
         ?>
@@ -119,7 +107,8 @@ and open the template in the editor.
                                 // Check if server online, and if not, show error page
                                 $bErrorPage = false;
                                 try {
-                                    $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
+                                    global $CURRENT_USER;
+                                    $saCategories = getUserFeatureList($CURRENT_USER, null);
                                 } catch (Exception $e) {
                                     // Should show Error Page
                                     $bErrorPage = true;
@@ -134,7 +123,7 @@ and open the template in the editor.
                                 //Fetch content from the server
                                 $count = 1;
                                 //load 8 first kategories
-                                foreach ($saCategories as $sCurCat) {
+                                foreach ($saCategories as $i=>$sCurCat) {
 
                                     echo '      <div class="span3">
                                         <h3><a href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' ">' . $sCurCat . '</a></h3>

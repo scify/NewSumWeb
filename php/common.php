@@ -2,14 +2,14 @@
 require_once("NewSumFreeService.php");
 require_once("resources.php");
 
-    $lang = $_GET["lang"];
-    if ($lang!=""){
-        $_SESSION["lang"]=$lang;
-    } else if (isset($_SESSION["lang"])){
-        $lang=$_SESSION["lang"];
-    } else {
-        $lang="gr";
-    }
+$lang = $_GET["lang"];
+if ($lang!=""){
+    $_SESSION["lang"]=$lang;
+} else if (isset($_SESSION["lang"])){
+    $lang=$_SESSION["lang"];
+} else {
+    $lang="gr";
+}
 
 $sourceUrls= array(
   "en" => "http://143.233.226.97:60001/NewSumFreeService/NewSumFreeService?wsdl", 

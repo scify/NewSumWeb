@@ -20,7 +20,9 @@ and open the template in the editor.
         <link href="css/bootstrap-combined.min.css" rel="stylesheet">
         <!-- Le styles -->
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
         <link href="css/global.css" rel="stylesheet">
+        
         <style type="text/css">
             body {
                 padding-top: 60px;
@@ -39,7 +41,7 @@ and open the template in the editor.
                 }
             }
         </style>
-        <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
+        
         <script>
            
             function toggleSearch() {
@@ -74,11 +76,11 @@ and open the template in the editor.
     <body>
         <?php
             set_include_path('./php');
-            require_once 'mysqlCommunicator.php';
-            require_once 'sessionHandler.php';
             require_once 'common.php';
-            require_once('regDomain.inc.php');
+            require_once 'regDomain.inc.php';
+            require_once 'mysqlCommunicator.php';
             require_once 'PserverCommunicator.php';
+            require_once 'sessionHandler.php';
             
             require_once $static_home.'navbar.php';
         ?>
@@ -495,7 +497,8 @@ and open the template in the editor.
 
             });
         </script>
-
+        
+        <script src="js/bootstrap/bootstrap-collapse.js"></script>
 
     </body>
 </html>

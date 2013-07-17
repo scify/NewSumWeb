@@ -6,6 +6,15 @@
     $stereotype=$server_IP."stereotype/".$clientCredentials."/";
     $community=$server_IP."community/".$clientCredentials."/";
     
+    function customJsonizeArray($array){
+        $res="{";
+        foreach ($array as $x=>$x_value){
+            $res=$res.'"'.$x.'":"'.$x_value.'",';
+        }
+        $res=$res."}";
+        return $res;
+    }
+    
     function adduser($usr, $attr){
         global $personal;
         
@@ -78,22 +87,30 @@
         
         $response=curl_exec($session);
         curl_close($session);
-        return json_decode($response,true);
+        $result=json_decode($response,true);
+        return $result["result"]["row"];
     }
     
     function setFeatures($ftrs){
+        global $personal;
+
         $curftrs=getFeaturesList();
-        $newftrs=Array();
+        for ($i=0;$i<count($curftrs);$i++){
+            $attr=$curftrs[$i]["attr"];
+            $defval=$curftrs[$i]["defval"];
+            $tempftrs[$attr]=$defval;
+        }
         foreach ($ftrs as $x=>$x_value){
-            if (!array_key_exists($x,$curftrs)){
+            if (!array_key_exists($x,$tempftrs)){
                 $newftrs[$x]=$x_value;
             }
         }
         
         $request=$personal.'add_features.json';
-        $Jftrs=json_encode($newftrs, true);
+        $Jftrs=json_encode($newftrs);
+        $Jftrs=str_replace(" ","\u0009",$Jftrs);
         $postargs='features='.$Jftrs;
-        $session=curl_init($session);
+        $session=curl_init($request);
         
         curl_setopt($session, CURLOPT_POST, true);
         curl_setopt($session, CURLOPT_POSTFIELDS, $postargs);
@@ -104,5 +121,5 @@
         curl_close($session);
         return json_decode($response,true);
     }
-
+    
 ?>

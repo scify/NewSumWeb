@@ -1,5 +1,6 @@
 <?php
 require_once("NewSumFreeService.php");
+require_once("resources.php");
 
     $lang = $_GET["lang"];
     if ($lang!=""){

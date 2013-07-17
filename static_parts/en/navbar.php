@@ -23,22 +23,6 @@
                     <li><a class="brand" href="#home" data-toggle="tab" title="Αρχική σελίδα"><img src="img/logoNewSum-simple.png" alt="" width="40" height="39"></a></li>
                     <li class="menuItem"><a href="#about" data-toggle="tab" title="Info about NewSum Web">About</a></li>
                     <li class="menuItem"><a href="#contact" data-toggle="tab" title="Find out how you can contact us">Contact</a></li>
-                    <li class="menuItem">
-                        <ul class="nav" role="navigation">
-                            <li class="dropdown">
-                                <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" title="Select a news category">Choose Category <b class="caret"></b></a>
-                                <ul id="categoryMenu" class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                                    <?php
-                                        $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
-
-                                        foreach ($saCategories as $sCurCat) {
-                                            echo' <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" onclick="GoToCategory(\''.$sCurCat.'\')"  id="SelectedCategory">' . $sCurCat . "</a></li>";
-                                        }
-                                    ?>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="menuItem lang clearfix"> <a href="index.php?lang=gr" data-toggle="tooltip" title="Ελληνικά"><img src="img/gr.png" alt="Greek Flag" width=16 height=11 /></a>
                         <a href="index.php?lang=en" data-toggle="tooltip" title="English"><img src="img/us.png" alt="en Flag" width=16 height=11 /></a></li>
 
@@ -55,6 +39,16 @@
                     ?>
             </div>
         </div>
+    </div>
+    <div class="navbar-inner container-fluid">
+        <ul class="nav">		      
+            <?php
+                $saCategories=splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
+                foreach ($saCategories as $sCurCat) {
+                    echo'<li><a href="category.php?lang='.$lang.'&categname='.$sCurCat.'"id="SelectedCategory">'.$sCurCat."</a></li>";
+                }
+            ?>
+        </ul>
     </div>
 </div><br>
 <script type="text/javascript">

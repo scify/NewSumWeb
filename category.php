@@ -55,7 +55,6 @@ and open the template in the editor.
                 }
             }
         </script>
-        <?php include ('php/navbar.php'); ?>
 
         <!--        google analytics-->
         <script>
@@ -73,6 +72,16 @@ and open the template in the editor.
 
     </head>
     <body>
+        <?php
+            set_include_path('./php');
+            require_once 'mysqlCommunicator.php';
+            require_once 'sessionHandler.php';
+            require_once 'common.php';
+            require_once('regDomain.inc.php');
+            require_once 'PserverCommunicator.php';
+            
+            require_once $static_home.'navbar.php';
+        ?>
         <div class="container-fluid">
             <div class="row-fluid">
 
@@ -84,10 +93,6 @@ and open the template in the editor.
 
                         <div class="tab-pane fade in active" id="categories">
                             <?php
-                            require_once ('php/common.php');
-                            require_once("php/regDomain.inc.php");
-
-
                             $category = $_GET["categname"];
                             $URLtopicID = $_GET["topicID"];
                             $lang = $_GET["lang"];

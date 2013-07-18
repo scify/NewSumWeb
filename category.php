@@ -95,20 +95,16 @@ and open the template in the editor.
 
                         <div class="tab-pane fade in active" id="categories">
                             <?php
+                            
                             $category = $_GET["categname"];
                             $URLtopicID = $_GET["topicID"];
-                            $lang = $_GET["lang"];
-
-                            if ($lang == "") {
-                                $lang = 'gr';
-                            }
-
 
                             echo '<div class="span3">
                                 <div class="well sidebar-nav">
                                     <h3 class="text-center">';
-
-
+                            
+                            increaseFeatureValue($CURRENT_USER,$category,1);
+                            
 			    # Topic Index anchor
 			    echo'<a name="topicList"></a>';
                             echo $category;

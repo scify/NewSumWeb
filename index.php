@@ -52,19 +52,6 @@ and open the template in the editor.
             }
         </script>
         
-        <script type='text/javascript'>
-            function GoToCategory(cat) {
-                document.getElementById('myIFrame').src="./category.php?categname="+cat;
-                document.getElementById('categoryLink').click();
-            }
-        </script>
-        
-        <script language="javascript" type="text/javascript">
-            function resizeIframe(obj) {
-              obj.style.height = obj.contentWindow.document.body.scrollHeight - 80 + 'px';
-            }
-        </script>
-        
         <title>NewSum on the Web</title>
 
     </head>
@@ -189,7 +176,6 @@ and open the template in the editor.
                                 require_once $static_home.'contact_tab.php';
                                 require_once $static_home.'register.php';
                             ?>
-                            <a style='display:none;' href='#category' data-toggle="tab" id='categoryLink'></a>
                         </div><!--myTabContent-->
                     </div><!--/span-->
                 </div><!--/row-->

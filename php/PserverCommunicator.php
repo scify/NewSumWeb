@@ -5,10 +5,16 @@
     $personal=$server_IP."personal/".$clientCredentials."/";
     $stereotype=$server_IP."stereotype/".$clientCredentials."/";
     $community=$server_IP."community/".$clientCredentials."/";
+   
+    function codeFeature($ftr){
+        global $lang;
+        $res=str_replace(" ","$$$",$ftr);
+        return $lang.".".$res;
+    }
     
     function cleanFeature($string){
         global $lang;
-        $res=str_replace("$=$"," ",$string);
+        $res=str_replace("$$$"," ",$string);
         return str_replace($lang.".","",$res);
     }
     
@@ -18,7 +24,7 @@
             $res=$res.'"'.$x.'":"'.$x_value.'",';
         }
         $res=$res."}";
-        return str_replace(" ","$=$",$res);
+        return str_replace(" ","$$$",$res);
     }
     
     function adduser($usr, $attr){
@@ -55,9 +61,11 @@
         
             $result2=$result["result"]["row"];
             $features=array();
-            for ($i=1;$i<count($result2);$i++){
-                if (strstr($result2[$i]["ftr"],$lang)){
-                    $features[$i]=cleanFeature($result2[$i]["ftr"]);
+            $i=0;
+            foreach ($result2 as $curRow){
+                if (strstr($curRow["ftr"],$lang)){
+                    $features[$i]=cleanFeature($curRow["ftr"]);
+                    $i=$i+1;
                 }
             }
             return $features;
@@ -76,14 +84,15 @@
         }
     }
     
-    function increaseFeatureValue($usr,$ftr) {
-        global $personal;
+    function increaseFeatureValue($usr,$ftr,$val) {
+        $personal="http://localhost:1111/pers?clnt=testClient|test&com=incval&usr=";
         
         if ($usr==null||count($ftr)==0){
             return false;
         }
         else {
-            $request=$personal.'increase_users_values.json?username='.$usr.'features='.customArrayToString($ftr);
+            //$request=$personal.'increase_users_values.json?username='.$usr.'&features='.customArrayToString($ftr);
+            $request=$personal.$usr."&".codeFeature($ftr)."=".$val;
             $response=file_get_contents($request);
             return !$response==null;
         }
@@ -94,7 +103,7 @@
         
         $request=$personal.'features.json?featuresPattern=*';
         $response=file_get_contents($request);
-        $response=str_replace("$=$"," ",$response);
+        $response=str_replace("$$$"," ",$response);
         
         $result=json_decode($response,true);
         

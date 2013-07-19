@@ -1,4 +1,4 @@
-<div class="tab-pane fade" id="about">
+<div class="tab-pane fade" id="about" style="margin-top: 40px">
     <div class="hero-unit">
         <h4> What is NewSum?</h4>
         <p> NewSum automatically summarizes information 

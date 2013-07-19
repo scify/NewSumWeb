@@ -1,4 +1,4 @@
-<div class="tab-pane fade" id="about">
+<div class="tab-pane fade" id="about" style="margin-top: 40px">
     <div class="hero-unit">
         <h4> Τι είναι το NewSum;</h4>
         <p> Tο NewSum δημιουργεί αυτόματα ένα περιληπτικό κείμενο για κάθε είδηση, αντλώντας δεδομένα από πολλές ειδησεογραφικές πηγές!

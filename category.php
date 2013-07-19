@@ -84,7 +84,7 @@ and open the template in the editor.
             
             require_once $static_home.'navbar.php';
         ?>
-        <div class="container-fluid">
+        <div class="container-fluid" style="margin-top: 40px">
             <div class="row-fluid">
 
                 <div class="span12">

@@ -1,4 +1,4 @@
-<div class="tab-pane fade" id="contact">
+<div class="tab-pane fade" id="contact" style="margin-top: 40px">
     <div class="row-fluid">
         <div class="span4">
             <div class="hero-unit">  

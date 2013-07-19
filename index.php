@@ -70,13 +70,13 @@ and open the template in the editor.
                 <div class="span12">
                     <div id="myTabContent" class="tab-content">
                         <div class="tab-pane fade in active" id="home">
-                            <div id="myCarousel" class="carousel slide">
+                            <div id="myCarousel" class="carousel slide" style="margin-top: 40px">
                                 <ol class="carousel-indicators">
                                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                                     <li data-target="#myCarousel" data-slide-to="1"></li>
                                     <li data-target="#myCarousel" data-slide-to="2"></li>
                                     <li data-target="#myCarousel" data-slide-to="3"></li>
-                                </ol>
+                                </ol><br>
                                 <div class="carousel-inner">
                                
                                    <!--fill carousel-->

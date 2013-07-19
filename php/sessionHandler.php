@@ -1,5 +1,4 @@
 <?php
-    session_start();
     if (isset($_GET["failedLogin"])){
         #TODO nice error message
     }

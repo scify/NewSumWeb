@@ -34,11 +34,11 @@
                         }
                         if (!isset($_SESSION["USER_ID"])){
                             echo '
-                                <li><form class="form-horizontal pull-right" style="margin-top: 14px;margin-right: 20px;" method="POST" action="">
+                                <form class="form-horizontal pull-right" style="margin-top: 14px;margin-right: 20px;" method="POST" action="">
                                     <input type="email" title="E-mail" placeholder="E-mail" name="login" class="input-medium" required>
                                     <input type="password" pattern="[^\']{6,18}" title="6-18 characters" name="pass" placeholder="Password" class="input-medium" required>
                                     <button type="submit" class="btn btn-small btn-primary" style="margin-top: -1.5px;">Login</button>
-                                </form></li>';
+                                </form>';
                         }
                     ?>
                 </div>

@@ -34,11 +34,11 @@
                         }
                         if (!isset($_SESSION["USER_ID"])){
                             echo '
-                                <li><form class="form-horizontal pull-right" style="margin-top: 14px;margin-right: 20px;" action="" method="POST">
+                                <form class="form-horizontal pull-right" style="margin-top: 14px;margin-right: 20px;" action="" method="POST">
                                     <input type="email" title="Λογαριασμός ηλεκτρονικού ταχυδρομείου" placeholder="E-mail" name="login" class="input-medium" required>
                                     <input type="password" pattern="[^\']{6,18}" title="6-18 χαρακτήρες" placeholder="κωδικός" name="pass" class="input-medium" required>
                                     <button type="submit" class="btn btn-small btn-primary" style="margin-top: -1.5px;">Είσοδος</button>
-                                </form></li>';
+                                </form>';
                         }
                     ?>
                 </div>

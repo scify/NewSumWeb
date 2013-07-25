@@ -6,6 +6,10 @@
     $stereotype=$server_IP."stereotype/".$clientCredentials."/";
     $community=$server_IP."community/".$clientCredentials."/";
    
+    function clean($dirty){
+        return str_replace(" ","$$$",$dirty);
+    }
+    
     function codeFeature($ftr){
         global $lang;
         $res=str_replace(" ","$$$",$ftr);
@@ -94,14 +98,14 @@
     }
     
     function increaseFeatureValue($usr,$ftr,$val) {
-        $personal="http://localhost:1111/pers?clnt=testClient|test&com=incval&usr=";
-        
+        global $personal;
+        global $lang;
+
         if ($usr==null||count($ftr)==0){
             return false;
         }
         else {
-            //$request=$personal.'increase_users_values.json?username='.$usr.'&features='.customArrayToString($ftr);
-            $request=$personal.$usr."&".codeFeature($ftr)."=".$val;
+            $request=$personal.'increase_users_values.json?username='.$usr.'&featurelist={'.$lang.'.'.clean($ftr).':1}';
             $response=file_get_contents($request);
             return !$response==null;
         }

@@ -32,7 +32,7 @@
     
     function register($userid,$pass){
         global $mysqli;
-        
+        adduser($userid,null);
         return $mysqli->query("insert into users values ('".$userid."',MD5('".$pass."'));");
     }
     

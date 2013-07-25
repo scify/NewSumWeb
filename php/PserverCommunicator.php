@@ -27,6 +27,15 @@
         return str_replace(" ","$$$",$res);
     }
     
+    function customSimpleArrayToString($array){
+        $res="{";
+        foreach ($array as $x=>$x_value){
+            $res=$res.'"'.$x_value.'",';
+        }
+        $res=$res."}";
+        return str_replace(" ","$$$",$res);
+    }
+    
     function adduser($usr, $attr){
         //TODO maybe call another function to initialize the users features to 1 for his language
         global $personal;
@@ -100,8 +109,9 @@
     
     function getFeaturesList(){
         global $personal;
+        global $lang;
         
-        $request=$personal.'features.json?featuresPattern=*';
+        $request=$personal.'features.json?featuresPattern='.$lang.'.*';
         $response=file_get_contents($request);
         $response=str_replace("$$$"," ",$response);
         
@@ -124,7 +134,16 @@
                 $newftrs[$x]=$x_value;
             }
         }
-        
+        $remftrs=array();
+        foreach ($tempftrs as $x=>$x_value){
+            if (!array_key_exists($x,$ftrs)){
+                $remftrs[]=$x;
+            }
+        }
+        if (count($remftrs)!=0){
+            $request=$personal.'delete_features.json?features='.customSimpleArrayToString($remftrs);
+            $response=file_get_contents($request);
+        }
         if (count($newftrs)!=0){
             $request=$personal.'add_features.json?features='.customArrayToString($newftrs);
             $response=file_get_contents($request);

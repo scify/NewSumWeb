@@ -1,5 +1,5 @@
 <div class="navbar-fixed-top">
-    <div class="navbar navbar-static-top">
+    <div class="navbar navbar-static-top navbar-inverse">
         <div class="navbar-inner">
             <div class="container-fluid">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -24,31 +24,30 @@
                             <li class="menuItem"><a href="http://www.scify.gr/site/el/support-us-el/help-us-el" target="_blank" data-toggle="tooltip" title="Ακόμα και ένα μικρό ποσό δωρεάς θα μας βοηθήσει να προσφέρουμε λύσεις... απίστευτες μέχρι σήμερα" ><i class="icon-gift icon-white"></i></a></li>
                         </ul>
                         <?php
-    //#registration
-    //                        if (!isset($_SESSION["USER_ID"])){
-    //                                    echo '<a class="navbar-text pull-right" style="margin-top: 12px;margin-right: 10px;" href="#register" data-toggle="modal" title="Είσοδος χρήστη">Εγγραφή χρήστη</a> ';
-    //                        }
-    //                        else {
-    //                            echo '
-    //                                <p class="navbar-text pull-right" style="margin-top: 12px;margin-right: 12px;">
-    //                                    Καλωσήρθες '.$_SESSION["USER_ID"].' <a class="navbar-text" href="index.php?logout">Αποσύνδεση</a> 
-    //                                </p>';
-    //                        }
-    //                        if (!isset($_SESSION["USER_ID"])){
-    //                            echo '
-    //                                <form class="form-horizontal pull-right" style="margin-top: 14px;margin-right: 20px;" action="" method="POST">
-    //                                    <input type="email" title="Λογαριασμός ηλεκτρονικού ταχυδρομείου" placeholder="E-mail" name="login" class="input-medium" required>
-    //                                    <input type="password" pattern="[^\']{6,18}" title="6-18 χαρακτήρες" placeholder="κωδικός" name="pass" class="input-medium" required>
-    //                                    <button type="submit" class="btn btn-small btn-primary" style="margin-top: -1.5px;">Είσοδος</button>
-    //                                </form>';
-    //                        }
+                            if (!isset($_SESSION["USER_ID"])){
+                                        echo '<a class="navbar-text pull-right" style="margin-top: 12px;margin-right: 10px;" href="#register" data-toggle="modal" title="Είσοδος χρήστη">Εγγραφή χρήστη</a> ';
+                            }
+                            else {
+                                echo '
+                                    <p class="navbar-text pull-right" style="margin-top: 12px;margin-right: 12px;">
+                                        Καλωσήρθες '.$_SESSION["USER_ID"].' <a class="navbar-text" href="index.php?logout">Αποσύνδεση</a> 
+                                    </p>';
+                            }
+                            if (!isset($_SESSION["USER_ID"])){
+                                echo '
+                                    <form class="form-horizontal pull-right" style="margin-top: 14px;margin-right: 20px;" action="./index.php" method="POST">
+                                        <input type="email" title="Λογαριασμός ηλεκτρονικού ταχυδρομείου" placeholder="E-mail" name="login" class="input-medium" required>
+                                        <input type="password" pattern="[^\']{6,18}" title="6-18 χαρακτήρες" placeholder="κωδικός" name="pass" class="input-medium" required>
+                                        <button type="submit" class="btn btn-small btn-primary" style="margin-top: -1.5px;">Είσοδος</button>
+                                    </form>';
+                            }
                         ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar navbar-inverse navbar-static-top"> <!--separate navbar so that they can have different bg color-->
         <div class="navbar-inner navbar-inverse container-fluid">
             <ul class="nav">		      
                 <?php
@@ -64,6 +63,14 @@
         </div>
     </div>
 </div><br>
+<?php
+    if (isset($_GET["failedLogin"])){
+        echo '<div class="alert" style="position:absolute;margin-top:20px;z-index:2;">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Αποτυχία σύνδεσης</strong> Παρακαλώ ελέγξτε τα στοιχεία σας
+          </div>';
+    }
+?>
 <script type="text/javascript">
     function resize(multiplier) {
         if (document.body.style.fontSize == "") {

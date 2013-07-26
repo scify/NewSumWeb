@@ -318,8 +318,7 @@ and open the template in the editor.
                         <?php
                             require_once $static_home.'about.php';
                             require_once $static_home.'contact_tab.php';
-                            //#registration
-                            //require_once $static_home.'register.php';
+                            require_once $static_home.'register.php';
                         ?>
                     </div><!--myTabContent-->
                 </div><!--/span-->

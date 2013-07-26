@@ -1,5 +1,5 @@
 <div class="modal hide fade fluid" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <form class="form-horizontal fluid" method="POST" action="">
+    <form class="form-horizontal fluid" method="POST" action="./index.php">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h3 id="myModalLabel">Εγγραφείτε</h3>

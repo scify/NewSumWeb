@@ -22,25 +22,27 @@
 
                         <li class="menuItem"><a href="http://www.scify.gr/site/el/support-us-el/help-us-el" target="_blank" data-toggle="tooltip" title="Ακόμα και ένα μικρό ποσό δωρεάς θα μας βοηθήσει να προσφέρουμε λύσεις... απίστευτες μέχρι σήμερα" ><i class="icon-gift icon-white"></i></a></li>
                     </ul>
-                    <?php
-                        if (!isset($_SESSION["USER_ID"])){
-                                    echo '<a class="navbar-text pull-right" style="margin-top: 12px;margin-right: 10px;" href="#register" data-toggle="modal" title="Είσοδος χρήστη">Εγγραφή χρήστη</a> ';
-                        }
-                        else {
+                    <ul class="nav pull-right">
+                      
+                        <?php
+                        if (!isset($_SESSION["USER_ID"])) {
                             echo '
-                                <p class="navbar-text pull-right" style="margin-top: 12px;margin-right: 12px;">
-                                    Καλωσήρθες '.$_SESSION["USER_ID"].' <a class="navbar-text" href="index.php?logout">Αποσύνδεση</a> 
-                                </p>';
-                        }
-                        if (!isset($_SESSION["USER_ID"])){
+                                <li>
+                                <form class="form-horizontal " style="margin-top: 20px;margin-right: 20px; margin-bottom: 0px;" action="./index.php" method="POST">
+                                    <input type="email" title="Λογαριασμός ηλεκτρονικού ταχυδρομείου" placeholder="E-mail" name="login" class="input-medium" required  style="height: 15px; margin-top: 5px;"><br class="hidden-desktop">
+                                    <input type="password" pattern="[^\']{6,18}" title="6-18 χαρακτήρες" placeholder="κωδικός" name="pass" class="input-medium" required  style="height: 15px; margin-top: 5px;"><br class="hidden-desktop">
+                                    <button type="submit" class="btn btn-small btn-primary" title="Είσοδος χρήστη">Είσοδος</button>
+                                    <a class="btn btn-small btn-info"  href="#register" data-toggle="modal" title="Εγγραφή χρήστη">Εγγραφή χρήστη</a>
+                                </form></li>';
+                        } else {
                             echo '
-                                <form class="form-horizontal pull-right" style="margin-top: 14px;margin-right: 20px;" action="./index.php" method="POST">
-                                    <input type="email" title="Λογαριασμός ηλεκτρονικού ταχυδρομείου" placeholder="E-mail" name="login" class="input-medium" required><br class="hidden-desktop">
-                                    <input type="password" pattern="[^\']{6,18}" title="6-18 χαρακτήρες" placeholder="κωδικός" name="pass" class="input-medium" required><br class="hidden-desktop">
-                                    <button type="submit" class="btn btn-small btn-primary" style="margin-top: -1.5px;">Είσοδος</button>
-                                </form>';
+                                <li><p class="navbar-text pull-right" style="margin-top: 12px;margin-right: 12px;">
+                                    Καλωσήρθες ' . $_SESSION["USER_ID"] . ' <a class="navbar-text" href="index.php?logout">Αποσύνδεση</a> 
+                                </p></li>';
                         }
-                    ?>
+                        ?>
+                    </ul>
+
                 </div>
             </div>
         </div>
@@ -48,24 +50,24 @@
     <div class="navbar-inner container-fluid">
         <ul class="nav">		      
             <?php
-                $saCategories=splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
-                $categories=array();
-                foreach ($saCategories as $sCurCat) {
-                    $categories[$lang.'.'.$sCurCat]=0;
-                    echo'<li><a href="category.php?lang='.$lang.'&categname='.$sCurCat.'"id="SelectedCategory">'.$sCurCat."</a></li>";
-                }
-                setFeatures($categories);
+            $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
+            $categories = array();
+            foreach ($saCategories as $sCurCat) {
+                $categories[$lang . '.' . $sCurCat] = 0;
+                echo'<li><a href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '"id="SelectedCategory">' . $sCurCat . "</a></li>";
+            }
+            setFeatures($categories);
             ?>
         </ul>
     </div>
 </div><br>
 <?php
-    if (isset($_GET["failedLogin"])){
-        echo '<div class="alert" style="position:absolute;margin-top:20px;z-index:2;">
+if (isset($_GET["failedLogin"])) {
+    echo '<div class="alert" style="position:absolute;margin-top:20px;z-index:2;">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong>Αποτυχία σύνδεσης</strong> Παρακαλώ ελέγξτε τα στοιχεία σας
           </div>';
-    }
+}
 ?>
 <script type="text/javascript">
     function resize(multiplier) {
@@ -75,12 +77,12 @@
         document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.2) + "em";
     }
 </script>
- <script language='javascript' type='text/javascript'>
+<script language='javascript' type='text/javascript'>
     function check(input) {
         if (input.value != document.getElementById('password').value) {
             input.setCustomValidity('The two passwords must match.');
         } else {
             input.setCustomValidity('');
-       }
+        }
     }
 </script>

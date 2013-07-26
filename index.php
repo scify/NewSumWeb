@@ -12,7 +12,6 @@ and open the template in the editor.
 
         <!-- Le styles -->
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
-        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="css/index.css" rel="stylesheet">
         <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
         <link href="css/global.css" rel="stylesheet">
@@ -79,6 +78,9 @@ and open the template in the editor.
                             </div>
                             
                             <?php //main page
+
+                                require_once $static_home.'personalinfo.php';
+                                   
                                 echo '<div class="row-fluid">';
 
                                 // Check if server online, and if not, show error page

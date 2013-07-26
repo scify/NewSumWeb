@@ -1,6 +1,6 @@
 <?php
     $clientCredentials="testClient|test";
-    $server_IP="http://localhost:1111/1.0/";
+    $server_IP="http://83.212.117.40:1111/1.0/";
     
     $personal=$server_IP."personal/".$clientCredentials."/";
     $stereotype=$server_IP."stereotype/".$clientCredentials."/";

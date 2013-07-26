@@ -42,16 +42,6 @@ and open the template in the editor.
 
         </script>
         
-        <script language='javascript' type='text/javascript'>
-            function check(input) {
-                if (input.value != document.getElementById('password').value) {
-                    input.setCustomValidity('The two passwords must match.');
-                } else {
-                    input.setCustomValidity('');
-               }
-            }
-        </script>
-        
         <title>NewSum on the Web</title>
 
     </head>
@@ -174,7 +164,8 @@ and open the template in the editor.
                                     ';
                                 require_once $static_home.'about.php';
                                 require_once $static_home.'contact_tab.php';
-                                require_once $static_home.'register.php';
+                                //#registration
+                                //require_once $static_home.'register.php';
                             ?>
                         </div><!--myTabContent-->
                     </div><!--/span-->
@@ -184,7 +175,6 @@ and open the template in the editor.
                 <?php
                     require_once $static_home.'footer.php';
                 ?>
-                
             </div><!--/.fluid-container-->
 
             <!-- Le javascript
@@ -209,8 +199,6 @@ and open the template in the editor.
                     interval: 7000
                 });
             });
-
-
             </script>
     </body>
 </html>

@@ -1,7 +1,4 @@
 <?php
-    if (isset($_GET["failedLogin"])){
-        #TODO nice error message
-    }
     if (isset($_GET["failedRegistration"])){
         #TODO nice error message
     }
@@ -29,10 +26,8 @@
         $pass=$_POST["pass"];
         if (checkLogin($user,$pass)){
             $_SESSION["USER_ID"]=$_POST["login"];
-            if (isset($_POST["remember"])){
-                setcookie("USER_ID", $user, time()-60*60*24*365);
-                setcookie("USER_PASS", getUserPass($user), time()-60*60*24*365);
-            }
+            setcookie("USER_ID", $user, time()+60*60*24*365);
+            setcookie("USER_PASS", getUserPass($user), time()+60*60*24*365);
         }
         else {
             header("Location: ".$_SERVER['PHP_SELF']."?failedLogin=1");
@@ -45,6 +40,8 @@
             $lang=$_SESSION["lang"];
         }
         session_destroy();
+        setcookie("USER_ID", $user, time()-60*60*24*365);
+        setcookie("USER_PASS", getUserPass($user), time()-60*60*24*365);
         if ($lang!=null){
             session_start();
             $_SESSION["lang"]=$lang;
@@ -72,7 +69,7 @@
             $pass=$_COOKIE["USER_PASS"];
             
             if (checkLoginFromCookie($user,$pass)){
-                
+                $_SESSION["USER_ID"]=$user;
             }
             else {
                 unset($_COOKIE["USER_ID"]);

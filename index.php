@@ -78,9 +78,7 @@ and open the template in the editor.
                             </div>
                             
                             <?php //main page
-
                                 require_once $static_home.'personalinfo.php';
-                                   
                                 echo '<div class="row-fluid">';
 
                                 // Check if server online, and if not, show error page
@@ -167,7 +165,7 @@ and open the template in the editor.
 
                                     $count++;
                                 }
-                                echo '   </div><!--/row-->';
+                                echo '   </div></div><!--/row-->';
 
 
 

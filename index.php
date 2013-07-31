@@ -103,7 +103,7 @@ and open the template in the editor.
                                 foreach ($saCategories as $i=>$sCurCat) {
 
                                     echo '      <div class="span3">
-                                        <h3><a href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' ">' . $sCurCat . '</a></h3>
+                                        <h4><a href="category.php?lang=' . $lang . '&categname=' . $sCurCat . ' ">' . $sCurCat . '</a></h4>
                                         <table class="table table-striped">
                                             <tbody>';
 

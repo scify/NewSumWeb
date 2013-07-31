@@ -36,7 +36,7 @@
     <h3 class="text-center">
         Οι 4 πιο καυτές κατηγορίες σας
         <a data-toggle="modal" href="#pserverinfoModal" >
-            <button class="btn btn-mini btn-info" type="button" style="height: 17px; padding-bottom: 6px;">Νέα υπηρεσία <i class="icon-question-sign icon-white"></i></button>
+            <button class="btn btn-mini btn-info" type="button" style="height: 17px;margin-top:-2px;margin-left:10px;"><p style="margin-top:-2px">Νέα υπηρεσία<i class="icon-question-sign icon-white"></i></p></button>
         </a>
 
     </h3>

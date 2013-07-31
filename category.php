@@ -249,7 +249,7 @@ and open the template in the editor.
 
 
 			    // Title and summary anchor
-                            echo'  <div class="hero-unit text-center"><img src="img/bee2.png"><a name="summary"></a>  <i>   ' . $summaryTopicTitle . '   </i>  <img src="img/bee1.png"></div>';
+                            echo'  <div class="hero-unit text-center"><a name="summary"></a>  <i>   ' . $summaryTopicTitle . '   </i> </div>';
 
 			    // Back to topics. Visible only on Non-desktop layouts
                             echo'  <div class="text-center hidden-desktop"><a class="button" href="#topicList">'.$TR['BackToTopicList.'.$lang].'</a></div>';

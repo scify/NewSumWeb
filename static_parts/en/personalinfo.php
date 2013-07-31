@@ -39,10 +39,10 @@
     </div>
 </div>
 <div class="well">
-    <h4 class="text-center">
+    <h3 class="text-center">
         Your 4 hottest categories
         <a data-toggle="modal" href="#pserverinfoModal" >
-            <button class="btn btn-mini btn-primary" type="button" style="height: 17px; padding-bottom: 6px;">New service <i class="icon-question-sign icon-white"></i></button>
+            <button class="btn btn-mini btn-primary" type="button" style="height: 17px;margin-top:-2px;margin-left:10px;"><p style="margin-top:-2px">New service <i class="icon-question-sign icon-white"></i></p></button>
         </a>
 
-    </h4>
+    </h3>

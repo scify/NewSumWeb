@@ -4,7 +4,7 @@
         <table>
             <tr>
                 <td><h4 id="myModalLabel">Personalization now</h4></td>
-                <td><img src="img/logoPServer-simple.png" alt="" style="margin-left: 200px; width: 60px; height: 59px;"></td>
+                <td><img src="img/pserver/logoPServer-simple.png" alt="" style="margin-left: 200px; width: 60px; height: 59px;"></td>
             </tr>
         </table>
     </div>

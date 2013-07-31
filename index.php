@@ -5,44 +5,24 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <title>NewSum on the web</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Get informed fast, without losing the pluralism!">
         <meta name="author" content="SciFY.org">
 
-        <!-- Le styles -->
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="img/favicon.ico">
+        
+        <!-- Bootstrap CSS -->
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
-        <link href="css/index.css" rel="stylesheet">
         <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
-        <link href="css/global.css" rel="stylesheet">
         
-        <script>
-            function toggleSearch() {
-                var ele = document.getElementById("toggleSearch");
-                var text = document.getElementById("displaySearch");
-                if (ele.style.display == "block") {
-                    ele.style.display = "none";
+        <!-- Scify CSS -->
+        <link href="css/scify/index.css" rel="stylesheet">
+        <link href="css/scify/global.css" rel="stylesheet">
 
-                }
-                else {
-                    ele.style.display = "block";
-                }
-            }
-        </script>
-        <!--        google analytics-->
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-31632742-6', 'newsumontheweb.org');
-            ga('send', 'pageview');
-
-        </script>
-        
-        <title>NewSum on the Web</title>
-
+        <script src="js/scify/general.js"></script>
     </head>
     <body>
         <?php
@@ -185,28 +165,27 @@ and open the template in the editor.
                 ?>
             </div><!--/.fluid-container-->
 
-            <!-- Le javascript
-            ================================================== -->
-            <!-- Placed at the end of the document so the pages load faster -->
-            <script src="js/bootstrap/jquery-1.9.1.min.js"></script>
-            <script src="js/bootstrap/bootstrap-transition.js"></script>
-            <script src="js/bootstrap/bootstrap-alert.js"></script>
-            <script src="js/bootstrap/bootstrap-modal.js"></script>
-            <script src="js/bootstrap/bootstrap-dropdown.js"></script>
-            <script src="js/bootstrap/bootstrap-scrollspy.js"></script>
-            <script src="js/bootstrap/bootstrap-tab.js"></script>
-            <script src="js/bootstrap/bootstrap-tooltip.js"></script>
-            <script src="js/bootstrap/bootstrap-popover.js"></script>
-            <script src="js/bootstrap/bootstrap-button.js"></script>
-            <script src="js/bootstrap/bootstrap-collapse.js"></script>
-            <script src="js/bootstrap/bootstrap-carousel.js"></script>
-            <script src="js/bootstrap/bootstrap-typeahead.js"></script>
-            <script>
-            $(function() {
-                $('.carousel').carousel({
-                    interval: 7000
-                });
+        <!-- Le javascript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery/jquery-1.9.1.min.js"></script>
+        <script src="js/bootstrap/bootstrap-transition.js"></script>
+        <script src="js/bootstrap/bootstrap-alert.js"></script>
+        <script src="js/bootstrap/bootstrap-modal.js"></script>
+        <script src="js/bootstrap/bootstrap-dropdown.js"></script>
+        <script src="js/bootstrap/bootstrap-scrollspy.js"></script>
+        <script src="js/bootstrap/bootstrap-tab.js"></script>
+        <script src="js/bootstrap/bootstrap-tooltip.js"></script>
+        <script src="js/bootstrap/bootstrap-button.js"></script>
+        <script src="js/bootstrap/bootstrap-collapse.js"></script>
+        <script src="js/bootstrap/bootstrap-carousel.js"></script>
+        <script src="js/bootstrap/bootstrap-typeahead.js"></script>
+        <script>
+        $(function() {
+            $('.carousel').carousel({
+                interval: 7000
             });
-            </script>
+        });
+        </script>
     </body>
 </html>

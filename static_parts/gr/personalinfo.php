@@ -4,7 +4,7 @@
         <table>
             <tr>
                 <td><h4 id="myModalLabel">Προσωποποίηση τώρα</h4></td>
-                <td><img src="img/logoPServer-simple.png" alt="" style="margin-left: 200px; width: 60px; height: 59px;"></td>
+                <td><img src="img/pserver/logoPServer-simple.png" alt="" style="margin-left: 200px; width: 60px; height: 59px;"></td>
             </tr>
         </table>
     </div>
@@ -36,7 +36,7 @@
     <h3 class="text-center">
         Οι 4 πιο καυτές κατηγορίες σας
         <a data-toggle="modal" href="#pserverinfoModal" >
-            <button class="btn btn-mini btn-info" type="button" style="height: 17px;margin-top:-2px;margin-left:10px;"><p style="margin-top:-2px">Νέα υπηρεσία<i class="icon-question-sign icon-white"></i></p></button>
+            <button class="btn btn-mini btn-primary" type="button" style="height: 17px;margin-top:-2px;margin-left:10px;"><p style="margin-top:-2px">Νέα υπηρεσία<i class="icon-question-sign icon-white"></i></p></button>
         </a>
 
     </h3>

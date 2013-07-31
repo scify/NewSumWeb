@@ -101,7 +101,7 @@ and open the template in the editor.
                                 }
                                 //Fetch content from the server
                                 $count = 1;
-                                //load 8 first kategories
+                                //load 4 first kategories
                                 foreach ($saCategories as $i=>$sCurCat) {
 
                                     echo '      <div class="span3">
@@ -109,16 +109,40 @@ and open the template in the editor.
                                         <table class="table table-striped">
                                             <tbody>';
 
-                                    //load 2 first topics
+                                    //load 4 first topics
 
                                     $paramsTitles = new getTopicTitles();
                                     $paramsTitles->sUserSources = "All";
                                     $paramsTitles->sCategory = $sCurCat;
                                     $saTopics = splitToFirstLevelSeparator($newsum->getTopicTitles($paramsTitles)->return);
 
-                                    $topicCount = 1;
-                                    $tempDate = "";
-                                    foreach ($saTopics as $sCurTopicInfo) {
+                                    $dates = Array();
+                                    $topics = Array();
+                                    $arrangedTopics = Array();
+                                    for ($i = 0; $i < count($saTopics); $i++) {
+                                        $sCurTopicInfo = $saTopics[$i];
+                                        $tempinfo = splitToSecondLevelSeparator($sCurTopicInfo);
+
+                                        $sCurTopicDate = $tempinfo[2];
+                                        $seconds = $sCurTopicDate / 1000;
+                                        $convertToDate = date("Y-m-d", $seconds);
+                                        
+                                        $topics[] = $convertToDate;
+                                        $dates[] = $convertToDate;
+                                    }
+                                    arsort($dates);
+                                    foreach ($dates as $curDate) {
+                                        foreach ($topics as $i => $curTopicDate) {
+                                            if ($curTopicDate == $curDate) {
+                                                $arrangedTopics[] = $i;
+                                            }
+                                        }
+                                        if (count($arrangedTopics) >= 4) {
+                                            break;
+                                        }
+                                    }
+                                    foreach (array_slice($arrangedTopics,0,4) as $cur=>$sCurTopicId) {
+                                        $sCurTopicInfo = $saTopics[$sCurTopicId];
                                         $tempinfo = splitToSecondLevelSeparator($sCurTopicInfo);
 
                                         $sCurTopicID = $tempinfo[0];
@@ -128,23 +152,8 @@ and open the template in the editor.
                                         $seconds = $sCurTopicDate / 1000;
                                         $convertToDate = date("d-m-Y", $seconds);
                                         echo '<tr><td>';
-
-    //                                    if($topicCount == 1){
-    //                                       $tempDate= $convertToDate;
-    //                                         echo'<small class="text-center">' . $convertToDate . '</small>';
-    //                                    }
-    //                                   
-    //                                    if($tempDate!=$convertToDate){
-    //                                    echo'<small class="text-center">' . $convertToDate . '</small>';
-    //                                    }
-
                                         echo'<a class="button" href="category.php?lang=' . $lang . '&categname=' . $sCurCat . '&topicID=' . $sCurTopicID . '#summary">' . $sCurTopic . "</a>";
                                         echo'<br><small class="muted">' . $convertToDate . '</small></td></tr>';
-
-                                        if ($topicCount % 4 == 0) {
-                                            break;
-                                        }
-                                        $topicCount++;
                                     }
 
 

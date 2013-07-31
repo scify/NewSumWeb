@@ -130,8 +130,34 @@ and open the template in the editor.
                                                 <tbody>';
                             $idfirstTopic = "";
                             $summaryTopicTitle = "";
-                            $tempDate = "";
-                            foreach ($saTopics as $sCurTopicInfo) {
+                            
+                            $dates = Array();
+                            $topics = Array();
+                            $arrangedTopics = Array();
+                            for ($i = 0; $i < count($saTopics); $i++) {
+                                $sCurTopicInfo = $saTopics[$i];
+                                $tempinfo = splitToSecondLevelSeparator($sCurTopicInfo);
+
+                                $sCurTopicDate = $tempinfo[2];
+                                $seconds = $sCurTopicDate / 1000;
+                                $convertToDate = date("Y-m-d", $seconds);
+
+                                $topics[] = $convertToDate;
+                                $dates[] = $convertToDate;
+                            }
+                            arsort($dates);
+                            foreach ($dates as $curDate) {
+                                foreach ($topics as $i => $curTopicDate) {
+                                    if ($curTopicDate == $curDate) {
+                                        $arrangedTopics[] = $i;
+                                    }
+                                }
+                                if (count($arrangedTopics) >= 10) {
+                                    break;
+                                }
+                            }
+                            foreach (array_slice($arrangedTopics,0,10) as $cur=>$sCurTopicId) {
+                                $sCurTopicInfo = $saTopics[$sCurTopicId];
                                 $tempinfo = splitToSecondLevelSeparator($sCurTopicInfo);
 
                                 $sCurTopicID = $tempinfo[0];

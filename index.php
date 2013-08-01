@@ -157,6 +157,7 @@ and open the template in the editor.
                                 require_once $static_home.'about.php';
                                 require_once $static_home.'contact_tab.php';
                                 require_once $static_home.'register.php';
+                                require_once $static_home.'serverDown.php';
                             ?>
                         </div><!--myTabContent-->
                     </div><!--/span-->

@@ -28,11 +28,12 @@
                         if (!isset($_SESSION["USER_ID"])) {
                             echo '
                                 <li>
-                                <form class="form-horizontal " style="margin-top: 20px;margin-right: 20px; margin-bottom: 0px;" action="./index.php" method="POST">
+                                <form class="form-horizontal " id="loginForm" style="margin-top: 20px;margin-right: 20px; margin-bottom: 0px;" action="./index.php" method="POST">
                                     <input type="email" title="Λογαριασμός ηλεκτρονικού ταχυδρομείου" placeholder="E-mail" name="login" class="input-medium" required  style="height: 15px; margin-top: 5px;"><br class="hidden-desktop">
                                     <input type="password" pattern="[^\']{6,18}" title="6-18 χαρακτήρες" placeholder="κωδικός" name="pass" class="input-medium" required  style="height: 15px; margin-top: 5px;"><br class="hidden-desktop">
-                                    <button type="submit" class="btn btn-small btn-primary" title="Είσοδος χρήστη">Είσοδος</button>
-                                    <a class="btn btn-small btn-info"  href="#register" data-toggle="modal" title="Εγγραφή χρήστη">Εγγραφή χρήστη</a>
+                                    <button type="button" action="" onclick="check_pserver_status(0)" class="btn btn-small btn-primary" title="Είσοδος χρήστη">Είσοδος</button>
+                                    <button type="submit" style="display:none" id="hiddenButton"></button>
+                                    <a class="btn btn-small btn-info"  href="javascript:void" onclick="check_pserver_status(1)" title="Εγγραφή χρήστη">Εγγραφή χρήστη</a>
                                 </form></li>';
                         } else {
                             echo '

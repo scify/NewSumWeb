@@ -28,11 +28,12 @@
                         if (!isset($_SESSION["USER_ID"])) {
                             echo '
                                 <li>
-                                <form class="form-horizontal" style="margin-top: 20px;margin-right: 20px; margin-bottom: 0px;" method="POST" action="./index.php">
+                                <form class="form-horizontal" id="loginForm" style="margin-top: 20px;margin-right: 20px; margin-bottom: 0px;" method="POST" action="./index.php">
                                     <input type="email" title="E-mail" placeholder="E-mail" name="login" class="input-medium" required style="height: 15px; margin-top: 5px;"><br class="hidden-desktop">
                                     <input type="password" pattern="[^\']{6,18}" title="6-18 characters" name="pass" placeholder="Password" class="input-medium" required style="height: 15px; margin-top: 5px;"><br class="hidden-desktop">
-                                    <button type="submit" class="btn btn-small btn-primary"  title="User login">Login</button>
-                                    <a class="btn btn-small btn-info"  href="#register" data-toggle="modal" title="User register">Register</a>
+                                    <button type="button" action="" onclick="check_pserver_status(0)" class="btn btn-small btn-primary"  title="User login">Login</button>
+                                    <button type="submit" style="display:none" id="hiddenButton"></button>
+                                    <a class="btn btn-small btn-info"  href="javascript:void" onclick="check_pserver_status(1)" title="User register">Register</a>
                                 </form>
                                 </li>';
                         } else {

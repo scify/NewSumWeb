@@ -22,7 +22,19 @@ and open the template in the editor.
         <link href="css/scify/category.css" rel="stylesheet">
         <link href="css/scify/global.css" rel="stylesheet">
         
+        <!-- Le javascript -->
         <script src="js/scify/general.js"></script>
+        
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <script src="js/bootstrap/bootstrap-modal.js"></script>
+        <script src="js/bootstrap/bootstrap-tab.js"></script>
+        <script src="js/bootstrap/bootstrap-transition.js"></script>
+        
+        <script src="js/jquery/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery/jquery.bootpag.min.js"></script>
+        <script src="js/jquery/jquery.cookie.js"></script>
+        
+        <script src="rating/jquery.raty.min.js"></script>
 
     </head>
     <body>
@@ -82,7 +94,7 @@ and open the template in the editor.
                                                 <tbody>';
                             $idfirstTopic = "";
                             $summaryTopicTitle = "";
-                            
+                                    
                             $dates = Array();
                             $topics = Array();
                             $arrangedTopics = Array();
@@ -104,11 +116,8 @@ and open the template in the editor.
                                         $arrangedTopics[] = $i;
                                     }
                                 }
-                                if (count($arrangedTopics) >= 10) {
-                                    break;
-                                }
                             }
-                            foreach (array_slice($arrangedTopics,0,10) as $cur=>$sCurTopicId) {
+                            foreach ($arrangedTopics as $sCurTopicId) {
                                 $sCurTopicInfo = $saTopics[$sCurTopicId];
                                 $tempinfo = splitToSecondLevelSeparator($sCurTopicInfo);
 
@@ -306,24 +315,7 @@ and open the template in the editor.
              ?>
         </div><!--/.fluid-container-->
         
-        <!-- Le javascript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="rating/jquery.raty.min.js"></script>
-        <script src="js/jquery/jquery.cookie.js"></script>
-        <script src="js/jquery/jquery.bootpag.min.js"></script>
-        <script src="js/jquery/jquery-1.9.1.min.js"></script>
-        <script src="js/bootstrap/bootstrap.min.js"></script>
-        <script src="js/bootstrap/bootstrap-transition.js"></script>
-        <script src="js/bootstrap/bootstrap-alert.js"></script>
-        <script src="js/bootstrap/bootstrap-modal.js"></script>
-        <script src="js/bootstrap/bootstrap-dropdown.js"></script>
-        <script src="js/bootstrap/bootstrap-scrollspy.js"></script>
-        <script src="js/bootstrap/bootstrap-tab.js"></script>
-        <script src="js/bootstrap/bootstrap-tooltip.js"></script>
-        <script src="js/bootstrap/bootstrap-button.js"></script>
-        <script src="js/bootstrap/bootstrap-collapse.js"></script>
-        <script src="js/bootstrap/bootstrap-typeahead.js"></script>
-
+        <script src="js/scify/rating.js"></script>
+        
     </body>
 </html>

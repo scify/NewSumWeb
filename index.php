@@ -172,20 +172,18 @@ and open the template in the editor.
         <script src="js/bootstrap/bootstrap-transition.js"></script>
         <script src="js/bootstrap/bootstrap-alert.js"></script>
         <script src="js/bootstrap/bootstrap-modal.js"></script>
-        <script src="js/bootstrap/bootstrap-dropdown.js"></script>
         <script src="js/bootstrap/bootstrap-scrollspy.js"></script>
         <script src="js/bootstrap/bootstrap-tab.js"></script>
         <script src="js/bootstrap/bootstrap-tooltip.js"></script>
         <script src="js/bootstrap/bootstrap-button.js"></script>
         <script src="js/bootstrap/bootstrap-collapse.js"></script>
         <script src="js/bootstrap/bootstrap-carousel.js"></script>
-        <script src="js/bootstrap/bootstrap-typeahead.js"></script>
         <script>
-        $(function() {
-            $('.carousel').carousel({
-                interval: 7000
+            $(function() {
+                $('.carousel').carousel({
+                    interval: 7000
+                });
             });
-        });
         </script>
     </body>
 </html>

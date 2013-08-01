@@ -66,6 +66,9 @@ and open the template in the editor.
                                 try {
                                     global $CURRENT_USER;
                                     $saCategories = getUserFeatureList($CURRENT_USER, null);
+                                    if (count($saCategories) == 0) {
+                                        $saCategories = splitToFirstLevelSeparator($newsum->getCategories(new getCategories())->return);
+                                    }
                                 } catch (Exception $e) {
                                     // Should show Error Page
                                     $bErrorPage = true;

@@ -25,11 +25,6 @@ and open the template in the editor.
         <!-- Le javascript -->
         <script src="js/scify/general.js"></script>
         
-        <script src="js/bootstrap/bootstrap.min.js"></script>
-        <script src="js/bootstrap/bootstrap-modal.js"></script>
-        <script src="js/bootstrap/bootstrap-tab.js"></script>
-        <script src="js/bootstrap/bootstrap-transition.js"></script>
-        
         <script src="js/jquery/jquery-1.9.1.min.js"></script>
         <script src="js/jquery/jquery.bootpag.min.js"></script>
         <script src="js/jquery/jquery.cookie.js"></script>
@@ -315,7 +310,19 @@ and open the template in the editor.
              ?>
         </div><!--/.fluid-container-->
         
+        <!-- Le javascript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
         <script src="js/scify/rating.js"></script>
+        <script src="js/bootstrap/bootstrap-transition.js"></script>
+        <script src="js/bootstrap/bootstrap-alert.js"></script>
+        <script src="js/bootstrap/bootstrap-modal.js"></script>
+        <script src="js/bootstrap/bootstrap-scrollspy.js"></script>
+        <script src="js/bootstrap/bootstrap-tab.js"></script>
+        <script src="js/bootstrap/bootstrap-tooltip.js"></script>
+        <script src="js/bootstrap/bootstrap-button.js"></script>
+        <script src="js/bootstrap/bootstrap-collapse.js"></script>
+        <script src="js/bootstrap/bootstrap-carousel.js"></script>
         
     </body>
 </html>

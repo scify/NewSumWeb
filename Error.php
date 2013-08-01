@@ -11,17 +11,18 @@ and open the template in the editor.
         <meta name="description" content="Get informed fast, without losing the pluralism!">
         <meta name="author" content="SciFY.org">
         
+                <!-- Le styles -->
+        <link href="css/scify/index.css" rel="stylesheet">
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
+        
                 <!-- Favicon -->
         <link rel="icon" type="image/png" href="img/favicon.ico">
-        
-        <!-- Bootstrap CSS -->
-        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
-        
     </head>
     <body>
 
         <div class="hero-unit" style="background-color: #d9d9d9">
-            <?php
+             <?php
             $lang = $_GET["lang"];
             if ($lang == "en") {
                 echo ' <h2>Unfortunately, our server is offline...</h2>

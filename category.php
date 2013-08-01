@@ -282,7 +282,7 @@ and open the template in the editor.
                                 <table>
                                     <tr>
                                         <td>
-                                            <img src="img/rightdownloadbanner.png" class="img-polaroid" width="90%">
+                                            <img src="img/category/rightdownloadbanner.png" class="img-polaroid" width="90%">
                                         </td>
                                     </tr>
                                     <tr>  

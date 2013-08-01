@@ -14,14 +14,14 @@ and open the template in the editor.
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="img/favicon.ico">
         
+        <!-- Scify CSS --><!-- MUST BE BEFORE BOOSTRAP CSS -->
+        <link href="css/scify/index.css" rel="stylesheet">
+        <link href="css/scify/global.css" rel="stylesheet">
+        
         <!-- Bootstrap CSS -->
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
         
-        <!-- Scify CSS -->
-        <link href="css/scify/index.css" rel="stylesheet">
-        <link href="css/scify/global.css" rel="stylesheet">
-
         <script src="js/scify/general.js"></script>
     </head>
     <body>
